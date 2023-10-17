@@ -1,0 +1,6 @@
+.footer {
+    background-color: #413939;; /* Color de fondo gris (ajusta el valor según tus preferencias) */
+    color: #fff; /* Color del texto (blanco en este caso, puedes cambiarlo) */
+    padding: 20px; /* Espaciado interior para el contenido del footer */
+    text-align: center; /* Centrar el texto horizontalmente */
+  }
