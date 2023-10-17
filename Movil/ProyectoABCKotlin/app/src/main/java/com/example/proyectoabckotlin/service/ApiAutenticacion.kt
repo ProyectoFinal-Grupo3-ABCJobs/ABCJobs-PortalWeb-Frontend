@@ -12,7 +12,7 @@ public interface ApiAutenticacion {
     @GET("/login?usuario={usuario}")
     fun login(@Query("usuario") usuario: String): Call<Usuario>*/
 
-    @POST("/login")
+    @POST("/users/auth")
     fun login(@Body usuario: Usuario): Call<Usuario>
 }
 
