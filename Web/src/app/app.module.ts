@@ -7,6 +7,10 @@ import { BannerComponent } from './banner/banner.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuEmpresaComponent } from './empresa/menu-empresa/menu-empresa.component';
+import { MenuCandidatoComponent } from './candidato/menu-candidato/menu-candidato.component';
+import { MenuFuncionarioComponent } from './funcionario/menu-funcionario/menu-funcionario.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,15 @@ import { FooterComponent } from './footer/footer.component';
     BannerComponent,
     NavbarComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    MenuEmpresaComponent,
+    MenuCandidatoComponent,
+    MenuFuncionarioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
