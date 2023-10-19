@@ -1,13 +1,13 @@
 package com.example.proyectoabckotlin.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityMainBinding
 import com.example.proyectoabckotlin.pojo.Usuario
@@ -15,12 +15,15 @@ import com.example.proyectoabckotlin.registroCandidato.RegistroCandidatoActivity
 import com.example.proyectoabckotlin.service.ApiAutenticacion
 import com.example.proyectoabckotlin.service.HeaderInterceptor
 import okhttp3.OkHttpClient
+import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.Collections
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -87,6 +90,11 @@ class MainActivity : AppCompatActivity() {
 
                         override fun onFailure(call: Call<Usuario?>, t: Throwable) {
                             println("onFailure")
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Error ingresando, intente nuevamente",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                     })
                 } catch (ex: Exception) {
@@ -102,12 +110,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://0.0.0.0:5000/users/auth/")
+            .baseUrl("https://9793-190-26-23-62.ngrok-free.app/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(this.getClient())
             .build();
     }
 
-    private fun getClient(): OkHttpClient =
-        OkHttpClient.Builder().addInterceptor(HeaderInterceptor()).build()
+    private fun getClient(): OkHttpClient {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        return OkHttpClient.Builder()
+            .protocols(Collections.singletonList(Protocol.HTTP_1_1))
+            .addInterceptor(HeaderInterceptor())
+            .addInterceptor(loggingInterceptor)
+            .build()
+    }
 }
