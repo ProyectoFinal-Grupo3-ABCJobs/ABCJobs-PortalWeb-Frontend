@@ -11,7 +11,7 @@
     </div>
     <div class="buttons">
       <button class="btn btnIngresar" (click)="onLogInUsuario(usuario.value, contrasena.value)">Ingresar</button>
-      <button class="btn btnRegistrarse">Registrarse</button>
+      <button class="btn btnRegistrarse" [routerLink]="['/candidato/registro']">Registrarse</button>
     </div>
   </div>
   <div class="login-right">

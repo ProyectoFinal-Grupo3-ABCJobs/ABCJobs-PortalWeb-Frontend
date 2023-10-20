@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+.input-decorado {
+    border: 2px solid #AAAAAA; /* Borde de 2 píxeles de ancho, color #333 */
+    padding: 25px; /* Espacio interior de 10 píxeles */
+    margin-right: 50px;  /* Margen derecho de 20 píxeles */
+    border-radius: 20px; /* Redondea todos los bordes con un radio de 10 píxeles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  }
+
+
+.container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh; /* Asegura que la altura sea del 100% de la ventana */
+  }
+  
+.login-left {
+    flex: 1; /* Ocupa el 50% de ancho de la página */
+  }
+
+.btn {
+    background-color: #E25928; /* Color de fondo azul (puedes cambiar el valor a tu preferencia) */
+    color: #fff; /* Color del texto blanco (puedes cambiar el valor si lo deseas) */
+    border: none; /* Quita el borde del botón */
+    padding: 10px 20px; /* Ajusta el relleno del botón según tus necesidades */
+    border-radius: 10px; /* Añade bordes redondeados (puedes ajustar el radio según tu preferencia) */
+
+}
+
+.btnRegistrarse{
+
+    margin-left: 20px;
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+}
