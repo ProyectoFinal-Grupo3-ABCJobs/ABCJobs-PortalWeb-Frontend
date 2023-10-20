@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuEmpresaComponent } from './empresa/menu-empresa/menu-empresa.component';
 import { MenuCandidatoComponent } from './candidato/menu-candidato/menu-candidato.component';
 import { MenuFuncionarioComponent } from './funcionario/menu-funcionario/menu-funcionario.component';
+import { RegistroCandidatoComponent } from './candidato/registro-candidato/registro-candidato.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
     // path: 'registro/:userId/:userToken',
     path: 'funcionario/main',
     component: MenuFuncionarioComponent
+  },
+  {
+    path: 'candidato/registro',
+    component: RegistroCandidatoComponent
   },
 
 ];

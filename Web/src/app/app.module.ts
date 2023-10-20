@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuEmpresaComponent } from './empresa/menu-empresa/menu-empresa.component';
 import { MenuCandidatoComponent } from './candidato/menu-candidato/menu-candidato.component';
 import { MenuFuncionarioComponent } from './funcionario/menu-funcionario/menu-funcionario.component';
+import { RegistroCandidatoComponent } from './candidato/registro-candidato/registro-candidato.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MenuFuncionarioComponent } from './funcionario/menu-funcionario/menu-fu
     FooterComponent,
     MenuEmpresaComponent,
     MenuCandidatoComponent,
-    MenuFuncionarioComponent
+    MenuFuncionarioComponent,
+    RegistroCandidatoComponent,
   ],
   imports: [
     BrowserModule,
