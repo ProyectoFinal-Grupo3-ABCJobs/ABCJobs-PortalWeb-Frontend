@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    apiUrl: 'https://bca0-190-26-23-62.ngrok-free.app:5000/users'
+    apiUrl: 'http://loadbalancerproyectoabc-735612126.us-east-2.elb.amazonaws.com:5000/users'
   };
 
