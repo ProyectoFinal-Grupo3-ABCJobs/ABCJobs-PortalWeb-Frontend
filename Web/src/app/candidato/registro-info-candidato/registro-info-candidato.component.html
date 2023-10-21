@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="titulo">
+        <h2>Formulario de registro de información del candidato</h2>
+        <div class="col-md-6">
+            <p>Información personal</p>
+            <div class="input-container">
+                <input #nombre type="text" placeholder="Nombre Completo *" style="margin-top: 20px;" />
+            </div>
+            <div class="input-container">
+                <select #tipoidentificacion placeholder="Tipo de identificación" style="margin-top: 20px;" >
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <input #identificacion type="number" placeholder="Identificacion" style="margin-top: 20px;" />
+            </div>
+            <div class="input-container">
+                <input #direccion type="text" placeholder="Dirección de residencia" style="margin-top: 20px;" />
+            </div>
+            <div class="input-container">
+                <input #telefono type="number" placeholder="Número de teléfono" style="margin-top: 20px;" />
+            </div>
+            <div class="input-container">
+                <select #pais  placeholder="País" style="margin-top: 20px;" >
+                    <option value="">Seleccionar País</option>
+                    <option value="1">Colombia</option>
+                    <option value="2">México</option>
+                    <option value="3">Estados Unidos</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <select #departamento  placeholder="Departamento" style="margin-top: 20px;" >
+                    <option value="">Seleccionar Departamento</option>
+                    <option value="1">Antioquia</option>
+                    <option value="2">Cundinamarca</option>
+                    <option value="3">Valle del Cauca</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <select #ciudad  placeholder="Ciudad" style="margin-top: 20px;" >
+                    <option value="">Seleccionar Ciudad</option>
+                    <option value="1">Medellín</option>
+                    <option value="2">Bogotá</option>
+                    <option value="3">Cali</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <input #profesion type="text" placeholder="Profesión" style="margin-top: 20px;" />
+            </div>
+            <div class="input-container">
+                <input #aniosExperiencia type="number" placeholder="Años de experiencia" style="margin-top: 20px;" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p>Educación</p>
+    
+            <div class="input-container">
+                <input #ultimoEstudio type="text" placeholder="Último estudio" style="margin-top: 20px;" />
+            </div>
+            <div class="input-container">
+                <input #institucion type="text" placeholder="Institución" style="margin-top: 20px;" />
+            </div>
+            <div class="input-container">
+                <input #anioGrado type="number" placeholder="Año de grado" style="margin-top: 20px;" />
+            </div>
+            <div class="input-container">
+                <select #departamentoEstudio  placeholder="Departamento" style="margin-top: 20px;" >
+                    <option value="">Seleccionar Departamento</option>
+                    <option value="1">Antioquia</option>
+                    <option value="2">Cundinamarca</option>
+                    <option value="3">Valle del Cauca</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <select #ciudadEstudio  placeholder="Ciudad" style="margin-top: 20px;" >
+                    <option value="">Seleccionar Ciudad</option>
+                    <option value="1">Medellín</option>
+                    <option value="2">Bogotá</option>
+                    <option value="3">Cali</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="buttons" style="margin-top: 20px;">
+            <button class="btn soyCandidato" [routerLink]="['/candidato/registroInformacion']">Siguiente</button>
+            <button class="btn regresar" [routerLink]="['/login']">Cancelar</button>
+        </div>
+    </div>
+</div>

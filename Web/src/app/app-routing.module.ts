@@ -5,6 +5,7 @@ import { MenuEmpresaComponent } from './empresa/menu-empresa/menu-empresa.compon
 import { MenuCandidatoComponent } from './candidato/menu-candidato/menu-candidato.component';
 import { MenuFuncionarioComponent } from './funcionario/menu-funcionario/menu-funcionario.component';
 import { RegistroCandidatoComponent } from './candidato/registro-candidato/registro-candidato.component';
+import { RegistroInfoCandidatoComponent } from './candidato/registro-info-candidato/registro-info-candidato.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
     path: 'candidato/registro',
     component: RegistroCandidatoComponent
   },
+  {
+    path: 'candidato/registroInformacion',
+    component: RegistroInfoCandidatoComponent
+  }
 
 ];
 
