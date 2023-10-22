@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { ToastrService } from 'ngx-toastr';
 import { CandidatoService } from '../candidato.service'; 
@@ -22,7 +22,8 @@ export class RegistroInfoCandidatoComponent implements OnInit {
   constructor(
     private candidatoService:CandidatoService,
     private formBuilder: FormBuilder,
-    private router: Router,
+    private router: ActivatedRoute,
+    private routerPath: Router,
     private toastr: ToastrService
   ) { }
 
@@ -57,7 +58,7 @@ export class RegistroInfoCandidatoComponent implements OnInit {
     newCandidato.palabrasClave = this.palabrasClaveList.join(', ');
     this.candidatoService.registrarInfoCandidato(newCandidato)
       .subscribe(res => {
-        this.router.navigate([``])
+        this.routerPath.navigate([`login`])
         this.showSuccess()
       },
         error => {
@@ -74,23 +75,30 @@ export class RegistroInfoCandidatoComponent implements OnInit {
     agregarPalabraClave() {
       const palabra = this.candidatoForm.get('palabrasClave')?.value;
       if (palabra) {
-        this.palabrasClaveList.push(palabra);
+        // Capitalizar la palabra antes de agregarla a la lista
+        const palabraCapitalizada = palabra.charAt(0).toUpperCase() + palabra.slice(1);
+        this.palabrasClaveList.push(palabraCapitalizada);
         this.candidatoForm.get('palabrasClave')?.setValue('');
+        console.log(this.palabrasClaveList);
       }
     }
   
     // Función para quitar una palabra clave
     quitarPalabraClave(index: number) {
       this.palabrasClaveList.splice(index, 1);
+      console.log(this.palabrasClaveList);
     }
 
   mostrarSegundaParte() {
     console.log("segunda parte")
     this.mostrarParte2 = true;
 
-
   }
   
+  cancelCreate() {
+    this.candidatoForm.reset()
+    this.routerPath.navigate([`login`])
+  } 
 
   showError(error: string) {
     this.toastr.error(error, "Error")

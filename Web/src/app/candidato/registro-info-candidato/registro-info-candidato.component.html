@@ -1,7 +1,7 @@
 <div class="container justify-content-center">
     <div class="titulo">
         <h2>Formulario de registro de información del candidato</h2>
-        <form formGroup="candidatoForm" (ngSubmit)="candidatoForm.valid && registrarCandidato(candidatoForm.value)">
+        <form [formGroup]="candidatoForm" (ngSubmit)="candidatoForm.valid && registrarCandidato(candidatoForm.value)">
             <div class="row parte1" [hidden]="mostrarParte2">
 
                 <div class="col-md-6">
@@ -22,7 +22,7 @@
                       <div class="form-group">
                         <div class="mb-3 row">
                           <div class="col-md-12">
-                            <select formControlName="tipoidentificacion" class="form-select" >
+                            <select formControlName="tipoIdentificacion" class="form-select" >
                                 <option value="">Seleccionar tipo documento</option>
                                 <option value="CC">Cédula de Ciudadanía</option>
                                 <option value="CE">Cédula de Extranjería</option>
@@ -31,7 +31,7 @@
                           </div>
                         </div>
                         <div class="alert alert-danger my-3"
-                          *ngIf="candidatoForm.get('tipoidentificacion')?.hasError('required') && candidatoForm.get('tipoidentificacion')?.touched">
+                          *ngIf="candidatoForm.get('tipoIdentificacion')?.hasError('required') && candidatoForm.get('tipoIdentificacion')?.touched">
                           Debe seleccionar un tipo de documento
                         </div>
                       </div>
@@ -212,7 +212,7 @@
                     <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <select formControlName="idCiudadInst" class="form-select" >
+                              <select formControlName="idCiudadInst" class="form-select">
                                 <option value="">Seleccionar Ciudad</option>
                                 <option value="1">Medellín</option>
                                 <option value="2">Bogotá</option>
@@ -282,7 +282,7 @@
                   <div class="mb-3 row">
                     <div class="col-md-12">
                       <input formControlName="palabrasClave" type="text" class="form-control" placeholder="Agregue conocimientos *">
-                      <button class="btn" style="margin-top: 20px;" (click)="agregarPalabraClave()">Agregar</button>
+                      <a class="btn-link" style="margin-top: 20px;" (click)="agregarPalabraClave()">Agregar</a>
                     </div>
                   </div>
                 </div>
@@ -292,7 +292,7 @@
                   <ul>
                     <li *ngFor="let palabra of palabrasClaveList">
                       {{ palabra }}
-                      <button class="btn btn-link" (click)="quitarPalabraClave(palabrasClaveList.indexOf(palabra))">Quitar</button>
+                      <a class="btn-link" (click)="quitarPalabraClave(palabrasClaveList.indexOf(palabra))">Quitar</a>
                     </li>
                   </ul>
                 </div>
@@ -301,9 +301,9 @@
             </div>
     
             <div class="buttons" style="margin-top: 20px;">
-                <button class="btn btnParte1" type="button" (click)="mostrarSegundaParte()" [hidden]="mostrarParte2">Siguiente</button>
-                <button class="btn btnSubmit" type="submit" routerLink="/login" [hidden]="!mostrarParte2" [disabled]="!candidatoForm.valid">Guardar</button>
-                <button class="btn" routerLink="/login">Cancelar</button>
+                <button class="btn btnParte1" (click)="mostrarSegundaParte()" [hidden]="mostrarParte2">Siguiente</button>
+                <button class="btn btnSubmit" type="submit" [hidden]="!mostrarParte2" [disabled]="!candidatoForm.valid">Guardar</button>
+                <button class="btn" (click)="cancelCreate()">Cancelar</button>
             </div>
         </form>
     </div>
