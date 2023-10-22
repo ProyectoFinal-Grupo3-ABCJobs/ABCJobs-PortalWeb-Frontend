@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JwtHelperService } from "@auth0/angular-jwt";
@@ -11,10 +11,13 @@ import { Candidato } from '../candidato';
   templateUrl: './registro-info-candidato.component.html',
   styleUrls: ['./registro-info-candidato.component.css']
 })
-export class RegistroInfoCandidatoComponent {
+export class RegistroInfoCandidatoComponent implements OnInit {
 
   helper = new JwtHelperService();
   candidatoForm: FormGroup = new FormGroup({});
+
+  mostrarParte2: boolean = false;
+  palabrasClaveList: string[] = [];
 
   constructor(
     private candidatoService:CandidatoService,
@@ -22,6 +25,7 @@ export class RegistroInfoCandidatoComponent {
     private router: Router,
     private toastr: ToastrService
   ) { }
+
 
   ngOnInit() {
     this.candidatoForm = this.formBuilder.group({
@@ -48,7 +52,9 @@ export class RegistroInfoCandidatoComponent {
     })
   }
 
+
   registrarCandidato(newCandidato:Candidato) {
+    newCandidato.palabrasClave = this.palabrasClaveList.join(', ');
     this.candidatoService.registrarInfoCandidato(newCandidato)
       .subscribe(res => {
         this.router.navigate([``])
@@ -63,6 +69,28 @@ export class RegistroInfoCandidatoComponent {
 
         })
   }
+
+    // Función para agregar una palabra clave
+    agregarPalabraClave() {
+      const palabra = this.candidatoForm.get('palabrasClave')?.value;
+      if (palabra) {
+        this.palabrasClaveList.push(palabra);
+        this.candidatoForm.get('palabrasClave')?.setValue('');
+      }
+    }
+  
+    // Función para quitar una palabra clave
+    quitarPalabraClave(index: number) {
+      this.palabrasClaveList.splice(index, 1);
+    }
+
+  mostrarSegundaParte() {
+    console.log("segunda parte")
+    this.mostrarParte2 = true;
+
+
+  }
+  
 
   showError(error: string) {
     this.toastr.error(error, "Error")

@@ -1,4 +1,4 @@
-.input-container input {
+.form-group input {
     width: 90%; 
     border: 1px solid #999;
     border-bottom: 1px solid #000;
@@ -6,7 +6,7 @@
     border-right: 0px; 
     border-left: 0px;
     font-family: 'Reboto', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
   }
 
 .titulo h2{
@@ -24,6 +24,15 @@
     margin-top: 5px;
   }
 
+.subtitulo {
+    font-family: 'Reboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: gray;
+}
+
+
 .btn {
     background-color: #E25928;
     color: #fff; 
@@ -34,7 +43,7 @@
 
 .buttons{
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: flex-start;
     margin-top: 20px;
 }
@@ -46,4 +55,6 @@
 
 .form-select {
     width: 90%; 
+    font-family: 'Reboto', sans-serif;
+    font-size: 18px;
 }

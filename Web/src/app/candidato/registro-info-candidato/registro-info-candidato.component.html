@@ -1,13 +1,13 @@
 <div class="container justify-content-center">
     <div class="titulo">
         <h2>Formulario de registro de información del candidato</h2>
-        <form formGroup="candidatoForm" (ngSubmit)="!candidatoForm.invalid && registrarCandidato(candidatoForm.value)">
-            <div class="row">
+        <form formGroup="candidatoForm" (ngSubmit)="candidatoForm.valid && registrarCandidato(candidatoForm.value)">
+            <div class="row parte1" [hidden]="mostrarParte2">
 
                 <div class="col-md-6">
-                    <p>Información personal</p>
+                    <p class="subtitulo">Información personal</p>
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                           <div class="col-md-12">
                             <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Completo *">
@@ -19,7 +19,7 @@
                         </div>
                       </div>
 
-                      <div class="input-container">
+                      <div class="form-group">
                         <div class="mb-3 row">
                           <div class="col-md-12">
                             <select formControlName="tipoidentificacion" class="form-select" >
@@ -37,10 +37,10 @@
                       </div>
         
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="identificacion" type="number" class="form-control" placeholder="Nº Identificación">
+                              <input formControlName="identificacion" type="number" class="form-control" placeholder="Nº Identificación *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -49,10 +49,10 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="direccion" type="text" class="form-control" placeholder="Dirección de residencia">
+                              <input formControlName="direccion" type="text" class="form-control" placeholder="Dirección de residencia *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -61,10 +61,10 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="telefono" type="number" class="form-control" placeholder="Número de teléfono">
+                              <input formControlName="telefono" type="number" class="form-control" placeholder="Número de teléfono *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -73,7 +73,7 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
                               <select formControlName="idPais" class="form-select" >
@@ -90,7 +90,7 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
                               <select formControlName="idDepartamento" class="form-select" >
@@ -107,7 +107,7 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
 
                         <div class="mb-3 row">
                             <div class="col-md-12">
@@ -125,11 +125,11 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
 
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="profesion" type="text" class="form-control" placeholder="Profesión">
+                              <input formControlName="profesion" type="text" class="form-control" placeholder="Profesión *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -138,11 +138,11 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
 
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="aniosExperiencia" type="number" class="form-control" placeholder="Años de experiencia">
+                              <input formControlName="aniosExperiencia" type="number" class="form-control" placeholder="Años de experiencia *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -153,12 +153,12 @@
 
                 </div>
                 <div class="col-md-6">
-                    <p>Educación</p>
+                    <p class="subtitulo">Educación</p>
             
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="ultimoEstudio" type="text" class="form-control" placeholder="Último nivel de estudio">
+                              <input formControlName="ultimoEstudio" type="text" class="form-control" placeholder="Último nivel de estudio *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -167,10 +167,10 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="institucion" type="text" class="form-control" placeholder="Institución">
+                              <input formControlName="institucion" type="text" class="form-control" placeholder="Institución *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -179,10 +179,10 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="anioGrado" type="number" class="form-control" placeholder="Año de grado">
+                              <input formControlName="anioGrado" type="number" class="form-control" placeholder="Año de grado *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -192,7 +192,7 @@
                     </div>
 
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
                               <select formControlName="idDepartamentoInst" class="form-select" >
@@ -209,7 +209,7 @@
                           </div>
                     </div>
 
-                    <div class="input-container">
+                    <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
                               <select formControlName="idCiudadInst" class="form-select" >
@@ -227,10 +227,83 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row parte2" [hidden]="!mostrarParte2">
+              <div class="col-md-6 offset-md-3">
+                <p class="subtitulo">Información laboral</p>
+
+                <div class="form-group">
+                  <div class="mb-3 row">
+                      <div class="col-md-12">
+                        <input formControlName="cargoUltimoEmpleo" type="text" class="form-control" placeholder="Cargo de su último empleo *">
+                      </div>
+                    </div>
+                    <div class="alert alert-danger my-3"
+                      *ngIf="candidatoForm.get('cargoUltimoEmpleo')?.hasError('required') && candidatoForm.get('cargoUltimoEmpleo')?.touched">
+                      Debe ingresar un cargo
+                    </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="mb-3 row">
+                      <div class="col-md-12">
+                        <input formControlName="empresa" type="text" class="form-control" placeholder="Última empresa">
+                      </div>
+                    </div>
+                    <div class="alert alert-danger my-3"
+                      *ngIf="candidatoForm.get('empresa')?.hasError('required') && candidatoForm.get('empresa')?.touched">
+                      Debe ingresar una empresa
+                    </div>
+                </div>        
+                
+                <div class="form-group">
+                  <div class="mb-3 row">
+                      <div class="col-md-12">
+                        <input formControlName="anioIngreso" type="number" class="form-control" placeholder="Año de ingreso *">
+                      </div>
+                    </div>
+                    <div class="alert alert-danger my-3"
+                      *ngIf="candidatoForm.get('anioIngreso')?.touched && !candidatoForm.get('anioIngreso')?.hasError('required')">
+                      Debe ingresar un año
+                    </div>
+                </div>   
+              
+                <div class="form-group">
+                  <div class="mb-3 row">
+                      <div class="col-md-12">
+                        <input formControlName="anioRetiro" type="number" class="form-control" placeholder="Año de retiro (si aplica)">
+                      </div>
+                    </div>
+                  </div>  
+
+                <p class="subtitulo">Conocimientos y aptitudes</p>
+
+                <div class="form-group">
+                  <div class="mb-3 row">
+                    <div class="col-md-12">
+                      <input formControlName="palabrasClave" type="text" class="form-control" placeholder="Agregue conocimientos *">
+                      <button class="btn" style="margin-top: 20px;" (click)="agregarPalabraClave()">Agregar</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <p>Palabras Clave:</p>
+                  <ul>
+                    <li *ngFor="let palabra of palabrasClaveList">
+                      {{ palabra }}
+                      <button class="btn btn-link" (click)="quitarPalabraClave(palabrasClaveList.indexOf(palabra))">Quitar</button>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
     
             <div class="buttons" style="margin-top: 20px;">
-                <button class="btn soyCandidato" routerLink="/candidato/registroInformacion">Siguiente</button>
-                <button class="btn regresar" routerLink="/login">Cancelar</button>
+                <button class="btn btnParte1" type="button" (click)="mostrarSegundaParte()" [hidden]="mostrarParte2">Siguiente</button>
+                <button class="btn btnSubmit" type="submit" routerLink="/login" [hidden]="!mostrarParte2" [disabled]="!candidatoForm.valid">Guardar</button>
+                <button class="btn" routerLink="/login">Cancelar</button>
             </div>
         </form>
     </div>
