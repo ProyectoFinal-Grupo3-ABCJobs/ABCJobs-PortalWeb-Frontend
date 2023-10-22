@@ -18,6 +18,7 @@ export class RegistroInfoCandidatoComponent implements OnInit {
 
   mostrarParte2: boolean = false;
   palabrasClaveList: string[] = [];
+  palabrasClaveValid: boolean = false;
 
   constructor(
     private candidatoService:CandidatoService,
@@ -49,7 +50,7 @@ export class RegistroInfoCandidatoComponent implements OnInit {
       empresa: ["", [Validators.required, Validators.maxLength(150)]],
       anioIngreso: ["", [Validators.required]],
       anioRetiro: [""],
-      palabrasClave: ["", [Validators.required, Validators.maxLength(300)]],
+      palabrasClave: [""],
     })
   }
 
@@ -81,12 +82,22 @@ export class RegistroInfoCandidatoComponent implements OnInit {
         this.candidatoForm.get('palabrasClave')?.setValue('');
         console.log(this.palabrasClaveList);
       }
+      if (this.palabrasClaveList.length > 0) {
+        this.palabrasClaveValid = true;
+      } else {
+        this.palabrasClaveValid = false;
+      }
     }
   
     // Función para quitar una palabra clave
     quitarPalabraClave(index: number) {
       this.palabrasClaveList.splice(index, 1);
       console.log(this.palabrasClaveList);
+      if (this.palabrasClaveList.length > 0) {
+        this.palabrasClaveValid = true;
+      } else {
+        this.palabrasClaveValid = false;
+      }
     }
 
   mostrarSegundaParte() {

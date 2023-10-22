@@ -23,7 +23,7 @@
                         <div class="mb-3 row">
                           <div class="col-md-12">
                             <select formControlName="tipoIdentificacion" class="form-select" >
-                                <option value="">Seleccionar tipo documento</option>
+                                <option value="">Seleccionar tipo documento *</option>
                                 <option value="CC">Cédula de Ciudadanía</option>
                                 <option value="CE">Cédula de Extranjería</option>
                                 <option value="Pasaporte">Pasaporte</option>
@@ -77,7 +77,7 @@
                         <div class="mb-3 row">
                             <div class="col-md-12">
                               <select formControlName="idPais" class="form-select" >
-                                <option value="">Seleccionar País</option>
+                                <option value="">Seleccionar País *</option>
                                 <option value="1">Colombia</option>
                                 <option value="2">México</option>
                                 <option value="3">Estados Unidos</option>
@@ -94,7 +94,7 @@
                         <div class="mb-3 row">
                             <div class="col-md-12">
                               <select formControlName="idDepartamento" class="form-select" >
-                                <option value="">Seleccionar Departamento</option>
+                                <option value="">Seleccionar Departamento *</option>
                                 <option value="1">Antioquia</option>
                                 <option value="2">Cundinamarca</option>
                                 <option value="3">Valle del Cauca</option>
@@ -112,7 +112,7 @@
                         <div class="mb-3 row">
                             <div class="col-md-12">
                               <select formControlName="idCiudad" class="form-select" >
-                                <option value="">Seleccionar Ciudad</option>
+                                <option value="">Seleccionar Ciudad *</option>
                                 <option value="1">Medellín</option>
                                 <option value="2">Bogotá</option>
                                 <option value="3">Cali</option>
@@ -196,7 +196,7 @@
                         <div class="mb-3 row">
                             <div class="col-md-12">
                               <select formControlName="idDepartamentoInst" class="form-select" >
-                                <option value="">Seleccionar Departamento</option>
+                                <option value="">Seleccionar Departamento *</option>
                                 <option value="1">Antioquia</option>
                                 <option value="2">Cundinamarca</option>
                                 <option value="3">Valle del Cauca</option>
@@ -213,7 +213,7 @@
                         <div class="mb-3 row">
                             <div class="col-md-12">
                               <select formControlName="idCiudadInst" class="form-select">
-                                <option value="">Seleccionar Ciudad</option>
+                                <option value="">Seleccionar Ciudad *</option>
                                 <option value="1">Medellín</option>
                                 <option value="2">Bogotá</option>
                                 <option value="3">Cali</option>
@@ -247,7 +247,7 @@
                 <div class="form-group">
                   <div class="mb-3 row">
                       <div class="col-md-12">
-                        <input formControlName="empresa" type="text" class="form-control" placeholder="Última empresa">
+                        <input formControlName="empresa" type="text" class="form-control" placeholder="Última empresa *">
                       </div>
                     </div>
                     <div class="alert alert-danger my-3"
@@ -263,7 +263,7 @@
                       </div>
                     </div>
                     <div class="alert alert-danger my-3"
-                      *ngIf="candidatoForm.get('anioIngreso')?.touched && !candidatoForm.get('anioIngreso')?.hasError('required')">
+                      *ngIf="candidatoForm.get('anioIngreso')?.touched && candidatoForm.get('anioIngreso')?.hasError('required')">
                       Debe ingresar un año
                     </div>
                 </div>   
@@ -301,8 +301,15 @@
             </div>
     
             <div class="buttons" style="margin-top: 20px;">
-                <button class="btn btnParte1" (click)="mostrarSegundaParte()" [hidden]="mostrarParte2">Siguiente</button>
-                <button class="btn btnSubmit" type="submit" [hidden]="!mostrarParte2" [disabled]="!candidatoForm.valid">Guardar</button>
+                <button class="btn btnParte1" (click)="mostrarSegundaParte()" [hidden]="mostrarParte2" 
+                [disabled]="!candidatoForm.get('nombre')?.valid || !candidatoForm.get('tipoIdentificacion')?.valid || !candidatoForm.get('identificacion')?.valid
+                || !candidatoForm.get('direccion')?.valid || !candidatoForm.get('telefono')?.valid || !candidatoForm.get('idPais')?.valid
+                || !candidatoForm.get('idDepartamento')?.valid || !candidatoForm.get('idCiudad')?.valid || !candidatoForm.get('profesion')?.valid
+                || !candidatoForm.get('aniosExperiencia')?.valid || !candidatoForm.get('ultimoEstudio')?.valid || !candidatoForm.get('institucion')?.valid
+                || !candidatoForm.get('anioGrado')?.valid || !candidatoForm.get('idDepartamentoInst')?.valid || !candidatoForm.get('idCiudadInst')?.valid">
+                  Siguiente
+                </button>
+                <button class="btn btnSubmit" type="submit" [hidden]="!mostrarParte2" [disabled]="!candidatoForm.valid && palabrasClaveValid">Guardar</button>
                 <button class="btn" (click)="cancelCreate()">Cancelar</button>
             </div>
         </form>
