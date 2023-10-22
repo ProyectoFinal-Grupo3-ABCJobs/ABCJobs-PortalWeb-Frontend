@@ -12,9 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuEmpresaComponent } from './empresa/menu-empresa/menu-empresa.component';
 import { MenuCandidatoComponent } from './candidato/menu-candidato/menu-candidato.component';
 import { MenuFuncionarioComponent } from './funcionario/menu-funcionario/menu-funcionario.component';
-import { RegistroCandidatoComponent } from './candidato/registro-candidato/registro-candidato.component';
-import { RegistroInfoCandidatoComponent } from './candidato/registro-info-candidato/registro-info-candidato.component';
 import { EmpresaModule } from './empresa/empresa.module'; 
+import { CandidatoModule } from './candidato/candidato.module'; 
 
 @NgModule({
   declarations: [
@@ -26,14 +25,13 @@ import { EmpresaModule } from './empresa/empresa.module';
     MenuEmpresaComponent,
     MenuCandidatoComponent,
     MenuFuncionarioComponent,
-    RegistroCandidatoComponent,
-    RegistroInfoCandidatoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     EmpresaModule,
+    CandidatoModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 7000,
