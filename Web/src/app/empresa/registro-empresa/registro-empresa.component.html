@@ -116,10 +116,11 @@
             </div>
           </div>
         </div>
-      </form>
-      <div class="buttons" style="margin-top: 20px;">
-          <button class="btn soyCandidato">Aceptar</button>
-          <button class="btn regresar" >Cancelar</button>
-      </div>
+      
+        <div class="buttons">        
+          <button type="submit" class="btn btn-warning" [disabled]="!empresaForm.valid">Aceptar</button>
+          <button class="btn btn-danger" (click)="cancelCreate()">Cancelar</button>
+        </div>
+    </form>
   </div>
 </div>

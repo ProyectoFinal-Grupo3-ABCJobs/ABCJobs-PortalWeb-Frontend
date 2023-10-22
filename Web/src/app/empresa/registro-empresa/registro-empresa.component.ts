@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { ToastrService } from 'ngx-toastr';
 import { EmpresaService } from '../empresa.service'; 
@@ -20,7 +20,8 @@ export class RegistroEmpresaComponent implements OnInit {
   constructor(
     private empresaService:EmpresaService,
     private formBuilder: FormBuilder,
-    private router: Router,
+    private router: ActivatedRoute,
+    private routerPath: Router,
     private toastr: ToastrService
   ) { }
 
@@ -39,7 +40,7 @@ export class RegistroEmpresaComponent implements OnInit {
   registrarEmpresa(newEmpresa:Empresa) {
     this.empresaService.crearEmpresa(newEmpresa)
       .subscribe(res => {
-        this.router.navigate([``])
+        this.routerPath.navigate([`candidato/registro`])
         this.showSuccess()
       },
         error => {
@@ -51,6 +52,11 @@ export class RegistroEmpresaComponent implements OnInit {
 
         })
   }
+
+  cancelCreate() {
+    this.empresaForm.reset()
+    this.routerPath.navigate([`candidato/registro`])
+  }  
 
   showError(error: string) {
     this.toastr.error(error, "Error")
