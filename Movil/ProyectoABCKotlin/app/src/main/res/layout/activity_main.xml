@@ -7,7 +7,7 @@
     tools:context=".main.MainActivity"
     android:background="#F0ECEC">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imagen1"
         android:layout_width="255dp"
         android:layout_height="255dp"
@@ -18,14 +18,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imagen1" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/usuario_login_edit"
         android:layout_width="240dp"
         android:layout_height="30dp"
         android:layout_marginTop="28dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="Usuario"
+        android:hint="@string/usuario"
+        android:contentDescription="@string/acces_ingrese_usuario"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -34,14 +35,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagen1" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/contrasena_login_edit"
         android:layout_width="240dp"
         android:layout_height="30dp"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Contraseña"
+        android:hint="@string/contrasena"
+        android:contentDescription="@string/acces_ingrese_contrasena"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:background="@color/white"
@@ -50,24 +52,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usuario_login_edit" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ingresar_login_button"
         android:layout_width="246dp"
         android:layout_height="41dp"
         android:layout_marginTop="56dp"
-        android:text="Ingresar"
+        android:text="@string/ingresar"
+        android:contentDescription="@string/acces_boton_ingresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contrasena_login_edit"
         android:background="@drawable/ic_button_rounded"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/registrar_candidato_login_button"
         android:layout_width="246dp"
         android:layout_height="42dp"
         android:layout_marginBottom="108dp"
-        android:text="Registrar Candidato"
+        android:text="@string/registrar_candidato"
+        android:contentDescription="@string/acces_boton_registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
