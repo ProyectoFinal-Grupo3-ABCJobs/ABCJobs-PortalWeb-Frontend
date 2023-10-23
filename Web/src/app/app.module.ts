@@ -35,7 +35,7 @@ import { CandidatoModule } from './candidato/candidato.module';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 7000,
-      positionClass: 'toast-bottom-right',
+      positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
   ],
