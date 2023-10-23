@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -40,25 +39,25 @@ class MainActivity : AppCompatActivity() {
                 var edit_usuario = findViewById<EditText>(R.id.usuario_login_edit)
                 var edit_contrasena = findViewById<EditText>(R.id.contrasena_login_edit)
                 override fun onClick(view: View) {
-                    val edit_usuario_text = edit_usuario.text.toString().trim { it <= ' ' }
-                    val edit_contrasena_text = edit_contrasena.text.toString().trim { it <= ' ' }
-                    Log.e("MainActivity", "edit_usuario_text" + edit_usuario_text)
-                    println("edit_usuario_text: " + edit_usuario_text)
-                    if (edit_usuario_text.isNullOrEmpty() || edit_usuario_text.isNullOrEmpty()) {
+                    val editUsuarioText = edit_usuario.text.toString().trim { it <= ' ' }
+                    val editContrasenaText = edit_contrasena.text.toString().trim { it <= ' ' }
+                    Log.e("MainActivity", "edit_usuario_text$editUsuarioText")
+                    println("edit_usuario_text: $editUsuarioText")
+                    if (editUsuarioText.isEmpty() || editUsuarioText.isEmpty()) {
                         Toast.makeText(
                             this@MainActivity,
-                            "Debe ingresar usuario y contraseña",
+                            getString(R.string.usuario_contra_vacio),
                             Toast.LENGTH_LONG
                         ).show()
                         return
                     }
                     val apiAutenticacion = getRetrofit().create(ApiAutenticacion::class.java)
-                    var usuario_body = Usuario()
-                    usuario_body.usuario = edit_usuario_text
-                    usuario_body.contrasena = edit_contrasena_text
-                    val call = apiAutenticacion.login(usuario_body)
+                    val usuarioBody = Usuario()
+                    usuarioBody.usuario = editUsuarioText
+                    usuarioBody.contrasena = editContrasenaText
+                    val call = apiAutenticacion.login(usuarioBody)
 
-                    call!!.enqueue(object : Callback<Usuario?> {
+                    call.enqueue(object : Callback<Usuario?> {
                         override fun onResponse(
                             call: Call<Usuario?>,
                             response: Response<Usuario?>
@@ -70,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                                 //Llamar el Activity de Registro de Candidato
                                 Toast.makeText(
                                     this@MainActivity,
-                                    "Login exitoso",
+                                    getString(R.string.login_exitoso),
                                     Toast.LENGTH_LONG
                                 ).show()
                                 val intent =
@@ -79,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                             } else {
                                 Toast.makeText(
                                     this@MainActivity,
-                                    "Datos incorrectos",
+                                    getString(R.string.datos_incorrectos),
                                     Toast.LENGTH_LONG
                                 ).show()
                             }
@@ -89,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                             println("onFailure")
                             Toast.makeText(
                                 this@MainActivity,
-                                "Error ingresando, intente nuevamente",
+                                getString(R.string.error_ingresando),
                                 Toast.LENGTH_LONG
                             ).show()
                         }
@@ -97,14 +96,11 @@ class MainActivity : AppCompatActivity() {
                 }
             })
 
-            binding.registrarCandidatoLoginButton.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(view: View) {
-                    val intent =
-                        Intent(this@MainActivity, RegistroCandidatoActivity::class.java)
-                    startActivity(intent)
-
-                }
-            })
+            binding.registrarCandidatoLoginButton.setOnClickListener {
+                val intent =
+                    Intent(this@MainActivity, RegistroCandidatoActivity::class.java)
+                startActivity(intent)
+            }
         } catch (ex: Exception) {
             Toast.makeText(
                 this@MainActivity,
@@ -116,10 +112,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://bca0-190-26-23-62.ngrok-free.app/")
+            .baseUrl("http://18.223.122.253:5000/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(this.getClient())
-            .build();
+            .build()
     }
 
     private fun getClient(): OkHttpClient {

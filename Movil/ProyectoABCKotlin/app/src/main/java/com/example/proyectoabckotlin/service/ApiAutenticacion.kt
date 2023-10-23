@@ -1,11 +1,11 @@
-package com.example.proyectoabckotlin.service;
+package com.example.proyectoabckotlin.service
 
 import com.example.proyectoabckotlin.pojo.Usuario
-import retrofit2.Call;
+import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.POST;
+import retrofit2.http.POST
 
-public interface ApiAutenticacion {
+interface ApiAutenticacion {
     /*@GET("/login/{id}")
     fun login(@Path("id") id: String): Call<Usuario>
 
