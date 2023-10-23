@@ -1,91 +1,317 @@
-<div class="container">
+<div class="container justify-content-center">
     <div class="titulo">
         <h2>Formulario de registro de información del candidato</h2>
-        <div class="col-md-6">
-            <p>Información personal</p>
-            <div class="input-container">
-                <input #nombre type="text" placeholder="Nombre Completo *" style="margin-top: 20px;" />
-            </div>
-            <div class="input-container">
-                <select #tipoidentificacion placeholder="Tipo de identificación" style="margin-top: 20px;" >
-                    <option value="CC">Cédula de Ciudadanía</option>
-                    <option value="CE">Cédula de Extranjería</option>
-                    <option value="Pasaporte">Pasaporte</option>
-                </select>
-            </div>
-            <div class="input-container">
-                <input #identificacion type="number" placeholder="Identificacion" style="margin-top: 20px;" />
-            </div>
-            <div class="input-container">
-                <input #direccion type="text" placeholder="Dirección de residencia" style="margin-top: 20px;" />
-            </div>
-            <div class="input-container">
-                <input #telefono type="number" placeholder="Número de teléfono" style="margin-top: 20px;" />
-            </div>
-            <div class="input-container">
-                <select #pais  placeholder="País" style="margin-top: 20px;" >
-                    <option value="">Seleccionar País</option>
-                    <option value="1">Colombia</option>
-                    <option value="2">México</option>
-                    <option value="3">Estados Unidos</option>
-                </select>
-            </div>
-            <div class="input-container">
-                <select #departamento  placeholder="Departamento" style="margin-top: 20px;" >
-                    <option value="">Seleccionar Departamento</option>
-                    <option value="1">Antioquia</option>
-                    <option value="2">Cundinamarca</option>
-                    <option value="3">Valle del Cauca</option>
-                </select>
-            </div>
-            <div class="input-container">
-                <select #ciudad  placeholder="Ciudad" style="margin-top: 20px;" >
-                    <option value="">Seleccionar Ciudad</option>
-                    <option value="1">Medellín</option>
-                    <option value="2">Bogotá</option>
-                    <option value="3">Cali</option>
-                </select>
-            </div>
-            <div class="input-container">
-                <input #profesion type="text" placeholder="Profesión" style="margin-top: 20px;" />
-            </div>
-            <div class="input-container">
-                <input #aniosExperiencia type="number" placeholder="Años de experiencia" style="margin-top: 20px;" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <p>Educación</p>
-    
-            <div class="input-container">
-                <input #ultimoEstudio type="text" placeholder="Último estudio" style="margin-top: 20px;" />
-            </div>
-            <div class="input-container">
-                <input #institucion type="text" placeholder="Institución" style="margin-top: 20px;" />
-            </div>
-            <div class="input-container">
-                <input #anioGrado type="number" placeholder="Año de grado" style="margin-top: 20px;" />
-            </div>
-            <div class="input-container">
-                <select #departamentoEstudio  placeholder="Departamento" style="margin-top: 20px;" >
-                    <option value="">Seleccionar Departamento</option>
-                    <option value="1">Antioquia</option>
-                    <option value="2">Cundinamarca</option>
-                    <option value="3">Valle del Cauca</option>
-                </select>
-            </div>
-            <div class="input-container">
-                <select #ciudadEstudio  placeholder="Ciudad" style="margin-top: 20px;" >
-                    <option value="">Seleccionar Ciudad</option>
-                    <option value="1">Medellín</option>
-                    <option value="2">Bogotá</option>
-                    <option value="3">Cali</option>
-                </select>
-            </div>
-        </div>
+        <form [formGroup]="candidatoForm" (ngSubmit)="candidatoForm.valid && registrarCandidato(candidatoForm.value)">
+            <div class="row parte1" [hidden]="mostrarParte2">
 
-        <div class="buttons" style="margin-top: 20px;">
-            <button class="btn soyCandidato" [routerLink]="['/candidato/registroInformacion']">Siguiente</button>
-            <button class="btn regresar" [routerLink]="['/login']">Cancelar</button>
-        </div>
+                <div class="col-md-6">
+                    <p class="subtitulo">Información personal</p>
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                          <div class="col-md-12">
+                            <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Completo *">
+                          </div>
+                        </div>
+                        <div class="alert alert-danger my-3"
+                          *ngIf="candidatoForm.get('nombre')?.hasError('required') && candidatoForm.get('nombre')?.touched">
+                          Debe ingresar un nombre
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="mb-3 row">
+                          <div class="col-md-12">
+                            <select formControlName="tipoIdentificacion" class="form-select" >
+                                <option value="">Seleccionar tipo documento *</option>
+                                <option value="CC">Cédula de Ciudadanía</option>
+                                <option value="CE">Cédula de Extranjería</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="alert alert-danger my-3"
+                          *ngIf="candidatoForm.get('tipoIdentificacion')?.hasError('required') && candidatoForm.get('tipoIdentificacion')?.touched">
+                          Debe seleccionar un tipo de documento
+                        </div>
+                      </div>
+        
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <input formControlName="identificacion" type="number" class="form-control" placeholder="Nº Identificación *">
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('identificacion')?.hasError('required') && candidatoForm.get('identificacion')?.touched">
+                            Debe ingresar un número de identificación
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <input formControlName="direccion" type="text" class="form-control" placeholder="Dirección de residencia *">
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('direccion')?.hasError('required') && candidatoForm.get('direccion')?.touched">
+                            Debe ingresar una dirección
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <input formControlName="telefono" type="number" class="form-control" placeholder="Número de teléfono *">
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('telefono')?.hasError('required') && candidatoForm.get('telefono')?.touched">
+                            Debe ingresar un número de teléfono
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <select formControlName="idPais" class="form-select" >
+                                <option value="">Seleccionar País *</option>
+                                <option value="1">Colombia</option>
+                                <option value="2">México</option>
+                                <option value="3">Estados Unidos</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('idPais')?.hasError('required') && candidatoForm.get('idPais')?.touched">
+                            Debe seleccionar un país
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <select formControlName="idDepartamento" class="form-select" >
+                                <option value="">Seleccionar Departamento *</option>
+                                <option value="1">Antioquia</option>
+                                <option value="2">Cundinamarca</option>
+                                <option value="3">Valle del Cauca</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('idDepartamento')?.hasError('required') && candidatoForm.get('idDepartamento')?.touched">
+                            Debe seleccionar un departamento
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <select formControlName="idCiudad" class="form-select" >
+                                <option value="">Seleccionar Ciudad *</option>
+                                <option value="1">Medellín</option>
+                                <option value="2">Bogotá</option>
+                                <option value="3">Cali</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('idCiudad')?.hasError('required') && candidatoForm.get('idCiudad')?.touched">
+                            Debe seleccionar una ciudad
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <input formControlName="profesion" type="text" class="form-control" placeholder="Profesión *">
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('profesion')?.hasError('required') && candidatoForm.get('profesion')?.touched">
+                            Debe ingresar una profesión
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <input formControlName="aniosExperiencia" type="number" class="form-control" placeholder="Años de experiencia *">
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('aniosExperiencia')?.hasError('required') && candidatoForm.get('aniosExperiencia')?.touched">
+                            Debe ingresar un valor
+                          </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <p class="subtitulo">Educación</p>
+            
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <input formControlName="ultimoEstudio" type="text" class="form-control" placeholder="Último nivel de estudio *">
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('ultimoEstudio')?.hasError('required') && candidatoForm.get('ultimoEstudio')?.touched">
+                            Debe ingresar un nivel de estudio
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <input formControlName="institucion" type="text" class="form-control" placeholder="Institución *">
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('institucion')?.hasError('required') && candidatoForm.get('institucion')?.touched">
+                            Debe ingresar una institución
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <input formControlName="anioGrado" type="number" class="form-control" placeholder="Año de grado *">
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('anioGrado')?.hasError('required') && candidatoForm.get('anioGrado')?.touched">
+                            Debe ingresar un año de grado
+                          </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <select formControlName="idDepartamentoInst" class="form-select" >
+                                <option value="">Seleccionar Departamento *</option>
+                                <option value="1">Antioquia</option>
+                                <option value="2">Cundinamarca</option>
+                                <option value="3">Valle del Cauca</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('idDepartamentoInst')?.hasError('required') && candidatoForm.get('idDepartamentoInst')?.touched">
+                            Debe seleccionar un departamento
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                              <select formControlName="idCiudadInst" class="form-select">
+                                <option value="">Seleccionar Ciudad *</option>
+                                <option value="1">Medellín</option>
+                                <option value="2">Bogotá</option>
+                                <option value="3">Cali</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="alert alert-danger my-3"
+                            *ngIf="candidatoForm.get('idCiudadInst')?.hasError('required') && candidatoForm.get('idCiudadInst')?.touched">
+                            Debe seleccionar una ciudad
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row parte2" [hidden]="!mostrarParte2">
+              <div class="col-md-6 offset-md-3">
+                <p class="subtitulo">Información laboral</p>
+
+                <div class="form-group">
+                  <div class="mb-3 row">
+                      <div class="col-md-12">
+                        <input formControlName="cargoUltimoEmpleo" type="text" class="form-control" placeholder="Cargo de su último empleo *">
+                      </div>
+                    </div>
+                    <div class="alert alert-danger my-3"
+                      *ngIf="candidatoForm.get('cargoUltimoEmpleo')?.hasError('required') && candidatoForm.get('cargoUltimoEmpleo')?.touched">
+                      Debe ingresar un cargo
+                    </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="mb-3 row">
+                      <div class="col-md-12">
+                        <input formControlName="empresa" type="text" class="form-control" placeholder="Última empresa *">
+                      </div>
+                    </div>
+                    <div class="alert alert-danger my-3"
+                      *ngIf="candidatoForm.get('empresa')?.hasError('required') && candidatoForm.get('empresa')?.touched">
+                      Debe ingresar una empresa
+                    </div>
+                </div>        
+                
+                <div class="form-group">
+                  <div class="mb-3 row">
+                      <div class="col-md-12">
+                        <input formControlName="anioIngreso" type="number" class="form-control" placeholder="Año de ingreso *">
+                      </div>
+                    </div>
+                    <div class="alert alert-danger my-3"
+                      *ngIf="candidatoForm.get('anioIngreso')?.touched && candidatoForm.get('anioIngreso')?.hasError('required')">
+                      Debe ingresar un año
+                    </div>
+                </div>   
+              
+                <div class="form-group">
+                  <div class="mb-3 row">
+                      <div class="col-md-12">
+                        <input formControlName="anioRetiro" type="number" class="form-control" placeholder="Año de retiro (si aplica)">
+                      </div>
+                    </div>
+                  </div>  
+
+                <p class="subtitulo">Conocimientos y aptitudes</p>
+
+                <div class="form-group">
+                  <div class="mb-3 row">
+                    <div class="col-md-12">
+                      <input formControlName="palabrasClave" type="text" class="form-control" placeholder="Agregue conocimientos *">
+                      <a class="btn-link" style="margin-top: 20px;" (click)="agregarPalabraClave()">Agregar</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <p>Palabras Clave:</p>
+                  <ul>
+                    <li *ngFor="let palabra of palabrasClaveList">
+                      {{ palabra }}
+                      <a class="btn-link" (click)="quitarPalabraClave(palabrasClaveList.indexOf(palabra))">Quitar</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+    
+            <div class="buttons" style="margin-top: 20px;">
+                <button class="btn btnParte1" (click)="mostrarSegundaParte()" [hidden]="mostrarParte2" 
+                [disabled]="!candidatoForm.get('nombre')?.valid || !candidatoForm.get('tipoIdentificacion')?.valid || !candidatoForm.get('identificacion')?.valid
+                || !candidatoForm.get('direccion')?.valid || !candidatoForm.get('telefono')?.valid || !candidatoForm.get('idPais')?.valid
+                || !candidatoForm.get('idDepartamento')?.valid || !candidatoForm.get('idCiudad')?.valid || !candidatoForm.get('profesion')?.valid
+                || !candidatoForm.get('aniosExperiencia')?.valid || !candidatoForm.get('ultimoEstudio')?.valid || !candidatoForm.get('institucion')?.valid
+                || !candidatoForm.get('anioGrado')?.valid || !candidatoForm.get('idDepartamentoInst')?.valid || !candidatoForm.get('idCiudadInst')?.valid">
+                  Siguiente
+                </button>
+                <button class="btn btnSubmit" type="submit" [hidden]="!mostrarParte2" [disabled]="!candidatoForm.valid && palabrasClaveValid">Guardar</button>
+                <button class="btn" (click)="cancelCreate()">Cancelar</button>
+            </div>
+        </form>
     </div>
 </div>

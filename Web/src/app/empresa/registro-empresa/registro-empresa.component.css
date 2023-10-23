@@ -1,12 +1,23 @@
 .form-group input {
-    width: 90%; 
+    width: 95%; 
     border: 1px solid #999;
     border-bottom: 1px solid #000;
     border-top: 0px; 
     border-right: 0px; 
     border-left: 0px;
     font-family: 'Reboto', sans-serif;
-    font-size: 18px;
+    font-size: 17px;
+  }
+
+  .form-group select {
+    width: 85%; 
+    border: 1px solid #999;
+    border-bottom: 1px solid #000;
+    border-top: 0px; 
+    border-right: 0px; 
+    border-left: 0px;
+    font-family: 'Reboto', sans-serif;
+    font-size: 20px;
   }
 
 .titulo h2{
@@ -24,15 +35,6 @@
     margin-top: 5px;
   }
 
-.subtitulo {
-    font-family: 'Reboto', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 20px;
-    color: gray;
-}
-
-
 .btn {
     background-color: #E25928;
     color: #fff; 
@@ -43,7 +45,7 @@
 
 .buttons{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: flex-start;
     margin-top: 20px;
 }
@@ -52,9 +54,3 @@
     width: 25%;
     margin: 0 10px;
   }
-
-.form-select {
-    width: 90%; 
-    font-family: 'Reboto', sans-serif;
-    font-size: 18px;
-}
