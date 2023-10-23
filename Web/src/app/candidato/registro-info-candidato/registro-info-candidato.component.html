@@ -1,7 +1,7 @@
 <div class="container justify-content-center">
     <div class="titulo">
         <h2>Formulario de registro de información del candidato</h2>
-        <form [formGroup]="candidatoForm" (ngSubmit)="candidatoForm.valid && registrarCandidato(candidatoForm.value)">
+        <form [formGroup]="candidatoForm">
             <div class="row parte1" [hidden]="mostrarParte2">
 
                 <div class="col-md-6">
@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="identificacion" type="number" class="form-control" placeholder="Nº Identificación *">
+                              <input formControlName="identificacion" type="text" class="form-control" placeholder="Nº Identificación *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -64,7 +64,7 @@
                     <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="telefono" type="number" class="form-control" placeholder="Número de teléfono *">
+                              <input formControlName="telefono" type="text" class="form-control" placeholder="Número de teléfono *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -142,7 +142,7 @@
 
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="aniosExperiencia" type="number" class="form-control" placeholder="Años de experiencia *">
+                              <input formControlName="aniosExperiencia" type="text" class="form-control" placeholder="Años de experiencia *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -182,7 +182,7 @@
                     <div class="form-group">
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                              <input formControlName="anioGrado" type="number" class="form-control" placeholder="Año de grado *">
+                              <input formControlName="anioGrado" type="text" class="form-control" placeholder="Año de grado *">
                             </div>
                           </div>
                           <div class="alert alert-danger my-3"
@@ -259,7 +259,7 @@
                 <div class="form-group">
                   <div class="mb-3 row">
                       <div class="col-md-12">
-                        <input formControlName="anioIngreso" type="number" class="form-control" placeholder="Año de ingreso *">
+                        <input formControlName="anioIngreso" type="text" class="form-control" placeholder="Año de ingreso *">
                       </div>
                     </div>
                     <div class="alert alert-danger my-3"
@@ -271,7 +271,7 @@
                 <div class="form-group">
                   <div class="mb-3 row">
                       <div class="col-md-12">
-                        <input formControlName="anioRetiro" type="number" class="form-control" placeholder="Año de retiro (si aplica)">
+                        <input formControlName="anioRetiro" type="text" class="form-control" placeholder="Año de retiro (si aplica)">
                       </div>
                     </div>
                   </div>  
@@ -309,7 +309,7 @@
                 || !candidatoForm.get('anioGrado')?.valid || !candidatoForm.get('idDepartamentoInst')?.valid || !candidatoForm.get('idCiudadInst')?.valid">
                   Siguiente
                 </button>
-                <button class="btn btnSubmit" type="submit" [hidden]="!mostrarParte2" [disabled]="!candidatoForm.valid && palabrasClaveValid">Guardar</button>
+                <button class="btn btnSubmit" type="submit" (click)="registrarCandidato(candidatoForm.value)" [hidden]="!mostrarParte2" [disabled]="!candidatoForm.valid && !palabrasClaveValid">Guardar</button>
                 <button class="btn" (click)="cancelCreate()">Cancelar</button>
             </div>
         </form>
