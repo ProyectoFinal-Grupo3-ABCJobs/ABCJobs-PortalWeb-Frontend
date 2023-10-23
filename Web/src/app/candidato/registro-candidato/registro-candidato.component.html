@@ -1,21 +1,54 @@
 <div class="container">
     <div class="titulo">
         <h2>Registro</h2>
-        <div class="input-container">
-            <input #nombre type="text" placeholder="Nombre Completo *" style="margin-top: 20px;" />
-        </div>
-        <div class="input-container">
-            <input #correo type="text" placeholder="Correo Electrónico" style="margin-top: 20px;" />
-        </div>
-        <div class="input-container">
-            <input #contrasena type="password" placeholder="Contraseña" style="margin-top: 20px;" />
-        </div>
-        <div class="input-container">
-            <input #confirmcontrasena type="password" placeholder="Confirmar Contraseña" style="margin-top: 20px;" />
-        </div>
-        <div class="buttons" style="margin-top: 20px;">
-            <button class="btn soyCandidato" routerLink="/candidato/registroInformacion">Soy Candidato</button>
-            <button class="btn soyEmpresa" routerLink="/empresa/registroInformacion">Soy Empresa</button>
-            <button class="btn regresar" routerLink="/login">Regresar</button>
-        </div>
+        <form [formGroup]="usuarioForm">
+
+            <div class="form-group">
+                <div class="mb-3 row">
+                  <div class="col-lg-9  ">
+                    <input formControlName="usuario" type="text" class="form-control" placeholder="Correo electrónico *">
+                  </div>
+                </div>
+                <div class="alert alert-danger my-3"
+                  *ngIf="usuarioForm.get('usuario')?.hasError('required') && usuarioForm.get('usuario')?.touched">
+                  Debe ingresar un correo
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="mb-3 row">
+                  <div class="col-lg-9  ">
+                    <input name="contrasena" formControlName="contrasena" type="password" class="form-control" placeholder="Contraseña *">
+                  </div>
+                </div>
+                <div class="alert alert-danger my-3"
+                  *ngIf="usuarioForm.get('contrasena')?.hasError('required') && usuarioForm.get('contrasena')?.touched">
+                  Debe ingresar una contraseña
+                </div>
+                <div class="alert alert-danger my-3" *ngIf="usuarioForm.get('contrasena')?.hasError('minlength')">
+                    La contraseña debe tener mínimo 5 caracteres
+                  </div>
+            </div>
+
+            <div class="form-group">
+                <div class="mb-3 row">
+                    <div class="col-lg-9">
+                        <input name="confirmarContrasena" formControlName="confirmarContrasena" type="password" class="form-control" placeholder="Confirmar Contraseña *" (keyup)="validarContrasenas()">
+                    </div>
+                </div>
+                <div class="alert alert-danger my-3"
+                  *ngIf="usuarioForm.get('confirmarContrasena')?.hasError('required') && usuarioForm.get('confirmarContrasena')?.touched">
+                  Debe repetir la contraseña
+                </div>
+                <div class="alert alert-danger my-3" *ngIf="usuarioForm.get('confirmarContrasena')?.touched && contrasenaCoincide">
+                    Las contraseñas no coinciden
+                </div>
+            </div>
+
+            <div class="buttons" style="margin-top: 20px;">
+                <button class="btn soyCandidato" (click)="registrarUsuario('candidato')" [disabled]="!usuarioForm.valid || contrasenaCoincide">Soy Candidato</button>
+                <button class="btn soyEmpresa" (click)="registrarUsuario('empresa')" [disabled]="!usuarioForm.valid || contrasenaCoincide">Soy Empresa</button>
+                <button class="btn regresar" (click)="cancelCreate()">Regresar</button>
+            </div>
+        </form>
     </div>
