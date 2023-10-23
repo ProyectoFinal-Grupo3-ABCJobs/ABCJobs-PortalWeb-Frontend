@@ -14,8 +14,6 @@ export class EmpresaService {
   constructor(private http: HttpClient) { }
 
   crearEmpresa(empresa: Empresa): Observable<Empresa> {
-    console.log("Empresa",empresa)
-    console.log("direccion",`${this.backUrl}/company/register`)
     return this.http.post<Empresa>(`${this.backUrl}5002/company/register`, empresa)
   }
 

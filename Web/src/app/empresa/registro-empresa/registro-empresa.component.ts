@@ -40,8 +40,10 @@ export class RegistroEmpresaComponent implements OnInit {
   registrarEmpresa(newEmpresa:Empresa) {
     this.empresaService.crearEmpresa(newEmpresa)
       .subscribe(res => {
-        this.routerPath.navigate([`candidato/registro`])
         this.showSuccess()
+        this.empresaForm.reset()
+        this.routerPath.navigate([`empresa/main`])
+        
       },
         error => {
           if (error.statusText === "CONFLICT") {
@@ -55,7 +57,7 @@ export class RegistroEmpresaComponent implements OnInit {
 
   cancelCreate() {
     this.empresaForm.reset()
-    this.routerPath.navigate([`candidato/registro`])
+    this.routerPath.navigate([`empresa/registroInformacion`])
   }  
 
   showError(error: string) {
