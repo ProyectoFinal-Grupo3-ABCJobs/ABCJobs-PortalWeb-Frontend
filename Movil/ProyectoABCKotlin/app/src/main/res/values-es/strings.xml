@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ProyectoABCKotlin</string>
-    <string name="ingresar">Ingresar</string>
     <string name="registrar_candidato">Registrar Candidato</string>
     <string name="usuario">Usuario</string>
     <string name="contrasena">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
     <string name="login_exitoso">Login exitoso</string>
     <string name="error_ingresando">Error ingresando, intente nuevamente</string>
     <string name="datos_incorrectos">usuario o contraseña incorrectos</string>

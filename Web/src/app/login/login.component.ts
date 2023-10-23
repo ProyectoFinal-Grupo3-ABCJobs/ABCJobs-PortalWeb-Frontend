@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent {
 
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    // private toastr: ToastrService,
   ) { }
 
   error: boolean = false
@@ -30,6 +32,7 @@ export class LoginComponent {
       .subscribe(res => {
         // const decodedToken = this.helper.decodeToken(res.token);
         // this.router.navigate([`/carreras/${decodedToken.sub}/${res.token}`])
+
         if (res.tipoUsuario==='CANDIDATO'){
           this.router.navigate([`candidato/main`])
         }
@@ -44,6 +47,7 @@ export class LoginComponent {
         
       },
         error => {
+
           this.error = true
         })
   }
