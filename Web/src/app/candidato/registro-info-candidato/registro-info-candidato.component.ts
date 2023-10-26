@@ -57,6 +57,7 @@ export class RegistroInfoCandidatoComponent implements OnInit {
 
   registrarCandidato(newCandidato:Candidato) {
     newCandidato.palabrasClave = this.palabrasClaveList.join(', ');
+    console.log(newCandidato)
     this.candidatoService.registrarInfoCandidato(newCandidato)
       .subscribe(res => {
         this.routerPath.navigate([`login`])
@@ -87,6 +88,7 @@ export class RegistroInfoCandidatoComponent implements OnInit {
       } else {
         this.palabrasClaveValid = false;
       }
+      console.log(this.palabrasClaveValid);
     }
   
     // Función para quitar una palabra clave
