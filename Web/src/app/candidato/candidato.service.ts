@@ -15,6 +15,7 @@ export class CandidatoService {
   constructor(private http: HttpClient) { }
 
   registrarInfoCandidato(candidato: Candidato): Observable<Candidato> {
+    console.log("candidato", candidato)
     return this.http.post<Candidato>(`${this.backUrl}5001/candidate/registerInfo`, candidato)
   }
 
