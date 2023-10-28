@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './autenticacion/login/login.component';
 import { MenuEmpresaComponent } from './empresa/menu-empresa/menu-empresa.component';
 import { MenuCandidatoComponent } from './candidato/menu-candidato/menu-candidato.component';
 import { MenuFuncionarioComponent } from './funcionario/menu-funcionario/menu-funcionario.component';
