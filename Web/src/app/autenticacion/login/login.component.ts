@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
 
 
   onLogInUsuario(usuario: string, contrasena: string) {
-    console.log('La contraseña es: ', contrasena)
     this.error = false
 
     this.loginService.userLogIn(usuario, contrasena)
