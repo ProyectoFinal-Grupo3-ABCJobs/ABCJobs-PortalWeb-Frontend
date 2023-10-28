@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
     })
   }
 
-
   onLogInUsuario(usuario: string, contrasena: string) {
     this.error = false
 
@@ -52,7 +51,6 @@ export class LoginComponent implements OnInit {
           this.router.navigate([`funcionario/main`])
         }
 
-        // this.router.navigate([`/registro`])
         
       },
         error => {
