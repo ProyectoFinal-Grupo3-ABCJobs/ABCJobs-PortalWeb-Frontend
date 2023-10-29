@@ -43,12 +43,12 @@ class MainActivity : AppCompatActivity() {
                     val editContrasenaText = edit_contrasena.text.toString().trim { it <= ' ' }
                     Log.e("MainActivity", "edit_usuario_text$editUsuarioText")
                     println("edit_usuario_text: $editUsuarioText")
-                    if (editUsuarioText.isEmpty() || editUsuarioText.isEmpty()) {
-                        Toast.makeText(
-                            this@MainActivity,
-                            getString(R.string.usuario_contra_vacio),
-                            Toast.LENGTH_LONG
-                        ).show()
+                    if (editUsuarioText.isEmpty()) {
+                        edit_usuario.error = getString(R.string.valida_usuario)
+                        return
+                    }
+                    if (editContrasenaText.isEmpty()) {
+                        edit_contrasena.error = getString(R.string.valida_contrasena)
                         return
                     }
                     val apiAutenticacion = getRetrofit().create(ApiAutenticacion::class.java)
@@ -72,9 +72,7 @@ class MainActivity : AppCompatActivity() {
                                     getString(R.string.login_exitoso),
                                     Toast.LENGTH_LONG
                                 ).show()
-                                val intent =
-                                    Intent(this@MainActivity, IngresarActivity::class.java)
-                                startActivity(intent)
+                                startActivity(Intent(this@MainActivity, IngresarActivity::class.java))
                             } else {
                                 Toast.makeText(
                                     this@MainActivity,
@@ -97,9 +95,7 @@ class MainActivity : AppCompatActivity() {
             })
 
             binding.registrarCandidatoLoginButton.setOnClickListener {
-                val intent =
-                    Intent(this@MainActivity, RegistroCandidatoActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this@MainActivity, RegistroCandidatoActivity::class.java))
             }
         } catch (ex: Exception) {
             Toast.makeText(
@@ -112,7 +108,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://18.223.122.253:5000/")
+            .baseUrl("http://LoadBalancerProyectoABC-735612126.us-east-2.elb.amazonaws.com:5000/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(this.getClient())
             .build()
