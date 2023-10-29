@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityMainBinding
 import com.example.proyectoabckotlin.databinding.ActivityRegistroCandidatoBinding
+import com.example.proyectoabckotlin.registroCandidato.RegistroInfoCandidatoActivity
 import com.example.proyectoabckotlin.ingresar.IngresarActivity
 import com.example.proyectoabckotlin.pojo.Usuario
 import com.example.proyectoabckotlin.service.ApiAutenticacion
@@ -36,10 +37,10 @@ class RegistroCandidatoActivity : AppCompatActivity() {
             binding.continuarRegistroButton.setOnClickListener {
                 var edit_usuario = findViewById<EditText>(R.id.usuario_registro_edit)
                 var edit_contrasena = findViewById<EditText>(R.id.contrasena_registro_edit)
-                /*intent = Intent(this@RegistroCandidatoActivity, Actividad Info Candidato::class.java))
+                intent = Intent(this@RegistroCandidatoActivity, RegistroInfoCandidatoActivity::class.java)
                 intent.putExtra("usuario", edit_usuario.text.toString().trim { it <= ' ' })
-                intent.putExtra("contrasena", edit_usuario.text.toString().trim { it <= ' ' })
-                startActivity(intent)*/
+                intent.putExtra("edit_contrasena", edit_contrasena.text.toString().trim { it <= ' ' })
+                startActivity(intent)
             }
 
             binding.regresarCandidatoLoginButton.setOnClickListener {
