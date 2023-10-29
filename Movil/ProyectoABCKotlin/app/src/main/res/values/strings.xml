@@ -12,4 +12,16 @@
     <string name="acces_ingrese_contrasena">Ingrese Contraseña</string>
     <string name="acces_boton_ingresar">Botón para ingresar</string>
     <string name="acces_boton_registrar">Botón para registrar candidato</string>
+    <string name="continuar">Continuar</string>
+    <string name="regresar">Regresar</string>
+    <string name="acces_boton_continuar">Botón para continuar</string>
+    <string name="acces_boton_regresar">Botón para regresar</string>
+    <string name="registro_candidato">Registro Candidato</string>
+    <string name="acces_text_registro">Título de registro de candidato</string>
+    <string name="acces_repetir_contrasena">Repita nuevamente la contraseña</string>
+    <string name="repetir_contrasena">Repetir Contraseña</string>
+    <string name="correo">Correo Electrónico</string>
+    <string name="acces_ingrese_correo">Ingrese el correo electrónico</string>
+    <string name="valida_usuario">Debe ingresar un usuario</string>
+    <string name="valida_contrasena">Debe ingresar una contraseña</string>
 </resources>
