@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registroCandidato.RegistroInfoCandidatoActivity"
+    android:background="#F0ECEC">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mensajeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Formulario de registro de información del candidato"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Información Personal"
+        android:textSize="16sp"
+        android:textColor="#808080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mensajeTextView" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/tipoIdentificacionSpinner"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Tipo Identificacion"
+        android:contentDescription="@string/acces_ingrese_id"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mensajeTextView" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/identificacionEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/identificacion"
+        android:contentDescription="@string/acces_ingrese_id"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipoIdentificacionSpinner" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/direccionEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/direccion"
+        android:contentDescription="@string/acces_ingrese_direccion"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/identificacionEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/telefonoEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/telefono"
+        android:contentDescription="@string/acces_ingrese_telefono"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/direccionEditText" />
+
+
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/paisSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefonoEditText" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/departamentoSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paisSpinner" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/ciudadSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/departamentoSpinner" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/profesionEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/profesion"
+        android:contentDescription="@string/acces_ingrese_profesion"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ciudadSpinner" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/experienciaEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/experiencia"
+        android:contentDescription="@string/acces_ingrese_experiencia"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profesionEditText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registrar_candidato_register_personal_button"
+        android:layout_width="246dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="108dp"
+        android:text="@string/siguiente_personal_candidato"
+        android:contentDescription="@string/acces_boton_info_per_candidato"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/experienciaEditText"
+        android:background="@drawable/ic_button_rounded"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
