@@ -25,4 +25,15 @@
     <string name="acces_ingrese_profesion">Enter Profesion</string>
     <string name="siguiente_personal_candidato">Following</string>
     <string name="acces_boton_info_per_candidato">Button to continue registrationcandidate informattion</string>
+    <string name="continuar">Continue</string>
+    <string name="regresar">Return</string>
+    <string name="acces_boton_continuar">Button to continue</string>
+    <string name="acces_boton_regresar">Button to return</string>
+    <string name="registro_candidato">Candidate Registration</string>
+    <string name="acces_text_registro">Candidate Registration Title</string>
+    <string name="acces_repetir_contrasena">Repeat the password again</string>
+    <string name="repetir_contrasena">Repeat password</string>
+    <string name="correo">Email</string>
+    <string name="acces_ingrese_correo">Enter email</string>
+    <string name="valida_usuario">A user must enter</string>
 </resources>
