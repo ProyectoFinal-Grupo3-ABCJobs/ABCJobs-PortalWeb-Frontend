@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="titulo">
+      <h2>Creación Proyecto</h2>
+      <form [formGroup]="proyectoForm" (ngSubmit)="crearProyecto(proyectoForm.value)">
+
+        <div class="form-group">
+          <div class="mb-3 row">
+            <div class="col-lg-9  ">
+              <input formControlName="nombreProyecto" type="text" class="form-control" placeholder="Nombre del proyecto *">
+            </div>
+          </div>
+          <div class="alert alert-danger my-3"
+            *ngIf="proyectoForm.get('nombreProyecto')?.hasError('required') && proyectoForm.get('nombreProyecto')?.touched">
+            Debe ingresar un nombre para el proyecto
+          </div>
+          <div class="alert alert-danger my-3" *ngIf="proyectoForm.get('nombreProyecto')?.hasError('maxlength')">
+            El nombre no debe exceder los 100 carácteres
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="mb-3 row">
+            <div class="col-lg-9  ">
+              <input formControlName="fechaInicio" type="date" class="form-control" placeholder="Razón Social *">
+            </div>
+          </div>  
+          <div class="alert alert-danger my-3"
+            *ngIf="proyectoForm.get('fechaInicio')?.hasError('required') && proyectoForm.get('fechaInicio')?.touched">
+            Debe ingresar una fecha
+          </div>
+
+        </div>
+        
+      
+        <div class="buttons">        
+          <button type="submit" class="btn btn-warning" [disabled]="!proyectoForm.valid">Aceptar</button>
+          <button class="btn btn-danger" (click)="cancelCreate()">Cancelar</button>
+        </div>
+    </form>
+  </div>
+</div>
