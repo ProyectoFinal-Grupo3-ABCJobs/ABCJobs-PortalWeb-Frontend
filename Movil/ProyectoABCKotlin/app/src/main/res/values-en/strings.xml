@@ -43,4 +43,28 @@
     <string name="acces_ingrese_pais">Enter the Country of Residence</string>
     <string name="acces_ingrese_departamento">" Enter the department of residence"</string>
     <string name="acces_ingrese_ciudad">Enter city of residence</string>
+    <string-array name="tipos_identificacion">
+        <item>Identification type</item>
+        <item>ID</item>
+        <item>Passport</item>
+        <item>Civil Registration</item>
+    </string-array>
+    <string-array name="pais">
+        <item>Country</item>
+        <item>Colombia</item>
+        <item>México</item>
+        <item>USA</item>
+    </string-array>
+    <string-array name="departamento">
+        <item>Department</item>
+        <item>Antioquia</item>
+        <item>Cundinamarca</item>
+        <item>Valle del cauca</item>
+    </string-array>
+    <string-array name="ciudad">
+        <item>City</item>
+        <item>Medellin</item>
+        <item>Bogota</item>
+        <item>Cali</item>
+    </string-array>
 </resources>

@@ -44,4 +44,28 @@
     <string name="acces_ingrese_pais">Ingrese el Pais de Residencia</string>
     <string name="acces_ingrese_departamento">Ingrese el departamento de residencia</string>
     <string name="acces_ingrese_ciudad">Ingrese la ciudad de residencia</string>
+    <string-array name="tipos_identificacion">
+        <item>Tipo de Identificación</item>
+        <item>Cédula de Identidad</item>
+        <item>Pasaporte</item>
+        <item>Registro Civil</item>
+    </string-array>
+    <string-array name="pais">
+        <item>País</item>
+        <item>Colombia</item>
+        <item>México</item>
+        <item>Estados Unidos</item>
+    </string-array>
+    <string-array name="departamento">
+        <item>Departamento</item>
+        <item>Antioquia</item>
+        <item>Cundinamarca</item>
+        <item>Valle del cauca</item>
+    </string-array>
+    <string-array name="ciudad">
+        <item>Ciudad</item>
+        <item>Medellin</item>
+        <item>Bogota</item>
+        <item>Cali</item>
+    </string-array>
 </resources>
