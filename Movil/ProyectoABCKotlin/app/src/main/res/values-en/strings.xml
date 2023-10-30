@@ -43,4 +43,6 @@
     <string name="acces_ingrese_pais">Enter the Country of Residence</string>
     <string name="acces_ingrese_departamento">" Enter the department of residence"</string>
     <string name="acces_ingrese_ciudad">Enter city of residence</string>
+    <string name="valida_contrasena">You must enter a password</string>
+    <string name="valida_igual_contrasena">Passwords do not match</string>
 </resources>

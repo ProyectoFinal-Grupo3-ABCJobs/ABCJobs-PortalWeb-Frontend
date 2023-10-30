@@ -44,4 +44,5 @@
     <string name="acces_ingrese_pais">Ingrese el Pais de Residencia</string>
     <string name="acces_ingrese_departamento">Ingrese el departamento de residencia</string>
     <string name="acces_ingrese_ciudad">Ingrese la ciudad de residencia</string>
+    <string name="valida_igual_contrasena">Las contraseñas no coinciden</string>
 </resources>
