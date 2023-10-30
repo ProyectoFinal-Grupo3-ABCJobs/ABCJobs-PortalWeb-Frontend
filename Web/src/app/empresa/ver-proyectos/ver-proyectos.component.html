@@ -1,0 +1,14 @@
+<div>
+  <label for="empresaId">ID de Empresa:</label>
+  <!-- <input type="number" id="empresaId" [(ngModel)]="empresaId"> -->
+  <button (click)="obtenerProyectos(7)">Buscar Proyectos</button>
+</div>
+
+<div *ngIf="proyectos">
+  <h3>Proyectos de la Empresa</h3>
+  <ul>
+    <li *ngFor="let proyecto of miObjeto">
+      {{ proyecto['nombreProyecto'] | json}}
+    <!-- </li> -->
+  </ul>
+</div>

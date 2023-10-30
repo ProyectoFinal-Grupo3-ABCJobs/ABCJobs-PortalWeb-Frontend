@@ -12,6 +12,18 @@
     <string name="acces_ingrese_contrasena">Ingrese Contraseña</string>
     <string name="acces_boton_ingresar">Botón para ingresar</string>
     <string name="acces_boton_registrar">Botón para registrar candidato</string>
+    <string name="identificacion">Identificación</string>
+    <string name="acces_ingrese_id">Ingrese el número de identificación</string>
+    <string name="direccion">Direcciónde residencia</string>
+    <string name="telefono">Número de teléfono</string>
+    <string name="profesion">Profesión</string>
+    <string name="experiencia">Años de experiencia</string>
+    <string name="acces_ingrese_direccion">Ingrese la dirección de residencia</string>
+    <string name="acces_ingrese_telefono">Ingrese un número de telefono</string>
+    <string name="acces_ingrese_profesion">Ingrese su profesión</string>
+    <string name="acces_ingrese_experiencia">Ingrese los años de experiencia</string>
+    <string name="siguiente_personal_candidato">Siguiente</string>
+    <string name="acces_boton_info_per_candidato">Botón para continuar registro información candidato</string>
     <string name="continuar">Continuar</string>
     <string name="regresar">Regresar</string>
     <string name="acces_boton_continuar">Botón para continuar</string>
@@ -24,8 +36,6 @@
     <string name="acces_ingrese_correo">Ingrese el correo electrónico</string>
     <string name="valida_usuario">Debe ingresar un usuario</string>
     <string name="valida_contrasena">Debe ingresar una contraseña</string>
-<<<<<<< Updated upstream
-=======
     <string name="titulo_registro_info_candidato">Registro de Información del Candidato</string>
     <string name="acces_text_registro_info_camdidato">Título de registro de información del candidato</string>
     <string name="subtitulo_registro_info_candidato">Información Personal</string>
@@ -34,5 +44,4 @@
     <string name="acces_ingrese_departamento">Ingrese el departamento de residencia</string>
     <string name="acces_ingrese_ciudad">Ingrese la ciudad de residencia</string>
     <string name="valida_igual_contrasena">Las contraseñas no coinciden</string>
->>>>>>> Stashed changes
 </resources>

@@ -1,3 +1,5 @@
+import { Proyecto } from "./proyecto";
+
 export class Empresa {
     idEmpresa: number;
     razonSocial: string;
@@ -5,6 +7,7 @@ export class Empresa {
     direccion: String;
     telefono: number;
     idCiudad: number;
+    proyecto: Proyecto;
   
       constructor(
         idEmpresa: number,
@@ -12,7 +15,8 @@ export class Empresa {
         nit: string,
         direccion: String,
         telefono: number,
-        idCiudad: number
+        idCiudad: number,
+        proyecto: Proyecto
       ) {
           this.idEmpresa = idEmpresa;
           this.razonSocial = razonSocial;
@@ -20,5 +24,6 @@ export class Empresa {
           this.direccion = direccion;
           this.telefono = telefono;
           this.idCiudad = idCiudad;
+          this.proyecto = proyecto;
       }
   }

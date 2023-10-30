@@ -9,12 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityRegistroCandidatoBinding
-<<<<<<< Updated upstream
-import com.example.proyectoabckotlin.ingresar.IngresarActivity
-import com.example.proyectoabckotlin.pojo.Usuario
-import com.example.proyectoabckotlin.service.ApiAutenticacion
-=======
->>>>>>> Stashed changes
+import com.example.proyectoabckotlin.registroCandidato.RegistroInfoCandidatoActivity
 import com.example.proyectoabckotlin.service.HeaderInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
@@ -32,16 +27,6 @@ class RegistroCandidatoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         try {
-<<<<<<< Updated upstream
-            binding.continuarRegistroButton.setOnClickListener {
-                var edit_usuario = findViewById<EditText>(R.id.usuario_registro_edit)
-                var edit_contrasena = findViewById<EditText>(R.id.contrasena_registro_edit)
-                /*intent = Intent(this@RegistroCandidatoActivity, Actividad Info Candidato::class.java))
-                intent.putExtra("usuario", edit_usuario.text.toString().trim { it <= ' ' })
-                intent.putExtra("contrasena", edit_usuario.text.toString().trim { it <= ' ' })
-                startActivity(intent)*/
-            }
-=======
             binding.continuarRegistroButton.setOnClickListener(object : View.OnClickListener {
                 var registro_usuario = findViewById<EditText>(R.id.usuario_registro_edit)
                 var registro_contrasena = findViewById<EditText>(R.id.contrasena_registro_edit)
@@ -84,7 +69,6 @@ class RegistroCandidatoActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
             })
->>>>>>> Stashed changes
 
             binding.regresarCandidatoLoginButton.setOnClickListener {
                 finish()
