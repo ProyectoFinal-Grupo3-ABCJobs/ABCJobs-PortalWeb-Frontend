@@ -1,0 +1,60 @@
+.form-group input {
+    width: 90%; 
+    border: 1px solid #999;
+    border-bottom: 1px solid #000;
+    border-top: 0px; 
+    border-right: 0px; 
+    border-left: 0px;
+    font-family: 'Reboto', sans-serif;
+    font-size: 18px;
+  }
+
+.titulo h2{
+    font-family: 'Reboto', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    border-bottom: 1px solid #000;
+    
+  }
+
+.titulo h2::after {
+    content: '';
+    display: block;
+    width: 700px; 
+    margin-top: 5px;
+  }
+
+.subtitulo {
+    font-family: 'Reboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: gray;
+}
+
+
+.btn {
+    background-color: #E25928;
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.buttons button {
+    width: 25%;
+    margin: 0 10px;
+  }
+
+.form-select {
+    width: 90%; 
+    font-family: 'Reboto', sans-serif;
+    font-size: 18px;
+}

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="login-left">
+    <h2>Inicio de sesión</h2>
+    <form [formGroup]="loginForm">
+      
+      
+      <div class="form-group">
+        <div class="mb-3 row">
+          <div class="col-lg-9  ">
+            <input #usuario name="usuario" formControlName="usuario" type="text" class="form-control" placeholder="Correo electrónico *">
+          </div>
+        </div>
+        <div class="alert alert-danger my-3"
+          *ngIf="loginForm.get('usuario')?.hasError('required') && loginForm.get('usuario')?.touched">
+          Debe ingresar un usuario
+        </div>
+    </div>
+
+    <div class="form-group">
+      <div class="mb-3 row">
+        <div class="col-lg-9  ">
+          <input #contrasena name="contrasena" formControlName="contrasena" type="password" class="form-control" placeholder="Contraseña *">
+        </div>
+      </div>
+      <div class="alert alert-danger my-3"
+        *ngIf="loginForm.get('contrasena')?.hasError('required') && loginForm.get('usuario')?.touched">
+        Debe ingresar una contraseña
+      </div>
+  </div>
+
+    <div class="buttons">
+      <button class="btn btnIngresar" (click)="onLogInUsuario(usuario.value,contrasena.value )" [disabled]="!loginForm.valid">Ingresar</button>
+      <button class="btn btnRegistrarse" (click)="registerButton()">Registrarse</button>
+    </div>
+
+  </form>
+  </div>
+  <div class="login-right">
+    <img src="assets/imgLogin.PNG" alt="Imagen" width="470" height="200"/>
+  </div>
+
+</div>

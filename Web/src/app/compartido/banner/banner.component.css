@@ -1,0 +1,23 @@
+/* banner.component.css */
+.banner {
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 10px;
+  position: relative;
+  background-color: #f0ecec;
+  /* Color de fondo del banner */
+  overflow: hidden;
+}
+
+.banner img {
+  display: block;
+  float: left;
+  margin-right: 10px;
+}
+
+.content {
+  text-align: left;
+  color: black;
+  /* Color del texto */
+  padding-top: 40px;
+}

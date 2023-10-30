@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProyectoABCKotlin</string>
+    <string name="registrar_candidato">Register Candidate</string>
+    <string name="usuario">User</string>
+    <string name="contrasena">Password</string>
+    <string name="ingresar">Login</string>
+    <string name="login_exitoso">Successful Login</string>
+    <string name="error_ingresando">Error logging in, try again</string>
+    <string name="datos_incorrectos">Incorrect username or password</string>
+    <string name="usuario_contra_vacio">You must enter username and password</string>
+    <string name="acces_ingrese_usuario">Enter the user</string>
+    <string name="acces_ingrese_contrasena">Enter the password</string>
+    <string name="acces_boton_ingresar">Button to enter</string>
+    <string name="acces_boton_registrar">Button to register candidate</string>
+    <string name="identificacion">ID</string>
+    <string name="acces_ingrese_id">Enter ID</string>
+    <string name="direccion">Address</string>
+    <string name="telefono">Telephone number</string>
+    <string name="profesion">Profession</string>
+    <string name="experiencia">Years of experience</string>
+    <string name="acces_ingrese_direccion">Enter residence address</string>
+    <string name="acces_ingrese_telefono">Enter telephone number</string>
+    <string name="acces_ingrese_experiencia">Enter years of experiences</string>
+    <string name="acces_ingrese_profesion">Enter Profesion</string>
+    <string name="siguiente_personal_candidato">Following</string>
+    <string name="acces_boton_info_per_candidato">Button to continue registrationcandidate informattion</string>
+    <string name="continuar">Continue</string>
+    <string name="regresar">Return</string>
+    <string name="acces_boton_continuar">Button to continue</string>
+    <string name="acces_boton_regresar">Button to return</string>
+    <string name="registro_candidato">Candidate Registration</string>
+    <string name="acces_text_registro">Candidate Registration Title</string>
+    <string name="acces_repetir_contrasena">Repeat the password again</string>
+    <string name="repetir_contrasena">Repeat password</string>
+    <string name="correo">Email</string>
+    <string name="acces_ingrese_correo">Enter email</string>
+    <string name="valida_usuario">A user must enter</string>
+    <string name="titulo_registro_info_candidato">Candidate Information Record</string>
+    <string name="acces_text_registro_info_camdidato">Candidate Information Record Title</string>
+    <string name="subtitulo_registro_info_candidato">Personal Information</string>
+    <string name="acces_sub_text_registro_info_candidato">Candidate Information Record Subtitle</string>
+    <string name="acces_ingrese_pais">Enter the Country of Residence</string>
+    <string name="acces_ingrese_departamento">" Enter the department of residence"</string>
+    <string name="acces_ingrese_ciudad">Enter city of residence</string>
+    <string-array name="tipos_identificacion">
+        <item>Identification type</item>
+        <item>ID</item>
+        <item>Passport</item>
+        <item>Civil Registration</item>
+    </string-array>
+    <string-array name="pais">
+        <item>Country</item>
+        <item>Colombia</item>
+        <item>México</item>
+        <item>USA</item>
+    </string-array>
+    <string-array name="departamento">
+        <item>Department</item>
+        <item>Antioquia</item>
+        <item>Cundinamarca</item>
+        <item>Valle del cauca</item>
+    </string-array>
+    <string-array name="ciudad">
+        <item>City</item>
+        <item>Medellin</item>
+        <item>Bogota</item>
+        <item>Cali</item>
+    </string-array>
+    <string name="valida_contrasena">You must enter a password</string>
+    <string name="valida_igual_contrasena">Passwords do not match</string>
+</resources>
