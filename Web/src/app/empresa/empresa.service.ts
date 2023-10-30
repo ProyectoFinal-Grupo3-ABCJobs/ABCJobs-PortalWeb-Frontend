@@ -21,26 +21,26 @@ export class EmpresaService {
   }
 
   crearProyecto(proyecto: Proyecto): Observable<Proyecto> {
-    return this.http.post<Proyecto>(`${this.backUrl}5002/company/proyectos/<int:id_empresa>`, proyecto)
+    return this.http.post<Proyecto>(`${this.backUrl}5002/company/projects/<int:id_empresa>`, proyecto)
   }
 
   verProyectos(empresa_id:number): Observable<Proyecto> {
     this.obtenerIdEmpresa()
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<Proyecto>(`${this.backUrl}5002/company/proyectos/${empresa_id}`, {headers})
+    return this.http.get<Proyecto>(`${this.backUrl}5002/company/projects/${empresa_id}`, {headers})
   }
 
-  obtenerIdEmpresa(): Observable<Proyecto>{
+  obtenerIdEmpresa(): any{
 
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     if(token){  
       const decodedToken = jwtDecode(token);
       console.log(decodedToken);
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-      return this.http.get<Proyecto>(`${this.backUrl}5002/company/proyectos/`, {headers})
+      //return this.http.get<Proyecto>(`${this.backUrl}5002/company/projects/`, {headers})
     }
-    return this.http.get<Proyecto>(`${this.backUrl}5002/company/proyectos/`)
+    //return this.http.get<Proyecto>(`${this.backUrl}5002/company/projects/`)
 
   }
 

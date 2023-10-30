@@ -30,7 +30,7 @@
 
     <div class="buttons">
       <button class="btn btnIngresar" (click)="onLogInUsuario(usuario.value,contrasena.value )" [disabled]="!loginForm.valid">Ingresar</button>
-      <button class="btn btnRegistrarse" routerLink="/candidato/registro">Registrarse</button>
+      <button class="btn btnRegistrarse" (click)="registerButton()">Registrarse</button>
     </div>
 
   </form>
