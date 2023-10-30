@@ -24,4 +24,16 @@
     <string name="correo">Email</string>
     <string name="acces_ingrese_correo">Enter email</string>
     <string name="valida_usuario">A user must enter</string>
+<<<<<<< Updated upstream
+=======
+    <string name="titulo_registro_info_candidato">Candidate Information Record</string>
+    <string name="acces_text_registro_info_camdidato">Candidate Information Record Title</string>
+    <string name="subtitulo_registro_info_candidato">Personal Information</string>
+    <string name="acces_sub_text_registro_info_candidato">Candidate Information Record Subtitle</string>
+    <string name="acces_ingrese_pais">Enter the Country of Residence</string>
+    <string name="acces_ingrese_departamento">" Enter the department of residence"</string>
+    <string name="acces_ingrese_ciudad">Enter city of residence</string>
+    <string name="valida_contrasena">You must enter a password</string>
+    <string name="valida_igual_contrasena">Passwords do not match</string>
+>>>>>>> Stashed changes
 </resources>

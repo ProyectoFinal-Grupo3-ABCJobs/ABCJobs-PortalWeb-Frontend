@@ -8,18 +8,17 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import com.example.proyectoabckotlin.R
-import com.example.proyectoabckotlin.databinding.ActivityMainBinding
 import com.example.proyectoabckotlin.databinding.ActivityRegistroCandidatoBinding
+<<<<<<< Updated upstream
 import com.example.proyectoabckotlin.ingresar.IngresarActivity
 import com.example.proyectoabckotlin.pojo.Usuario
 import com.example.proyectoabckotlin.service.ApiAutenticacion
+=======
+>>>>>>> Stashed changes
 import com.example.proyectoabckotlin.service.HeaderInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.Collections
@@ -33,6 +32,7 @@ class RegistroCandidatoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         try {
+<<<<<<< Updated upstream
             binding.continuarRegistroButton.setOnClickListener {
                 var edit_usuario = findViewById<EditText>(R.id.usuario_registro_edit)
                 var edit_contrasena = findViewById<EditText>(R.id.contrasena_registro_edit)
@@ -41,10 +41,55 @@ class RegistroCandidatoActivity : AppCompatActivity() {
                 intent.putExtra("contrasena", edit_usuario.text.toString().trim { it <= ' ' })
                 startActivity(intent)*/
             }
+=======
+            binding.continuarRegistroButton.setOnClickListener(object : View.OnClickListener {
+                var registro_usuario = findViewById<EditText>(R.id.usuario_registro_edit)
+                var registro_contrasena = findViewById<EditText>(R.id.contrasena_registro_edit)
+                var repetir_contrasena =
+                    findViewById<EditText>(R.id.repetir_contrasena_registro_edit)
+
+                override fun onClick(view: View) {
+                    val registroUsuarioText = registro_usuario.text.toString().trim { it <= ' ' }
+                    val registroContrasenaText =
+                        registro_contrasena.text.toString().trim { it <= ' ' }
+                    val registroRepetirContrasenaText =
+                        repetir_contrasena.text.toString().trim { it <= ' ' }
+                    Log.e("MainActivity", "edit_usuario_text$registroUsuarioText")
+                    println("edit_usuario_text: $registroUsuarioText")
+                    if (registroUsuarioText.isEmpty()) {
+                        registro_usuario.error = getString(R.string.valida_usuario)
+                        return
+                    }
+                    if (registroContrasenaText.isEmpty()) {
+                        registro_contrasena.error = getString(R.string.valida_contrasena)
+                        return
+                    }
+                    if (registroRepetirContrasenaText.isEmpty()) {
+                        repetir_contrasena.error = getString(R.string.valida_contrasena)
+                        return
+                    }
+                    if (registroContrasenaText != registroRepetirContrasenaText) {
+                        repetir_contrasena.error = getString(R.string.valida_igual_contrasena)
+                        return
+                    }
+
+                    intent = Intent(
+                        this@RegistroCandidatoActivity,
+                        RegistroInfoCandidatoActivity::class.java
+                    )
+                    intent.putExtra("usuario", registro_usuario.text.toString().trim { it <= ' ' })
+                    intent.putExtra(
+                        "contrasena",
+                        registro_contrasena.text.toString().trim { it <= ' ' })
+                    startActivity(intent)
+                }
+            })
+>>>>>>> Stashed changes
 
             binding.regresarCandidatoLoginButton.setOnClickListener {
                 finish()
             }
+
         } catch (ex: Exception) {
             Toast.makeText(
                 this@RegistroCandidatoActivity,
