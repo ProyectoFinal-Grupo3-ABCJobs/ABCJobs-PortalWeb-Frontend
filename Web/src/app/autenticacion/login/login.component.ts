@@ -42,12 +42,16 @@ export class LoginComponent implements OnInit {
         // this.router.navigate([`/carreras/${decodedToken.sub}/${res.token}`])
 
         if (res.tipoUsuario==='CANDIDATO'){
+          // Almacenar el token JWT en localStorage después de iniciar sesión
+          localStorage.setItem('token', res.token); // Donde 'token' es el token JWT recibido del servidor
           this.router.navigate([`candidato/main`])
         }
         if (res.tipoUsuario==='EMPRESA'){
+          localStorage.setItem('token', res.token); // Donde 'token' es el token JWT recibido del servidor
           this.router.navigate([`empresa/main`])
         }
         if (res.tipoUsuario==='FUNCIONARIO'){
+          localStorage.setItem('token', res.token); // Donde 'token' es el token JWT recibido del servidor
           this.router.navigate([`funcionario/main`])
         }
 
@@ -58,5 +62,9 @@ export class LoginComponent implements OnInit {
           this.error = true
         })
   }
+
+  registerButton() {
+    this.router.navigate([`candidato/registro`])
+  } 
 
 }

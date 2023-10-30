@@ -67,4 +67,5 @@
         <item>Bogota</item>
         <item>Cali</item>
     </string-array>
+    <string name="valida_igual_contrasena">Las contraseñas no coinciden</string>
 </resources>

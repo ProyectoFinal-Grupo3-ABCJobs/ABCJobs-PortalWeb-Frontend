@@ -67,4 +67,6 @@
         <item>Bogota</item>
         <item>Cali</item>
     </string-array>
+    <string name="valida_contrasena">You must enter a password</string>
+    <string name="valida_igual_contrasena">Passwords do not match</string>
 </resources>
