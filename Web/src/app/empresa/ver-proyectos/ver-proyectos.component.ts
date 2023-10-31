@@ -12,22 +12,20 @@ export class VerProyectosComponent implements OnInit{
   proyectos: Array<Proyecto> = [];
   empresaId: number = 0 ;
   objetoJSON = ""
-  miObjeto="";
+  datosProyecto="";
   constructor(private empresaService: EmpresaService) { }
 
-  obtenerProyectos(empresaId:number):void{
-    this.empresaService.verProyectos(empresaId)
+  obtenerProyectos(){
+    this.empresaService.verProyectos()
     .subscribe((proyectos) => {
 
       this.proyectos.push(proyectos)
       this.objetoJSON = JSON.stringify(this.proyectos[0]);
-      this.miObjeto = JSON.parse(this.objetoJSON);
-      // console.log("El tipo de dato es ", typeof this.miObjeto)
-      // console.log("El tipo contenido es  ", this.miObjeto)
+      this.datosProyecto = JSON.parse(this.objetoJSON);
     });
   }
   ngOnInit() {
-    
+    this.obtenerProyectos()
   }
 
 }

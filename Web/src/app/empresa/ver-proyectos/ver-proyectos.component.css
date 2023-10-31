@@ -1,0 +1,22 @@
+.buttons{
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn_ {
+    background-color: #E25928; /* Color de fondo azul (puedes cambiar el valor a tu preferencia) */
+    color: #fff; /* Color del texto blanco (puedes cambiar el valor si lo deseas) */
+    border: none; /* Quita el borde del botón */
+    padding: 5px 20px; /* Ajusta el relleno del botón según tus necesidades */
+    border-radius: 10px; /* Añade bordes redondeados (puedes ajustar el radio según tu preferencia) */
+
+}
+
+.custom-list-group{
+    width: 50%;
+
+    
+}
