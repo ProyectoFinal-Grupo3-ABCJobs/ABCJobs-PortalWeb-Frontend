@@ -3,7 +3,7 @@
 <nav class="navbar" style="background-color: #413939;">
     <ul class="navbar-nav">
       <li class="nav-item" style="margin-left: 20px;">
-        <a class="nav-link" routerLink="/" >Home</a>
+        <a class="nav-link" routerLink="/" i18n>Inicio</a>
       </li>
     </ul>
 
@@ -14,28 +14,21 @@
 
 <div *ngIf="perfilUsuario === 'EMPRESA' ">
   <nav class="navbar navbar-expand-lg" style="background-color: #413939;">
-    <!-- <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-ts-toggle="collapse" data-ts-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio</a>
+          <a i18n class="nav-link" href="#">Inicio</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink="/empresa/verProyectos" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+          <a  i18n class="nav-link dropdown-toggle" routerLink="/empresa/verProyectos" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Ver Proyectos
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Submenu 1</a>
-            <a class="dropdown-item" href="#">Submenu 2</a>
-            <a class="dropdown-item" href="#">Submenu 2</a>
-          </div>
+
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Salir</a>
+          <a i18n class="nav-link" href="#">Salir</a>
         </li>
       </ul>
     </div>

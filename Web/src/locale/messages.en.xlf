@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2425823832164539467" datatype="html">
+        <source>Inicio de sesión</source>
+        <target>User Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/autenticacion/login/login.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="786480387026161087" datatype="html">
+        <source>Correo electrónico *</source>
+          <target>Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/autenticacion/login/login.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8629774670916872745" datatype="html">
+        <source>Contraseña *</source>
+         <target>Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/autenticacion/login/login.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5752331855682104921" datatype="html">
+        <source>Ingresar</source>
+        <target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/autenticacion/login/login.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3854215443743812691" datatype="html">
+        <source>Registrarse</source>
+        <target>Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/autenticacion/login/login.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1926157928707021468" datatype="html">
+        <source>Inicio</source>
+         <target>Home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7062780906978521540" datatype="html">
+        <source> Ver Proyectos </source>
+         <target>Projects</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7561060183100598492" datatype="html">
+        <source>Salir</source>
+         <target>Logout</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="614064995678289947" datatype="html">
+        <source>Listado de proyectos</source>
+         <target>Projects list</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/ver-proyectos/ver-proyectos.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4798961227159743968" datatype="html">
+        <source>Cerrar</source>
+         <target>Close</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/ver-proyectos/ver-proyectos.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
