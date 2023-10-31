@@ -13,7 +13,7 @@ import { jwtDecode } from "jwt-decode";
 })
 export class EmpresaService {
   private backUrl: string = environment.apiUrl
-
+  private idEmpresa:string='';
   constructor(private http: HttpClient) { }
 
   crearEmpresa(empresa: Empresa): Observable<Empresa> {
@@ -24,24 +24,15 @@ export class EmpresaService {
     return this.http.post<Proyecto>(`${this.backUrl}5002/company/projects/<int:id_empresa>`, proyecto)
   }
 
-  verProyectos(empresa_id:number): Observable<Proyecto> {
-    this.obtenerIdEmpresa()
-    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<Proyecto>(`${this.backUrl}5002/company/projects/${empresa_id}`, {headers})
-  }
-
-  obtenerIdEmpresa(): any{
-
+  verProyectos(): Observable<Proyecto> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     if(token){  
       const decodedToken = jwtDecode(token);
-      console.log(decodedToken);
-      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-      //return this.http.get<Proyecto>(`${this.backUrl}5002/company/projects/`, {headers})
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
     }
-    //return this.http.get<Proyecto>(`${this.backUrl}5002/company/projects/`)
-
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Proyecto>(`${this.backUrl}5002/company/${this.idEmpresa}/projects`, {headers})
   }
+
 
 }
