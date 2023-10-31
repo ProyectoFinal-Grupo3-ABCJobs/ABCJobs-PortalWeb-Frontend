@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
 import { LoginService } from 'src/app/autenticacion/login/login.service';
 
 @Component({

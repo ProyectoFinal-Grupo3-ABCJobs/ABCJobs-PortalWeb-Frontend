@@ -39,16 +39,20 @@ export class LoginComponent implements OnInit {
         if (res.tipoUsuario==='CANDIDATO'){
           localStorage.setItem('token', res.token); 
           this.loginService.perfilUsuario('CANDIDATO');
+          this.loginService.datoUsuario(usuario);
           this.router.navigate([`candidato/main`])
         }
         if (res.tipoUsuario==='EMPRESA'){
-          this.loginService.perfilUsuario('EMPRESA');
           localStorage.setItem('token', res.token); 
+          this.loginService.perfilUsuario('EMPRESA');
+          this.loginService.datoUsuario(usuario);
           this.router.navigate([`empresa/main`])
         }
         if (res.tipoUsuario==='FUNCIONARIO'){
-          this.loginService.perfilUsuario('FUNCIONARIO');
           localStorage.setItem('token', res.token); 
+          this.loginService.perfilUsuario('FUNCIONARIO');
+          this.loginService.datoUsuario(usuario);
+          
         }        
       },
         error => {

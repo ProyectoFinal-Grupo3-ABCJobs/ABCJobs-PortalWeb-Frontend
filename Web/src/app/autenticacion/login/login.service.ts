@@ -9,9 +9,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LoginService {
 
-  private backUrl: string = environment.apiUrl
+  private backUrl: string = environment.apiUrl;
+  
   private perfilActual = new BehaviorSubject<string>('VISITANTE');
   perfil$ = this.perfilActual.asObservable();
+
+  private usuarioActual = new BehaviorSubject<string>('ABC JOBS');
+  usr$ = this.usuarioActual.asObservable();
+
 
   constructor(private http: HttpClient) { }
 
@@ -21,10 +26,15 @@ export class LoginService {
   }
 
   perfilUsuario(perfilUsuario:string){
-    
     this.perfilActual.next(perfilUsuario)
-
   }
+
+
+  datoUsuario(usrDatos:string){
+    this.usuarioActual.next(usrDatos)
+  }
+
+
 
 
 
