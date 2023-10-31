@@ -56,7 +56,7 @@
       </trans-unit>
       <trans-unit id="7062780906978521540" datatype="html">
         <source> Ver Proyectos </source>
-         <target>Projects</target>
+         <target>View Projects</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
           <context context-type="linenumber">25,27</context>
