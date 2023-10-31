@@ -1,6 +1,7 @@
 import { Component,OnInit  } from '@angular/core';
 import { Proyecto } from '../proyecto';
 import { EmpresaService } from '../empresa.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ver-proyectos',
@@ -13,7 +14,7 @@ export class VerProyectosComponent implements OnInit{
   empresaId: number = 0 ;
   objetoJSON = ""
   datosProyecto="";
-  constructor(private empresaService: EmpresaService) { }
+  constructor(private empresaService: EmpresaService,private router: Router) { }
 
   obtenerProyectos(){
     this.empresaService.verProyectos()
@@ -26,6 +27,10 @@ export class VerProyectosComponent implements OnInit{
   }
   ngOnInit() {
     this.obtenerProyectos()
+  }
+
+  irAMain(){
+    this.router.navigate(['/empresa/main']);
   }
 
 }

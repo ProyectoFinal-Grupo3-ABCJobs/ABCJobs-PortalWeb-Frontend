@@ -11,7 +11,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   helper = new JwtHelperService();
   loginForm: FormGroup = new FormGroup({});
 
@@ -28,8 +27,6 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       usuario: ["", [Validators.required, Validators.maxLength(50)]],
       contrasena: ["", [Validators.required, Validators.maxLength(90), Validators.minLength(5)]],
-
-      
     })
   }
 
@@ -38,24 +35,21 @@ export class LoginComponent implements OnInit {
 
     this.loginService.userLogIn(usuario, contrasena)
       .subscribe(res => {
-        // const decodedToken = this.helper.decodeToken(res.token);
-        // this.router.navigate([`/carreras/${decodedToken.sub}/${res.token}`])
 
         if (res.tipoUsuario==='CANDIDATO'){
-          // Almacenar el token JWT en localStorage después de iniciar sesión
-          localStorage.setItem('token', res.token); // Donde 'token' es el token JWT recibido del servidor
+          localStorage.setItem('token', res.token); 
+          this.loginService.perfilUsuario('CANDIDATO');
           this.router.navigate([`candidato/main`])
         }
         if (res.tipoUsuario==='EMPRESA'){
-          localStorage.setItem('token', res.token); // Donde 'token' es el token JWT recibido del servidor
+          this.loginService.perfilUsuario('EMPRESA');
+          localStorage.setItem('token', res.token); 
           this.router.navigate([`empresa/main`])
         }
         if (res.tipoUsuario==='FUNCIONARIO'){
-          localStorage.setItem('token', res.token); // Donde 'token' es el token JWT recibido del servidor
-          this.router.navigate([`funcionario/main`])
-        }
-
-        
+          this.loginService.perfilUsuario('FUNCIONARIO');
+          localStorage.setItem('token', res.token); 
+        }        
       },
         error => {
 
