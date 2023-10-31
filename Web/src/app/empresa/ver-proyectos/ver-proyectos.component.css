@@ -20,3 +20,15 @@
 
     
 }
+
+.lista-proyectos {
+    text-align: center; /* Centra horizontalmente los elementos de la lista */
+    margin: 0 auto;     /* Centra el contenedor al 50% del ancho del elemento padre */
+  }
+
+ul {
+    list-style: none;   /* Quita las viñetas de la lista */
+    padding: 0;         /* Elimina el relleno predeterminado de la lista */
+    width: 50%;
+    align-self: center;
+  }
