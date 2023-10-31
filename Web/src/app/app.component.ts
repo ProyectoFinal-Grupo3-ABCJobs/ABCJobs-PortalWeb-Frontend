@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/autenticacion/login/login.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,7 @@ import { LoginService } from 'src/app/autenticacion/login/login.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'gestion_autenticacion';
-
-
+  title = 'Proyecto ABC Jobs';
   perfilUsuario;
 
   constructor(){
@@ -18,7 +16,9 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
 
-      this.perfilUsuario = 'VISITANTE'
+      this.perfilUsuario = 'VISITANTE';
+      localStorage.setItem('token', '');
+      localStorage.setItem('perfil', ''); 
 
     
     
