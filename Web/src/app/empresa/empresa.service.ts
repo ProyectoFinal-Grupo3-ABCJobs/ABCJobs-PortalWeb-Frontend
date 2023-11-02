@@ -21,7 +21,13 @@ export class EmpresaService {
   }
 
   crearProyecto(proyecto: Proyecto): Observable<Proyecto> {
-    return this.http.post<Proyecto>(`${this.backUrl}5002/company/projects/<int:id_empresa>`, proyecto)
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if(token){  
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post<Proyecto>(`${this.backUrl}5002/company/${this.idEmpresa}/projectCreate`,proyecto, {headers})
   }
 
   verProyectos(): Observable<Proyecto> {

@@ -8,6 +8,7 @@ import { RegistroCandidatoComponent } from './candidato/registro-candidato/regis
 import { RegistroInfoCandidatoComponent } from './candidato/registro-info-candidato/registro-info-candidato.component';
 import { RegistroEmpresaComponent } from './empresa/registro-empresa/registro-empresa.component'; 
 import { VerProyectosComponent } from './empresa/ver-proyectos/ver-proyectos.component';
+import { CrearProyectoComponent } from './empresa/crear-proyecto/crear-proyecto.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: 'empresa/verProyectos',
     component: VerProyectosComponent
+  },
+  {
+    path: 'empresa/crearProyecto',
+    component: CrearProyectoComponent
   }
 
 ];
