@@ -1,39 +1,45 @@
-<div class="container">
+<div class="container justify-content-center">
   <div class="titulo">
-      <h2>Creación Proyecto</h2>
-      <form [formGroup]="proyectoForm" (ngSubmit)="crearProyecto(proyectoForm.value)">
+      <h2 i18n class="col-12">Creación Proyecto</h2>
+      <form class="col-12" style="margin-top: 5rem;" [formGroup]="proyectoForm" (ngSubmit)="crearProyecto(proyectoForm.value)">
 
-        <div class="form-group">
-          <div class="mb-3 row">
-            <div class="col-lg-9  ">
-              <input formControlName="nombreProyecto" type="text" class="form-control" placeholder="Nombre del proyecto *">
+        <div class="card p-4" style="background-color: transparent;">
+
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-10 offset-md-1">
+                <input formControlName="nombreProyecto" type="text" class="form-control" placeholder="Nombre del proyecto *">
+              </div>
+            </div>
+            <div class="alert alert-danger my-3"
+              *ngIf="proyectoForm.get('nombreProyecto')?.hasError('required') && proyectoForm.get('nombreProyecto')?.touched">
+              Debe ingresar un nombre para el proyecto
+            </div>
+            <div class="alert alert-danger my-3" *ngIf="proyectoForm.get('nombreProyecto')?.hasError('maxlength')">
+              El nombre no debe exceder los 100 carácteres
             </div>
           </div>
-          <div class="alert alert-danger my-3"
-            *ngIf="proyectoForm.get('nombreProyecto')?.hasError('required') && proyectoForm.get('nombreProyecto')?.touched">
-            Debe ingresar un nombre para el proyecto
-          </div>
-          <div class="alert alert-danger my-3" *ngIf="proyectoForm.get('nombreProyecto')?.hasError('maxlength')">
-            El nombre no debe exceder los 100 carácteres
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="mb-3 row">
-            <div class="col-lg-9  ">
-              <input formControlName="fechaInicio" type="date" class="form-control" placeholder="Razón Social *">
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-10 offset-md-1">
+                <label i18n for="fechaInicio">Fecha de inicio</label>
+              </div>
+              <div class="col-md-10 offset-md-1">
+                <input formControlName="fechaInicio" type="date" class="form-control" placeholder="Fecha de inicio">
+              </div>
+            </div>  
+            <div class="alert alert-danger my-3"
+              *ngIf="proyectoForm.get('fechaInicio')?.hasError('required') && proyectoForm.get('fechaInicio')?.touched">
+              Debe ingresar una fecha
             </div>
-          </div>  
-          <div class="alert alert-danger my-3"
-            *ngIf="proyectoForm.get('fechaInicio')?.hasError('required') && proyectoForm.get('fechaInicio')?.touched">
-            Debe ingresar una fecha
+  
           </div>
-
         </div>
         
       
-        <div class="buttons">        
-          <button type="submit" class="btn btn-warning" [disabled]="!proyectoForm.valid">Aceptar</button>
-          <button class="btn btn-danger" (click)="cancelCreate()">Cancelar</button>
+        <div class="buttons justify-content-center">        
+          <button i18n type="submit" class="btn btn-warning" [disabled]="!proyectoForm.valid">Crear</button>
+          <button i18n class="btn btn-danger" (click)="cancelCreate()">Cancelar</button>
         </div>
     </form>
   </div>

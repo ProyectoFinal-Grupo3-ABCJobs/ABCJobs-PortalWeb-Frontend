@@ -43,7 +43,7 @@ export class CrearProyectoComponent implements OnInit {
       },
         error => {
           if (error.statusText === "CONFLICT") {
-            this.showError(`El proyecto ya existe`)
+            this.showError(`Ya existe un proyecto con ese nombre`)
           } else {
             this.showError(`Ha ocurrido un error: ${error.message}`)
           }
@@ -53,7 +53,7 @@ export class CrearProyectoComponent implements OnInit {
 
   cancelCreate() {
     this.proyectoForm.reset()
-    this.routerPath.navigate([`empresa/registroInformacion`])
+    this.routerPath.navigate([`empresa/main`])
   }  
 
   showError(error: string) {

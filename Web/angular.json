@@ -9,6 +9,18 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "es",
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": ""
+          }         
+          
+      
+        }
+      },
+      
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -25,12 +37,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "localize": ["en"],
+              "outputPath": "dist",
+              "i18nMissingTranslation": "error"
+           },
             "production": {
               "budgets": [
                 {
@@ -60,6 +78,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "en": {
+              "browserTarget": "gestion_autenticacion:build:en"
+            },
             "production": {
               "browserTarget": "gestion_autenticacion:build:production"
             },
@@ -88,10 +109,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/ngx-toastr/toastr.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "src/styles.css"
+
             ],
             "scripts": []
           }

@@ -12,6 +12,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+
+
   helper = new JwtHelperService();
   loginForm: FormGroup = new FormGroup({});
 
@@ -28,8 +30,6 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       usuario: ["", [Validators.required, Validators.maxLength(50)]],
       contrasena: ["", [Validators.required, Validators.maxLength(90), Validators.minLength(5)]],
-
-      
     })
   }
 
@@ -38,24 +38,25 @@ export class LoginComponent implements OnInit {
 
     this.loginService.userLogIn(usuario, contrasena)
       .subscribe(res => {
-        // const decodedToken = this.helper.decodeToken(res.token);
-        // this.router.navigate([`/carreras/${decodedToken.sub}/${res.token}`])
 
         if (res.tipoUsuario==='CANDIDATO'){
-          // Almacenar el token JWT en localStorage después de iniciar sesión
-          localStorage.setItem('token', res.token); // Donde 'token' es el token JWT recibido del servidor
+          localStorage.setItem('token', res.token); 
+          this.loginService.perfilUsuario('CANDIDATO');
+          this.loginService.datoUsuario(usuario);
           this.router.navigate([`candidato/main`])
         }
         if (res.tipoUsuario==='EMPRESA'){
-          localStorage.setItem('token', res.token); // Donde 'token' es el token JWT recibido del servidor
+          localStorage.setItem('token', res.token); 
+          this.loginService.perfilUsuario('EMPRESA');
+          this.loginService.datoUsuario(usuario);
           this.router.navigate([`empresa/main`])
         }
         if (res.tipoUsuario==='FUNCIONARIO'){
-          localStorage.setItem('token', res.token); // Donde 'token' es el token JWT recibido del servidor
-          this.router.navigate([`funcionario/main`])
-        }
-
-        
+          localStorage.setItem('token', res.token); 
+          this.loginService.perfilUsuario('FUNCIONARIO');
+          this.loginService.datoUsuario(usuario);
+          
+        }        
       },
         error => {
 
