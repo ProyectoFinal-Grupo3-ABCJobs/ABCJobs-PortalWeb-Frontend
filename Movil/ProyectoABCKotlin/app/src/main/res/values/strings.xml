@@ -7,7 +7,6 @@
     <string name="login_exitoso">Login exitoso</string>
     <string name="error_ingresando">Error ingresando, intente nuevamente</string>
     <string name="datos_incorrectos">usuario o contraseña incorrectos</string>
-    <string name="usuario_contra_vacio">Debe ingresar usuario y contraseña</string>
     <string name="acces_ingrese_usuario">Ingrese el usuario</string>
     <string name="acces_ingrese_contrasena">Ingrese Contraseña</string>
     <string name="acces_boton_ingresar">Botón para ingresar</string>
@@ -20,12 +19,8 @@
     <string name="acces_text_registro">Título de registro de candidato</string>
     <string name="acces_repetir_contrasena">Repita nuevamente la contraseña</string>
     <string name="repetir_contrasena">Repetir Contraseña</string>
-    <string name="correo">Correo Electrónico</string>
-    <string name="acces_ingrese_correo">Ingrese el correo electrónico</string>
     <string name="valida_usuario">Debe ingresar un usuario</string>
     <string name="valida_contrasena">Debe ingresar una contraseña</string>
-<<<<<<< Updated upstream
-=======
     <string name="titulo_registro_info_candidato">Registro de Información del Candidato</string>
     <string name="acces_text_registro_info_camdidato">Título de registro de información del candidato</string>
     <string name="subtitulo_registro_info_candidato">Información Personal</string>
@@ -34,5 +29,4 @@
     <string name="acces_ingrese_departamento">Ingrese el departamento de residencia</string>
     <string name="acces_ingrese_ciudad">Ingrese la ciudad de residencia</string>
     <string name="valida_igual_contrasena">Las contraseñas no coinciden</string>
->>>>>>> Stashed changes
 </resources>
