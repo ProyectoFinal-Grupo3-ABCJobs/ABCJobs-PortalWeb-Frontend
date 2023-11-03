@@ -1,13 +1,13 @@
 <div class="container">
   <div class="login-left">
-    <h2>Inicio de sesión</h2>
+    <h2 i18n>Inicio de sesión</h2>
     <form [formGroup]="loginForm">
       
       
       <div class="form-group">
         <div class="mb-3 row">
           <div class="col-lg-9  ">
-            <input #usuario name="usuario" formControlName="usuario" type="text" class="form-control" placeholder="Correo electrónico *">
+            <input  #usuario name="usuario" formControlName="usuario" type="text" class="form-control" i18n-placeholder placeholder="Correo electrónico *" >
           </div>
         </div>
         <div class="alert alert-danger my-3"
@@ -19,7 +19,7 @@
     <div class="form-group">
       <div class="mb-3 row">
         <div class="col-lg-9  ">
-          <input #contrasena name="contrasena" formControlName="contrasena" type="password" class="form-control" placeholder="Contraseña *">
+          <input i18n-placeholder #contrasena name="contrasena" formControlName="contrasena" type="password" class="form-control" placeholder="Contraseña *" i18n="@@namePlaceholder">
         </div>
       </div>
       <div class="alert alert-danger my-3"
@@ -29,8 +29,8 @@
   </div>
 
     <div class="buttons">
-      <button class="btn btnIngresar" (click)="onLogInUsuario(usuario.value,contrasena.value )" [disabled]="!loginForm.valid">Ingresar</button>
-      <button class="btn btnRegistrarse" routerLink="/candidato/registro">Registrarse</button>
+      <button i18n class="btn btnIngresar" (click)="onLogInUsuario(usuario.value,contrasena.value )" [disabled]="!loginForm.valid">Ingresar</button>
+      <button i18n class="btn btnRegistrarse" (click)="registerButton()">Registrarse</button>
     </div>
 
   </form>

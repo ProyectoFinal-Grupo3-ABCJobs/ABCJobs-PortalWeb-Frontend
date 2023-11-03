@@ -1,14 +1,22 @@
+<!-- <app-navbar></app-navbar> -->
+
 <div>
-  <label for="empresaId">ID de Empresa:</label>
-  <!-- <input type="number" id="empresaId" [(ngModel)]="empresaId"> -->
-  <button (click)="obtenerProyectos(7)">Buscar Proyectos</button>
+
+  <h2 i18n class="mt-5 text-center">Listado de proyectos</h2>
+
+<div class="list-group  lista-proyectos" >
+  <ul>
+<li
+      class="list-group-item text-center" 
+      *ngFor="let proyecto of datosProyecto" >
+      {{ proyecto['nombreProyecto'] | titlecase}}
+  </li>
+</ul>
+
+</div>
+<div class="buttons">
+
+  <button i18n class="btn_" (click)="irAMain()">Cerrar</button>
 </div>
 
-<div *ngIf="proyectos">
-  <h3>Proyectos de la Empresa</h3>
-  <ul>
-    <li *ngFor="let proyecto of miObjeto">
-      {{ proyecto['nombreProyecto'] | json}}
-    <!-- </li> -->
-  </ul>
 </div>

@@ -1,12 +1,11 @@
 /* navbar.component.css */
 .navbar {
     width: 100%;
-    padding: 10px 0; /* Espacio vertical */
-    color: #fff; /* Color del texto */
+    padding: 10px 0; 
   }
   
   .navbar a {
-    color: #fff; /* Color de los enlaces */
-    margin: 0 10px; /* Espacio horizontal entre enlaces */
+    color: #fff; 
+    margin: 0 10px; 
   }
   

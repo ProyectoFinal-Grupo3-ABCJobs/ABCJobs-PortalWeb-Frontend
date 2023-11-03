@@ -1,6 +1,7 @@
 import { Component,OnInit  } from '@angular/core';
 import { Proyecto } from '../proyecto';
 import { EmpresaService } from '../empresa.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ver-proyectos',
@@ -12,22 +13,24 @@ export class VerProyectosComponent implements OnInit{
   proyectos: Array<Proyecto> = [];
   empresaId: number = 0 ;
   objetoJSON = ""
-  miObjeto="";
-  constructor(private empresaService: EmpresaService) { }
+  datosProyecto="";
+  constructor(private empresaService: EmpresaService,private router: Router) { }
 
-  obtenerProyectos(empresaId:number):void{
-    this.empresaService.verProyectos(empresaId)
+  obtenerProyectos(){
+    this.empresaService.verProyectos()
     .subscribe((proyectos) => {
 
       this.proyectos.push(proyectos)
       this.objetoJSON = JSON.stringify(this.proyectos[0]);
-      this.miObjeto = JSON.parse(this.objetoJSON);
-      // console.log("El tipo de dato es ", typeof this.miObjeto)
-      // console.log("El tipo contenido es  ", this.miObjeto)
+      this.datosProyecto = JSON.parse(this.objetoJSON);
     });
   }
   ngOnInit() {
-    
+    this.obtenerProyectos()
+  }
+
+  irAMain(){
+    this.router.navigate(['/empresa/main']);
   }
 
 }
