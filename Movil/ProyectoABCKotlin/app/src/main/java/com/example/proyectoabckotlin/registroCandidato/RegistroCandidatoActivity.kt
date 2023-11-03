@@ -9,9 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityRegistroCandidatoBinding
-import com.example.proyectoabckotlin.ingresar.IngresarActivity
-import com.example.proyectoabckotlin.pojo.Usuario
-import com.example.proyectoabckotlin.service.ApiAutenticacion
+import com.example.proyectoabckotlin.registroCandidato.RegistroInfoCandidatoActivity
 import com.example.proyectoabckotlin.service.HeaderInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.Protocol

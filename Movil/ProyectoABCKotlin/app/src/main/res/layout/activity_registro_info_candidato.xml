@@ -193,6 +193,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profesionEditText" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registrar_candidato_register_personal_button"
         android:layout_width="246dp"
         android:layout_height="42dp"
         android:layout_marginBottom="50dp"
