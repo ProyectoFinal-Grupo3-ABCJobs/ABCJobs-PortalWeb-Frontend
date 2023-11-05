@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registroCandidato.RegistroInfoCandidatoActivity"
+    tools:context=".registroCandidato.RegistroInfoEduCandidatoActivity"
     android:background="#F0ECEC">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -25,13 +25,13 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/subtitulo_registro_info_candidato"
+        android:id="@+id/subtitulo_registro_edu_candidato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:contentDescription="@string/acces_sub_text_registro_info_candidato"
+        android:contentDescription="@string/acces_sub_text_registro_edu_candidato"
         android:gravity="center"
-        android:text="@string/subtitulo_registro_info_candidato"
+        android:text="@string/subtitulo_registro_edu_candidato"
         android:textSize="20sp"
         android:textColor="#292727"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,29 +39,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo_registro_info_candidato" />
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/tipoIdentificacionSpinner"
-        android:layout_width="240dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:contentDescription="@string/acces_ingrese_id"
-        android:textColor="@color/black"
-        android:textColorHint="@color/grey"
-        android:background="@drawable/ic_edittext_background_v2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitulo_registro_info_candidato" />
-
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/identificacionEditText"
+        android:id="@+id/ultimoEstudioEditText"
         android:layout_width="240dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/identificacion"
-        android:contentDescription="@string/acces_ingrese_id"
+        android:hint="@string/ultimoEstudio"
+        android:contentDescription="@string/acces_ingrese_ultimo_estudio"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/grey"
@@ -69,16 +54,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tipoIdentificacionSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/subtitulo_registro_edu_candidato" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/direccionEditText"
+        android:id="@+id/institucionEditText"
         android:layout_width="240dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/direccion"
-        android:contentDescription="@string/acces_ingrese_direccion"
+        android:hint="@string/institucion"
+        android:contentDescription="@string/acces_ingrese_institucion"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/grey"
@@ -86,16 +71,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/identificacionEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/ultimoEstudioEditText" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/telefonoEditText"
+        android:id="@+id/anioGradoEditText"
         android:layout_width="240dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/telefono"
-        android:contentDescription="@string/acces_ingrese_telefono"
+        android:hint="@string/anioGrado"
+        android:contentDescription="@string/acces_ingrese_anio_grado"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/grey"
@@ -103,34 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/direccionEditText" />
-
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/paisSpinner"
-        android:layout_width="240dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="pais"
-        android:contentDescription="@string/acces_ingrese_pais"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/grey"
-        android:background="@drawable/ic_edittext_background_v2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefonoEditText" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/errorMessageTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_red_light"
-        android:textSize="12sp"
-        android:visibility="gone"
-        android:layout_below="@id/paisSpinner"
-        android:layout_centerHorizontal="true" />
+        app:layout_constraintTop_toBottomOf="@+id/institucionEditText" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/departamentoSpinner"
@@ -147,7 +105,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paisSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/anioGradoEditText" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/ciudadSpinner"
@@ -166,32 +124,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/departamentoSpinner" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/profesionEditText"
-        android:layout_width="240dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/profesion"
-        android:contentDescription="@string/acces_ingrese_profesion"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/grey"
-        android:background="@drawable/ic_edittext_background_v2"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/subtitulo_registro_lab_candidato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/acces_sub_text_registro_lab_candidato"
+        android:gravity="center"
+        android:text="@string/subtitulo_registro_lab_candidato"
+        android:textSize="20sp"
+        android:textColor="#292727"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ciudadSpinner" />
 
-
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/experienciaEditText"
+        android:id="@+id/cargoEditText"
         android:layout_width="240dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/experiencia"
-        android:contentDescription="@string/acces_ingrese_experiencia"
+        android:hint="@string/cargo"
+        android:contentDescription="@string/acces_ingrese_cargo"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/grey"
@@ -199,10 +154,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profesionEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/subtitulo_registro_lab_candidato" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ultimaEmpresaEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/ultimaEmpresa"
+        android:contentDescription="@string/acces_ingrese_ultima_empresa"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cargoEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/anioIngresoEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/anioIngreso"
+        android:contentDescription="@string/acces_ingrese_anio_ingreso"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ultimaEmpresaEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/anioRetiroEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/anioRetiro"
+        android:contentDescription="@string/acces_ingrese_anio_retiro"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anioIngresoEditText" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/continuar_regis_per_candidato_button"
+        android:id="@+id/continuar_regis_lab_candidato_button"
         android:layout_width="246dp"
         android:layout_height="42dp"
         android:layout_marginBottom="50dp"
@@ -212,7 +219,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/experienciaEditText"
+        app:layout_constraintTop_toBottomOf="@+id/anioRetiroEditText"
         android:background="@drawable/ic_button_rounded"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

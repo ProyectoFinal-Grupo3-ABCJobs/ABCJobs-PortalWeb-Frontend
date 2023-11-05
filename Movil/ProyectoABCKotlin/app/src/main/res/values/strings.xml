@@ -65,4 +65,33 @@
         <item>Cali</item>
     </string-array>
     <string name="valida_igual_contrasena">Las contraseñas no coinciden</string>
+    <string name="valida_identificacion">Debe ingresar un número de identificación</string>
+    <string name="valida_direccion">Debe ingresar una dirección de residencia</string>
+    <string name="validacion_telefono">Debe ingresar un número de teléfono</string>
+    <string name="valida_profesion">Debe ingresar una profesion</string>
+    <string name="valida_experiencia">Debe ingresar los años de experiencia</string>
+    <string name="subtitulo_registro_edu_candidato">Educación</string>
+    <string name="acces_sub_text_registro_edu_candidato">Subtitulo Registro educación candidato</string>
+    <string name="acces_ingrese_ultimo_estudio">Ingrese Último Estudio</string>
+    <string name="ultimoEstudio">Ultimo Estudio</string>
+    <string name="acces_sub_text_registro_lab_candidato">Subtitulo registrar información laboral</string>
+    <string name="subtitulo_registro_lab_candidato">Información Laboral</string>
+    <string name="acces_ingrese_institucion">Ingrese institución de último estudio</string>
+    <string name="institucion">Institución</string>
+    <string name="acces_ingrese_anio_grado">Ingrese año del grado</string>
+    <string name="anioGrado">Año de Grado</string>
+    <string name="acces_ingrese_cargo">Ingrese el cargo de su ultimo empleo</string>
+    <string name="cargo">Cargo de su último empleo</string>
+    <string name="acces_ingrese_ultima_empresa">Ingrese el nombre de la última empresa</string>
+    <string name="ultimaEmpresa">Ultima Empresa</string>
+    <string name="acces_ingrese_anio_ingreso">Ingrese el año de ingreso a la empresa</string>
+    <string name="anioIngreso">Año de Ingreso</string>
+    <string name="anioRetiro">Año Retiro</string>
+    <string name="acces_ingrese_anio_retiro">Ingrese año de retiro</string>
+    <string name="guardar_info_candidato">Guardar</string>
+    <string name="acces_boton_guardar_candidato">Botón para guardar la información del candidato</string>
+    <string name="acces_sub_text_registro_palabra_candidato">Subtitulo conociminetos y aptitudes del candidato</string>
+    <string name="subtitulo_registro_palabra_candidato">Conocimientos y Aptitudes</string>
+    <string name="valida_claves">Debe Ingresar conocimientos y aptitudes</string>
+    <string name="acces_ingrese_palabra_clave">Ingrese Conocimientos y aptiudes</string>
 </resources>
