@@ -7,14 +7,14 @@
             <div class="mb-3 row">
               <div class="col-md-10 offset-md-1">
                 <select formControlName="tipoIdentificacion" class="form-select" >
-                  <option value="">Seleccionar tipo documento *</option>
-                  <option value="CC">Cédula de Ciudadanía</option>
-                  <option value="CE">Cédula de Extranjería</option>
-                  <option value="Pasaporte">Pasaporte</option>
+                  <option i18n value="">Seleccionar tipo documento *</option>
+                  <option i18n value="CC">Cédula de Ciudadanía</option>
+                  <option i18n value="CE">Cédula de Extranjería</option>
+                  <option i18n value="Pasaporte">Pasaporte</option>
               </select>
               </div>
             </div>
-            <div class="alert alert-danger my-3"
+            <div i18n class="alert alert-danger my-3"
               *ngIf="empleadoForm.get('tipoIdentificacion')?.hasError('required') && empleadoForm.get('tipoIdentificacion')?.touched">
               Debe seleccionar un tipo de documento
             </div>
@@ -25,7 +25,7 @@
                 <input formControlName="identificacion" type="text" class="form-control" placeholder="Identificación">
               </div>
             </div>  
-            <div class="alert alert-danger my-3"
+            <div i18n class="alert alert-danger my-3"
               *ngIf="empleadoForm.get('identificacion')?.hasError('required') && empleadoForm.get('identificacion')?.touched">
               Debe ingresar un número de documento
             </div>
@@ -36,11 +36,11 @@
                 <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre">
               </div>
             </div>  
-            <div class="alert alert-danger my-3"
+            <div i18n class="alert alert-danger my-3"
               *ngIf="empleadoForm.get('nombre')?.hasError('required') && empleadoForm.get('nombre')?.touched">
               Debe ingresar un nombre
             </div>
-            <div class="alert alert-danger my-3" *ngIf="empleadoForm.get('nombre')?.hasError('maxlength')">
+            <div i18n class="alert alert-danger my-3" *ngIf="empleadoForm.get('nombre')?.hasError('maxlength')">
               El nombre no debe exceder los 100 carácteres
             </div>
           </div>
@@ -50,11 +50,11 @@
                 <input formControlName="cargo" type="text" class="form-control" placeholder="Cargo">
               </div>
             </div>  
-            <div class="alert alert-danger my-3"
+            <div i18n class="alert alert-danger my-3"
               *ngIf="empleadoForm.get('cargo')?.hasError('required') && empleadoForm.get('cargo')?.touched">
               Debe ingresar un cargo
             </div>
-            <div class="alert alert-danger my-3" *ngIf="empleadoForm.get('cargo')?.hasError('maxlength')">
+            <div i18n class="alert alert-danger my-3" *ngIf="empleadoForm.get('cargo')?.hasError('maxlength')">
               El cargo no debe exceder los 100 carácteres
             </div>
           </div>

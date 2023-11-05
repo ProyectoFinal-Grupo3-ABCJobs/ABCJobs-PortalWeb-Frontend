@@ -11,11 +11,11 @@
                 <input formControlName="nombreProyecto" type="text" class="form-control" placeholder="Nombre del proyecto *">
               </div>
             </div>
-            <div class="alert alert-danger my-3"
+            <div i18n class="alert alert-danger my-3"
               *ngIf="proyectoForm.get('nombreProyecto')?.hasError('required') && proyectoForm.get('nombreProyecto')?.touched">
               Debe ingresar un nombre para el proyecto
             </div>
-            <div class="alert alert-danger my-3" *ngIf="proyectoForm.get('nombreProyecto')?.hasError('maxlength')">
+            <div i18n class="alert alert-danger my-3" *ngIf="proyectoForm.get('nombreProyecto')?.hasError('maxlength')">
               El nombre no debe exceder los 100 carácteres
             </div>
           </div>
@@ -28,7 +28,7 @@
                 <input formControlName="fechaInicio" type="date" class="form-control" placeholder="Fecha de inicio">
               </div>
             </div>  
-            <div class="alert alert-danger my-3"
+            <div i18n class="alert alert-danger my-3"
               *ngIf="proyectoForm.get('fechaInicio')?.hasError('required') && proyectoForm.get('fechaInicio')?.touched">
               Debe ingresar una fecha
             </div>
