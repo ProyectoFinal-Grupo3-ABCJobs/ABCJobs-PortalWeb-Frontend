@@ -92,4 +92,10 @@
     <string name="anioIngreso">Año de Ingreso</string>
     <string name="anioRetiro">Año Retiro</string>
     <string name="acces_ingrese_anio_retiro">Ingrese año de retiro</string>
+    <string name="guardar_info_candidato">Guardar</string>
+    <string name="acces_boton_guardar_candidato">Botón para guardar la información del candidato</string>
+    <string name="acces_sub_text_registro_palabra_candidato">Subtitulo conociminetos y aptitudes del candidato</string>
+    <string name="subtitulo_registro_palabra_candidato">Conocimientos y Aptitudes</string>
+    <string name="valida_claves">Debe Ingresar conocimientos y aptitudes</string>
+    <string name="acces_ingrese_palabra_clave">Ingrese Conocimientos y aptiudes</string>
 </resources>
