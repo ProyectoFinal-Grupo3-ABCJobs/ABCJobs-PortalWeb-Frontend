@@ -37,40 +37,6 @@ class RegistroInfoEduCandidatoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         try {
-            val intentUsuario = intent
-            val usuarioRecibido = intentUsuario.getStringExtra("usuario")
-            val contrasenaRecibida = intentUsuario.getStringExtra("contrasena")
-            val tipoIdentificacion = intentUsuario.getStringExtra("tipoIdentificacion")
-            val identificacionRecibida = intentUsuario.getStringExtra("identificacion")
-            val telefonoRecibido = intentUsuario.getStringExtra("telefono")
-            val direccionRecibida = intentUsuario.getStringExtra("direccion")
-            val pais = intentUsuario.getStringExtra("pais")
-            val departamento = intentUsuario.getStringExtra("departamento")
-            val ciudad = intentUsuario.getStringExtra("ciudad")
-            val profesionRecibida = intentUsuario.getStringExtra("profesion")
-            val experienciaRecibida = intentUsuario.getStringExtra("experiencia")
-
-            if (usuarioRecibido != null && contrasenaRecibida != null) {
-                Log.d("usuario", usuarioRecibido)
-                Log.d("contrasena", contrasenaRecibida)
-                if (identificacionRecibida != null) {
-                    Log.d("identificacion", identificacionRecibida)
-                }
-                if (telefonoRecibido != null) {
-                    Log.d("telefono", telefonoRecibido)
-                }
-                if (direccionRecibida != null) {
-                    Log.d("direccion", direccionRecibida)
-                }
-                if (profesionRecibida != null) {
-                    Log.d("profesion", profesionRecibida)
-                }
-                if (experienciaRecibida != null) {
-                    Log.d("experiencia", experienciaRecibida)
-                }
-
-            }
-
             val listaDepartamentos = listOf(
                 RegistroInfoEduCandidatoActivity.Departamento(0, "Departamento"),
                 RegistroInfoEduCandidatoActivity.Departamento(1, "Antioquia"),
@@ -180,6 +146,7 @@ class RegistroInfoEduCandidatoActivity : AppCompatActivity() {
 
 
 
+
                 override fun onClick(view: View) {
                     val registroUltimoEstudioText = registro_ultimoEstudio.text.toString().trim { it <= ' ' }
                     val registroInstitucionText = registro_institucion.text.toString().trim { it <= ' ' }
@@ -218,6 +185,7 @@ class RegistroInfoEduCandidatoActivity : AppCompatActivity() {
                     val intentUsuario = intent
                     val usuarioRecibido = intentUsuario.getStringExtra("usuario")
                     val contrasenaRecibida = intentUsuario.getStringExtra("contrasena")
+                    val nombreRecibido = intentUsuario.getStringExtra("nombre")
                     val tipoIdentificacion = intentUsuario.getStringExtra("tipoIdentificacion")
                     val identificacionRecibida = intentUsuario.getStringExtra("identificacion")
                     val telefonoRecibido = intentUsuario.getStringExtra("telefono")
@@ -239,6 +207,7 @@ class RegistroInfoEduCandidatoActivity : AppCompatActivity() {
                     )
                     intent.putExtra("usuario", usuarioRecibido)
                     intent.putExtra("contrasena",contrasenaRecibida)
+                    intent.putExtra("nombre",nombreRecibido)
                     intent.putExtra("tipoIdentificacion",tipoIdentificacion)
                     intent.putExtra("identificacion",identificacionRecibida)
                     intent.putExtra("telefono",telefonoRecibido)

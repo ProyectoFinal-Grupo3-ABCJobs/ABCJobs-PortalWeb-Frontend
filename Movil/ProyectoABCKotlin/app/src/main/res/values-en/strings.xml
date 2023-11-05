@@ -98,4 +98,7 @@
     <string name="subtitulo_registro_palabra_candidato">Knowledge and Skills</string>
     <string name="valida_claves">You must enter knowledge and skills</string>
     <string name="acces_ingrese_palabra_clave">Enter Knowledge and Skills</string>
+    <string name="acces_ingrese_nombre">Enter Name</string>
+    <string name="nombre">Name</string>
+    <string name="registro_candidato_exitoso">Successful Candidate Registration</string>
 </resources>
