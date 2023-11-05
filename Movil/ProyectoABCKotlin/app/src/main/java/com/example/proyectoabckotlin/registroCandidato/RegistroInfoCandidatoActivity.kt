@@ -33,7 +33,10 @@ import java.util.Collections
 
 class RegistroInfoCandidatoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroInfoCandidatoBinding
-    private var paisSeleccionado: String = ""
+    private var idPaisSeleccionado: Int = 0
+    private var tipoIdSeleccionado: String = ""
+    private var idDepartamentoSeleccionado: Int = 0
+    private var idCiudadSeleccionado: Int = 0
     data class Pais(val id: Int, val nombre: String)
     data class TipoIdentificacion(val id: String, val nombre: String)
     data class Departamento(val id: Int, val nombre: String)
@@ -56,6 +59,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
             //val tiposIdentificacionArray = resources.getStringArray(R.array.tipos_identificacion)
 
             val tiposIdentificacionArray = listOf(
+                TipoIdentificacion("", "Tipo Identificación"),
                 TipoIdentificacion("CC", "Cédula"),
                 TipoIdentificacion("PA", "Pasaporte"),
                 TipoIdentificacion("RC", "Registro Civil"),
@@ -64,6 +68,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
             )
 
             val listaPaises = listOf(
+                Pais(0, "País"),
                 Pais(1, "Colombia"),
                 Pais(2, "México"),
                 Pais(3, "Estados Unidos"),
@@ -71,6 +76,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
             )
 
             val listaDepartamentos = listOf(
+                Departamento(0, "Departamento"),
                 Departamento(1, "Antioquia"),
                 Departamento(2, "Cundinamarca"),
                 Departamento(3, "Valle del cauca"),
@@ -78,6 +84,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
             )
 
             val listaCiudades = listOf(
+                Ciudad(0, "Ciudad"),
                 Ciudad(1, "Medellin"),
                 Ciudad(2, "Bogota"),
                 Ciudad(3, "Cali"),
@@ -109,8 +116,6 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
 
             if (defaultPosition >= 0) {
                 spinnerTI.setSelection(defaultPosition)
-            } else {
-                Log.e("Spinner", "Valor por defecto no encontrado en tiposIdentificacionArray")
             }
             // Maneja la selección de elementos del Spinner
             spinnerTI.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -145,12 +150,20 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
             val spinnerP = findViewById<Spinner>(R.id.paisSpinner)
             val adapterP = paisAdapter(this, listaPaises)
             spinnerP.adapter = adapterP
+
+            val defaultValueP = "País"
+            val defaultPositionP = listaPaises.indexOfFirst { it.nombre == defaultValueP }
+
+            if (defaultPositionP >= 0) {
+                spinnerP.setSelection(defaultPositionP)
+            }
+
             // Maneja la selección de elementos del Spinner
             spinnerP.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     val paisSeleccionado = listaPaises[position]
                     if (position > 0) {
-                        val idPaisSeleccionado = paisSeleccionado.id
+                        idPaisSeleccionado = paisSeleccionado.id
                         // El valor seleccionado no es "Selecciona un país", haz algo con él
                         // Por ejemplo, mostrarlo en un Toast
                         Toast.makeText(this@RegistroInfoCandidatoActivity, "País seleccionado: $idPaisSeleccionado", Toast.LENGTH_SHORT).show()
@@ -178,6 +191,14 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
             val spinnerDep = findViewById<Spinner>(R.id.departamentoSpinner)
             val adapterDep= departamentoAdapter(this, listaDepartamentos)
             spinnerDep.adapter = adapterDep
+
+            val defaultValueDep = "Departamento"
+            val defaultPositionDep = listaDepartamentos.indexOfFirst { it.nombre == defaultValueDep }
+
+            if (defaultPositionDep >= 0) {
+                spinnerDep.setSelection(defaultPositionDep)
+            }
+
             // Maneja la selección de elementos del Spinner
             spinnerDep.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -211,6 +232,14 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
             val spinnerCiu = findViewById<Spinner>(R.id.ciudadSpinner)
             val adapterCiu= ciudadAdapter(this, listaCiudades)
             spinnerCiu.adapter = adapterCiu
+
+            val defaultValueCiu = "Ciudad"
+            val defaultPositionCiu = listaCiudades.indexOfFirst { it.nombre == defaultValueCiu }
+
+            if (defaultPositionCiu >= 0) {
+                spinnerDep.setSelection(defaultPositionCiu)
+            }
+
             // Maneja la selección de elementos del Spinner
             spinnerCiu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -235,10 +264,8 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                 var registro_telefono = findViewById<EditText>(R.id.telefonoEditText)
                 var registro_profesion = findViewById<EditText>(R.id.profesionEditText)
                 var registro_experiencia = findViewById<EditText>(R.id.experienciaEditText)
-                val spinner = findViewById<Spinner>(R.id.paisSpinner)
 
-                // Obtiene el valor seleccionado del Spinner
-                val selectedValue = spinner.selectedItem.toString()
+
 
                 override fun onClick(view: View) {
                     val registroUsuarioText = registro_identificacion.text.toString().trim { it <= ' ' }
@@ -250,6 +277,12 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
 
                     Log.e("MainActivity", "edit_usuario_text$registroUsuarioText")
                     println("edit_usuario_text: $registroUsuarioText")
+
+                    /*if (idPaisSeleccionado == 0) {
+                        errorMessageTextView.error = getString(R.string.valida_experiencia)
+                        errorMessageTextView.visibility = View.VISIBLE
+                        return
+                    }*/
 
                     if (registroUsuarioText.isEmpty()) {
                         registro_identificacion.error = getString(R.string.valida_identificacion)
@@ -281,7 +314,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                           Log.d("contrasena", contrasenaRecibida)
                     }
 
-                    Log.d("tipoIdentificacion", paisSeleccionado)
+                    Log.d("idPais", idPaisSeleccionado.toString())
 
                     intent = Intent(
                         this@RegistroInfoCandidatoActivity,
@@ -294,6 +327,10 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                     intent.putExtra("telefono", registro_telefono.text.toString().trim { it <= ' ' })
                     intent.putExtra("profesion", registro_profesion.text.toString().trim { it <= ' ' })
                     intent.putExtra("experiencia", registro_experiencia.text.toString().trim { it <= ' ' })
+                    intent.putExtra("tipoIdentificacion",tipoIdSeleccionado)
+                    intent.putExtra("pais",idPaisSeleccionado)
+                    intent.putExtra("departamento",idDepartamentoSeleccionado)
+                    intent.putExtra("ciudad",idCiudadSeleccionado)
 
                     startActivity(intent)
                 }
