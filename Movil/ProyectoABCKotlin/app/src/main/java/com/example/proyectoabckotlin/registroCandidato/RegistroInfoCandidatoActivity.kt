@@ -259,6 +259,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
 
 
             binding.continuarRegisPerCandidatoButton.setOnClickListener(object : View.OnClickListener {
+                var registro_nombre = findViewById<EditText>(R.id.nombreEditText)
                 var registro_identificacion = findViewById<EditText>(R.id.identificacionEditText)
                 var registro_direccion = findViewById<EditText>(R.id.direccionEditText)
                 var registro_telefono = findViewById<EditText>(R.id.telefonoEditText)
@@ -268,6 +269,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
 
 
                 override fun onClick(view: View) {
+                    val registronombreText = registro_nombre.text.toString().trim { it <= ' ' }
                     val registroUsuarioText = registro_identificacion.text.toString().trim { it <= ' ' }
                     val registroDireccionText = registro_direccion.text.toString().trim { it <= ' ' }
                     val registroTelefonoText = registro_telefono.text.toString().trim { it <= ' ' }
@@ -275,15 +277,16 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                     val registroExperienciaText = registro_experiencia.text.toString().trim { it <= ' ' }
 
 
-                    Log.e("MainActivity", "edit_usuario_text$registroUsuarioText")
-                    println("edit_usuario_text: $registroUsuarioText")
-
                     /*if (idPaisSeleccionado == 0) {
                         errorMessageTextView.error = getString(R.string.valida_experiencia)
                         errorMessageTextView.visibility = View.VISIBLE
                         return
                     }*/
 
+                    if (registronombreText.isEmpty()) {
+                        registro_nombre.error = getString(R.string.valida_identificacion)
+                        return
+                    }
                     if (registroUsuarioText.isEmpty()) {
                         registro_identificacion.error = getString(R.string.valida_identificacion)
                         return
@@ -314,14 +317,13 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                           Log.d("contrasena", contrasenaRecibida)
                     }
 
-                    Log.d("idPais", idPaisSeleccionado.toString())
-
                     intent = Intent(
                         this@RegistroInfoCandidatoActivity,
                         RegistroInfoEduCandidatoActivity::class.java
                     )
                     intent.putExtra("usuario", usuarioRecibido)
                     intent.putExtra("contrasena",contrasenaRecibida)
+                    intent.putExtra("nombre", registro_identificacion.text.toString().trim { it <= ' ' })
                     intent.putExtra("identificacion", registro_identificacion.text.toString().trim { it <= ' ' })
                     intent.putExtra("direccion",registro_direccion.text.toString().trim { it <= ' ' })
                     intent.putExtra("telefono", registro_telefono.text.toString().trim { it <= ' ' })

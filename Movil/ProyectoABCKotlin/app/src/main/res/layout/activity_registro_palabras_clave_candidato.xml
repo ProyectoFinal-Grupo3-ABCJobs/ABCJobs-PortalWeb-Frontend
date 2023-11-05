@@ -41,14 +41,6 @@
 
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/palabrasRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/agregarPalabraButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/palabraClaveEditText"
         android:layout_width="250dp"
@@ -63,6 +55,15 @@
         app:layout_constraintTop_toBottomOf="@+id/subtitulo_registro_palabra_candidato"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/agregarPalabraButton" />
+
+    <ListView
+        android:id="@+id/palabrasListView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/agregarPalabraButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
     <androidx.appcompat.widget.AppCompatButton
