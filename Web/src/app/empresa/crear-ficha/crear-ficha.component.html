@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="titulo">
+    <h2 i18n class="col-12">Creación Ficha</h2>
+
+    <div style="background-color: transparent;">
+
+      <div class="container">
+        <div class="col">
+          <h5 i18n>1. Proyecto seleccionado</h5>
+          <select [(ngModel)]="proyectoSeleccionado" name="proyectoSeleccionado"
+            (ngModelChange)="seleccionarProyecto()" [ngClass]="'select-ancho-fijo'">
+            <option *ngFor="let proyecto of proyectos" [ngValue]="proyecto">{{ proyecto.nombreProyecto }}</option>
+          </select>
+        </div>
+        <div class="col">
+          <h5 i18n>2. Empleados internos asignados</h5>
+          <select [(ngModel)]="empleadosSeleccionados" name="empleadosSeleccionados" multiple="multiple" [ngClass]="'select-ancho-fijo'">
+            <option *ngFor="let empleadoInterno of empleadosInternos" [ngValue]="empleadoInterno">{{
+              empleadoInterno.nombre }} | {{ empleadoInterno.cargo }}</option>
+          </select>
+        </div>
+        <div class="col">
+          <h5 i18n>3. Perfil requerido para contratación</h5>
+          <select [(ngModel)]="perfilesSeleccionados" name="perfilesSeleccionados" multiple="multiple" [ngClass]="'select-ancho-fijo'">
+            <option *ngFor="let perfil of perfiles" [ngValue]="perfil">{{perfil.nombre }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="buttons justify-content-center">
+      <button i18n class="btn btn-warning" (click)="crearFicha()">Crear Ficha</button>
+      <button i18n class="btn btn-danger" (click)="cancelCreate()">Cancelar</button>
+    </div>
+    
+  </div>
+</div>

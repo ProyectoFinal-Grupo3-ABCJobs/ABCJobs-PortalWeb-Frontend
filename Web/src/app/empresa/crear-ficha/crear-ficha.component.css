@@ -1,0 +1,31 @@
+.select-ancho-fijo {
+  width: 200px;
+  /* Establece el ancho deseado en píxeles o la unidad que prefieras */
+}
+
+.btn {
+  background-color: #E25928;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.buttons button {
+  width: 25%;
+  margin: 0 10px;
+}
+
+.container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}

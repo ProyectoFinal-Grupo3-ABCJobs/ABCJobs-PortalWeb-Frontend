@@ -21,6 +21,7 @@ export class LoginService {
   userLogIn(usuario: string, contrasena: string): Observable<any> {
 
       return this.http.post<any>(`${this.backUrl}5000/users/auth`, { "usuario": usuario, "contrasena": contrasena });
+      //return this.http.post<any>(`http://LoadBalancerProyectoABC-735612126.us-east-2.elb.amazonaws.com:5000/users/auth`, { "usuario": usuario, "contrasena": contrasena });
   }
 
   perfilUsuario(perfilUsuario:string){

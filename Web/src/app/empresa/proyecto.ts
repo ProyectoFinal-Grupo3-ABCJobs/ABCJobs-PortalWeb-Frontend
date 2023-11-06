@@ -1,5 +1,6 @@
 export class Proyecto {
     idEmpresa: number;
+    idProyecto: number;
     nombreProyecto: string;
     fechaInicio: Date;
     numeroColaboradores: string;
