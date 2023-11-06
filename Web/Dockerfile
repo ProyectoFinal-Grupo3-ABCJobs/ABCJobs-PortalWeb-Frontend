@@ -6,7 +6,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install
+# RUN npm install -g npm@10.2.3
+RUN npm install --force
 
 EXPOSE 4200
 

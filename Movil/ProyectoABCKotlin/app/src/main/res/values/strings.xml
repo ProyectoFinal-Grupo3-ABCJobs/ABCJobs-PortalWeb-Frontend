@@ -94,4 +94,7 @@
     <string name="subtitulo_registro_palabra_candidato">Conocimientos y Aptitudes</string>
     <string name="valida_claves">Debe Ingresar conocimientos y aptitudes</string>
     <string name="acces_ingrese_palabra_clave">Ingrese Conocimientos y aptiudes</string>
+    <string name="acces_ingrese_nombre">Ingrese el nombre</string>
+    <string name="nombre">Nombre</string>
+    <string name="registro_candidato_exitoso">Registro Candidato Exitoso</string>
 </resources>
