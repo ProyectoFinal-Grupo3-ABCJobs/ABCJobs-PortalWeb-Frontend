@@ -3,7 +3,7 @@ package com.example.proyectoabckotlin.pojo
 class Candidato {
     var idCandidato: Int? = null
     var tipoIdentificacion: String? = null
-    var identificacion: Int? = null
+    var identificacion: String? = null
     var nombre: String? = null
     var direccion: String? = null
     var telefono: String? = null

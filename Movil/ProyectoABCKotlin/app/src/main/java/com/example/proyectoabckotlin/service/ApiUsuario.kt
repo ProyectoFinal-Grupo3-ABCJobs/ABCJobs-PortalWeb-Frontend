@@ -6,6 +6,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface ApiUsuario {
-    @POST("5000/users/register")
+    @POST("/users/register")
     fun register(@Body usuario: Usuario): Call<Usuario>
 }

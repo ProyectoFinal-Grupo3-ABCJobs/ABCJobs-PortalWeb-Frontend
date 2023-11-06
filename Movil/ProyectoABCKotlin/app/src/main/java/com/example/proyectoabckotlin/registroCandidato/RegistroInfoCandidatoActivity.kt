@@ -33,14 +33,14 @@ import java.util.Collections
 
 class RegistroInfoCandidatoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroInfoCandidatoBinding
-    private var idPaisSeleccionado: Int = 0
-    private var tipoIdSeleccionado: String = ""
-    private var idDepartamentoSeleccionado: Int = 0
-    private var idCiudadSeleccionado: Int = 0
-    data class Pais(val id: Int, val nombre: String)
+    private var idPaisSeleccionado: String = ""
+    private var idTipoSeleccionado: String = ""
+    private var idDepartamentoSeleccionado: String = ""
+    private var idCiudadSeleccionado: String = ""
+    data class Pais(val id: String, val nombre: String)
     data class TipoIdentificacion(val id: String, val nombre: String)
-    data class Departamento(val id: Int, val nombre: String)
-    data class Ciudad(val id: Int, val nombre: String)
+    data class Departamento(val id: String, val nombre: String)
+    data class Ciudad(val id: String, val nombre: String)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,26 +68,26 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
             )
 
             val listaPaises = listOf(
-                Pais(0, "País"),
-                Pais(1, "Colombia"),
-                Pais(2, "México"),
-                Pais(3, "Estados Unidos"),
+                Pais("", "País"),
+                Pais("1", "Colombia"),
+                Pais("2", "México"),
+                Pais("3", "Estados Unidos"),
                 // Agrega más países según sea necesario
             )
 
             val listaDepartamentos = listOf(
-                Departamento(0, "Departamento"),
-                Departamento(1, "Antioquia"),
-                Departamento(2, "Cundinamarca"),
-                Departamento(3, "Valle del cauca"),
+                Departamento("", "Departamento"),
+                Departamento("1", "Antioquia"),
+                Departamento("2", "Cundinamarca"),
+                Departamento("3", "Valle del cauca"),
                 // Agrega más países según sea necesario
             )
 
             val listaCiudades = listOf(
-                Ciudad(0, "Ciudad"),
-                Ciudad(1, "Medellin"),
-                Ciudad(2, "Bogota"),
-                Ciudad(3, "Cali"),
+                Ciudad("", "Ciudad"),
+                Ciudad("1", "Medellin"),
+                Ciudad("2", "Bogota"),
+                Ciudad("3", "Cali"),
                 // Agrega más países según sea necesario
             )
 
@@ -122,7 +122,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     val tipoIdSeleccionado = tiposIdentificacionArray[position]
                     if (position > 0) {
-                        val idTipoSeleccionado = tipoIdSeleccionado.id
+                        idTipoSeleccionado = tipoIdSeleccionado.id
                         // El valor seleccionado no es "Selecciona un país", haz algo con él
                         // Por ejemplo, mostrarlo en un Toast
                         Toast.makeText(this@RegistroInfoCandidatoActivity, "País seleccionado: $idTipoSeleccionado", Toast.LENGTH_SHORT).show()
@@ -166,7 +166,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                         idPaisSeleccionado = paisSeleccionado.id
                         // El valor seleccionado no es "Selecciona un país", haz algo con él
                         // Por ejemplo, mostrarlo en un Toast
-                        Toast.makeText(this@RegistroInfoCandidatoActivity, "País seleccionado: $idPaisSeleccionado", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(this@RegistroInfoCandidatoActivity, "País seleccionado: $idPaisSeleccionado", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -204,10 +204,10 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     val departamentoSeleccionado = listaDepartamentos[position]
                     if (position > 0) {
-                        val idDepartamentoSeleccionado = departamentoSeleccionado.id
+                        idDepartamentoSeleccionado = departamentoSeleccionado.id
                         // El valor seleccionado no es "Selecciona un país", haz algo con él
                         // Por ejemplo, mostrarlo en un Toast
-                        Toast.makeText(this@RegistroInfoCandidatoActivity, "Departamento seleccionado: $idDepartamentoSeleccionado", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(this@RegistroInfoCandidatoActivity, "Departamento seleccionado: $idDepartamentoSeleccionado", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -245,10 +245,10 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     val ciudadSeleccionado = listaCiudades[position]
                     if (position > 0) {
-                        val idCiudadSeleccionado = ciudadSeleccionado.id
+                        idCiudadSeleccionado = ciudadSeleccionado.id
                         // El valor seleccionado no es "Selecciona un país", haz algo con él
                         // Por ejemplo, mostrarlo en un Toast
-                        Toast.makeText(this@RegistroInfoCandidatoActivity, "Ciudad seleccionado: $idCiudadSeleccionado", Toast.LENGTH_SHORT).show()
+                       // Toast.makeText(this@RegistroInfoCandidatoActivity, "Ciudad seleccionado: $idCiudadSeleccionado", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -329,7 +329,7 @@ class RegistroInfoCandidatoActivity : AppCompatActivity() {
                     intent.putExtra("telefono", registro_telefono.text.toString().trim { it <= ' ' })
                     intent.putExtra("profesion", registro_profesion.text.toString().trim { it <= ' ' })
                     intent.putExtra("experiencia", registro_experiencia.text.toString().trim { it <= ' ' })
-                    intent.putExtra("tipoIdentificacion",tipoIdSeleccionado)
+                    intent.putExtra("tipoIdentificacion",idTipoSeleccionado)
                     intent.putExtra("pais",idPaisSeleccionado)
                     intent.putExtra("departamento",idDepartamentoSeleccionado)
                     intent.putExtra("ciudad",idCiudadSeleccionado)

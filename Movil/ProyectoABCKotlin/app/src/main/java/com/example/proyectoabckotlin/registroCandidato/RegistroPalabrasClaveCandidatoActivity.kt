@@ -110,6 +110,7 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                     val usuarioBody = Usuario()
                     usuarioBody.usuario = usuario
                     usuarioBody.contrasena = contrasena
+                    usuarioBody.tipoUsuario = "CANDIDATO"
                     val call = apiUsuario.register(usuarioBody)
 
                     call.enqueue(object : Callback<Usuario?> {
@@ -118,8 +119,12 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                             response: Response<Usuario?>
                         ) {
                             if (response.isSuccessful && response.body() != null) {
-
-
+                                Toast.makeText(
+                                    this@RegistroPalabrasClaveCandidatoActivity,
+                                    "Registro usuario exitoso",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                Log.d("Response", response.toString())
 
                             } else {
                                 Toast.makeText(
@@ -140,11 +145,11 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                         }
                     })
 
-                    val apiCandidato = getRetrofit().create(ApiCandidato::class.java)
+                    val apiCandidato = getRetrofitCandidato().create(ApiCandidato::class.java)
                     val candidatoBody = Candidato()
                     candidatoBody.nombre = nombre
                     candidatoBody.tipoIdentificacion = tipoIdentificacion
-                    candidatoBody.tipoIdentificacion = identificacion
+                    candidatoBody.identificacion = identificacion
                     candidatoBody.direccion = direccion
                     candidatoBody.telefono = telefono
                     candidatoBody.profesion = profesion
@@ -162,6 +167,7 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                     candidatoBody.anioIngreso = anioIngreso
                     candidatoBody.anioRetiro = anioRetiro
                     candidatoBody.estado = false
+                    candidatoBody.palabrasClave= palabrasList.toString()
 
                     val callCandidato = apiCandidato.register(candidatoBody)
 
@@ -215,7 +221,15 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://LoadBalancerProyectoABC-735612126.us-east-2.elb.amazonaws.com:")
+            .baseUrl("http://LoadBalancerProyectoABC-735612126.us-east-2.elb.amazonaws.com:5000")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(this.getClient())
+            .build()
+    }
+
+    private fun getRetrofitCandidato(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl("http://LoadBalancerProyectoABC-735612126.us-east-2.elb.amazonaws.com:5001")
             .addConverterFactory(GsonConverterFactory.create())
             .client(this.getClient())
             .build()
