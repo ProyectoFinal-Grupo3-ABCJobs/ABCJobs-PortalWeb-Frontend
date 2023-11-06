@@ -91,11 +91,11 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                     val aniosExperiencia = intentUsuario.getStringExtra("experiencia")
                     val ultimoEstudio = intentUsuario.getStringExtra("ultimoEstudio")
                     val institucion = intentUsuario.getStringExtra("institucion")
-                    val anioGrado = intentUsuario.getStringExtra("anioGrado")?.toInt()
+                    val anioGrado = intentUsuario.getStringExtra("anioGrado")
                     val cargoUltimoEmpleo = intentUsuario.getStringExtra("cargoUltimoEmpleo")
                     val empresa = intentUsuario.getStringExtra("ultimaEmpresa")
-                    val anioIngreso = intentUsuario.getStringExtra("anioIngreso")?.toInt()
-                    val anioRetiro = intentUsuario.getStringExtra("anioRetiro")?.toInt()
+                    val anioIngreso = intentUsuario.getStringExtra("anioIngreso")
+                    val anioRetiro = intentUsuario.getStringExtra("anioRetiro")
                     val idDepartamentoInst = intentUsuario.getStringExtra("idDepartamentoInst")
                     val idCiudadInst = intentUsuario.getStringExtra("idCiudadInst")
 
@@ -186,7 +186,7 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                                 startActivity(
                                     Intent(
                                         this@RegistroPalabrasClaveCandidatoActivity,
-                                        IngresarActivity::class.java
+                                        CandidatoMainActivity::class.java
                                     )
                                 )
                             } else {
