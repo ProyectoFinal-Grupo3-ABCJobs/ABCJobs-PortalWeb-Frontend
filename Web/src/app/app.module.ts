@@ -15,6 +15,7 @@ import { EmpresaModule } from './empresa/empresa.module';
 import { CandidatoModule } from './candidato/candidato.module'; 
 import { AutenticacionModule } from './autenticacion/autenticacion.module';
 import { HttpErrorInterceptorService } from './interceptors/http-error-interceptor.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,9 +27,9 @@ import { HttpErrorInterceptorService } from './interceptors/http-error-intercept
     MenuEmpresaComponent,
     MenuCandidatoComponent,
     MenuFuncionarioComponent,
-
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

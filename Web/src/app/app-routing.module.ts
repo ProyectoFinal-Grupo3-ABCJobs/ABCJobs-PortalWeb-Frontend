@@ -10,6 +10,7 @@ import { RegistroEmpresaComponent } from './empresa/registro-empresa/registro-em
 import { VerProyectosComponent } from './empresa/ver-proyectos/ver-proyectos.component';
 import { CrearProyectoComponent } from './empresa/crear-proyecto/crear-proyecto.component';
 import { AsignarEmpleadoComponent } from './empresa/asignar-empleado/asignar-empleado.component';
+import { CrearFichaComponent } from './empresa/crear-ficha/crear-ficha.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'empresa/asignarEmpleado',
     component: AsignarEmpleadoComponent
+  },
+  {
+    path: 'empresa/crearFicha',
+    component: CrearFichaComponent
   }
 
 ];
