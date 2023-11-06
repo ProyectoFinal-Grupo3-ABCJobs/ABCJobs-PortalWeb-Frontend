@@ -26,11 +26,11 @@ import java.util.Collections
 
 class RegistroInfoEduCandidatoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroInfoEduCandidatoBinding
-    private var idDepartamentoSeleccionado: Int = 0
-    private var idCiudadSeleccionado: Int = 0
+    private var idDepartamentoSeleccionado: String = ""
+    private var idCiudadSeleccionado: String = ""
 
-    data class Departamento(val id: Int, val nombre: String)
-    data class Ciudad(val id: Int, val nombre: String)
+    data class Departamento(val id: String, val nombre: String)
+    data class Ciudad(val id: String, val nombre: String)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroInfoEduCandidatoBinding.inflate(layoutInflater)
@@ -38,18 +38,18 @@ class RegistroInfoEduCandidatoActivity : AppCompatActivity() {
 
         try {
             val listaDepartamentos = listOf(
-                RegistroInfoEduCandidatoActivity.Departamento(0, "Departamento"),
-                RegistroInfoEduCandidatoActivity.Departamento(1, "Antioquia"),
-                RegistroInfoEduCandidatoActivity.Departamento(2, "Cundinamarca"),
-                RegistroInfoEduCandidatoActivity.Departamento(3, "Valle del cauca"),
+                Departamento("", "Departamento"),
+                Departamento("1", "Antioquia"),
+                Departamento("2", "Cundinamarca"),
+                Departamento("3", "Valle del cauca"),
                 // Agrega más países según sea necesario
             )
 
             val listaCiudades = listOf(
-                RegistroInfoEduCandidatoActivity.Ciudad(0, "Ciudad"),
-                RegistroInfoEduCandidatoActivity.Ciudad(1, "Medellin"),
-                RegistroInfoEduCandidatoActivity.Ciudad(2, "Bogota"),
-                RegistroInfoEduCandidatoActivity.Ciudad(3, "Cali"),
+                Ciudad("", "Ciudad"),
+                Ciudad("1", "Medellin"),
+                Ciudad("2", "Bogota"),
+                Ciudad("3", "Cali"),
                 // Agrega más países según sea necesario
             )
 
@@ -82,7 +82,7 @@ class RegistroInfoEduCandidatoActivity : AppCompatActivity() {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     val departamentoSeleccionado = listaDepartamentos[position]
                     if (position > 0) {
-                        val idDepartamentoSeleccionado = departamentoSeleccionado.id
+                        idDepartamentoSeleccionado = departamentoSeleccionado.id
                         // El valor seleccionado no es "Selecciona un país", haz algo con él
                         // Por ejemplo, mostrarlo en un Toast
                         Toast.makeText(this@RegistroInfoEduCandidatoActivity, "Departamento seleccionado: $idDepartamentoSeleccionado", Toast.LENGTH_SHORT).show()
@@ -123,7 +123,7 @@ class RegistroInfoEduCandidatoActivity : AppCompatActivity() {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     val ciudadSeleccionado = listaCiudades[position]
                     if (position > 0) {
-                        val idCiudadSeleccionado = ciudadSeleccionado.id
+                        idCiudadSeleccionado = ciudadSeleccionado.id
                         // El valor seleccionado no es "Selecciona un país", haz algo con él
                         // Por ejemplo, mostrarlo en un Toast
                         Toast.makeText(this@RegistroInfoEduCandidatoActivity, "Ciudad seleccionado: $idCiudadSeleccionado", Toast.LENGTH_SHORT).show()
@@ -196,10 +196,10 @@ class RegistroInfoEduCandidatoActivity : AppCompatActivity() {
                     val profesionRecibida = intentUsuario.getStringExtra("profesion")
                     val experienciaRecibida = intentUsuario.getStringExtra("experiencia")
 
-                    if (usuarioRecibido != null && contrasenaRecibida != null) {
-                        Log.d("usuario", usuarioRecibido)
-                        Log.d("contrasena", contrasenaRecibida)
-                    }
+
+                    Log.d("usuario", idCiudadSeleccionado.toString())
+                    Log.d("contrasena", idDepartamentoSeleccionado.toString())
+
 
                     intent = Intent(
                         this@RegistroInfoEduCandidatoActivity,

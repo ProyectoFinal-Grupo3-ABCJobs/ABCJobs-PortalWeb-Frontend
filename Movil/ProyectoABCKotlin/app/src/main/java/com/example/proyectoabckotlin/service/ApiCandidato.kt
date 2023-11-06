@@ -6,6 +6,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface ApiCandidato {
-    @POST("5001/candidate/registerInfo")
+    @POST("/candidate/registerInfo")
     fun register(@Body candidato: Candidato): Call<Candidato>
 }
