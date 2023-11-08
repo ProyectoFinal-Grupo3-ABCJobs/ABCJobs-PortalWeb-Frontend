@@ -63,7 +63,7 @@ export class CrearFichaComponent implements OnInit {
   }
 
   verPerfiles() {
-    this.empresaService.verPerfiles()
+    this.empresaService.verPerfiles(this.proyectoSeleccionado.idProyecto)
       .subscribe((data: any) => {
         this.perfiles = data;
       },
@@ -82,12 +82,8 @@ export class CrearFichaComponent implements OnInit {
   }
 
   crearFicha() {
-    alert("EMPL: " + JSON.stringify(this.empleadosSeleccionados))
-    alert("PERFILES: " + JSON.stringify(this.perfilesSeleccionados))
-    alert("IDPROYECTO: " + this.proyectoSeleccionado.idProyecto)
     this.ficha = new Ficha(this.proyectoSeleccionado.idProyecto, this.empleadosSeleccionados, this.perfilesSeleccionados);
     
-    alert("FICHA: " + JSON.stringify(this.ficha))
     this.empresaService.crearFicha(this.ficha)
       .subscribe(res => {
         this.showSuccess()
