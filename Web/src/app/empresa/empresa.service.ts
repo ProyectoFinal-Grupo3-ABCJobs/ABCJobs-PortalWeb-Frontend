@@ -64,14 +64,14 @@ export class EmpresaService {
     return this.http.get<EmpleadoInterno>(`${this.backUrl}5002/company/${this.idEmpresa}/internalEmployees`, { headers })
   }
 
-  verPerfiles(): Observable<Perfil> {
+  verPerfiles(idProyecto: number): Observable<Perfil> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     if (token) {
       const decodedToken = jwtDecode(token);
       this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
     }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<Perfil>(`${this.backUrl}5002/company/projects/${this.idEmpresa}/profiles`, { headers })
+    return this.http.get<Perfil>(`${this.backUrl}5002/company/projects/${idProyecto}/profiles`, { headers })
   }
 
   crearFicha(ficha: Ficha): Observable<Ficha> {
