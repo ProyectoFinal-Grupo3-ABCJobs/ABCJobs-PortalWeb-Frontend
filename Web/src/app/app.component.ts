@@ -17,8 +17,10 @@ export class AppComponent implements OnInit{
   ngOnInit(){
 
       this.perfilUsuario = 'VISITANTE';
-      localStorage.setItem('token', '');
-      localStorage.setItem('perfil', ''); 
+      
+      // localStorage.setItem('token', '');
+      // localStorage.setItem('perfil', ''); 
+
 
     
     

@@ -1,0 +1,11 @@
+ul {
+    list-style: none;   /* Quita las viñetas de la lista */
+    padding: 0;         /* Elimina el relleno predeterminado de la lista */
+    width: 30%;
+    align-self: left;
+    margin-left: 20px;
+}
+
+.tituloMenu1{
+    margin-left: 20px;
+}

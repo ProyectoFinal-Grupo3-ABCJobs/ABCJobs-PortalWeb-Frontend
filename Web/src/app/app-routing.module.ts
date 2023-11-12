@@ -11,6 +11,7 @@ import { VerProyectosComponent } from './empresa/ver-proyectos/ver-proyectos.com
 import { CrearProyectoComponent } from './empresa/crear-proyecto/crear-proyecto.component';
 import { AsignarEmpleadoComponent } from './empresa/asignar-empleado/asignar-empleado.component';
 import { CrearFichaComponent } from './empresa/crear-ficha/crear-ficha.component';
+import { VerEmparejamientoComponent } from './empresa/ver-emparejamiento/ver-emparejamiento.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,11 @@ const routes: Routes = [
   {
     path: 'empresa/crearFicha',
     component: CrearFichaComponent
+  }
+  ,
+  {
+    path: 'empresa/verEmparejamiento',
+    component: VerEmparejamientoComponent
   }
 
 ];
