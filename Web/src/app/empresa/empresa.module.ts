@@ -6,10 +6,11 @@ import { CrearProyectoComponent } from './crear-proyecto/crear-proyecto.componen
 import { VerProyectosComponent } from './ver-proyectos/ver-proyectos.component';
 import { AsignarEmpleadoComponent } from './asignar-empleado/asignar-empleado.component';
 import { CrearFichaComponent } from './crear-ficha/crear-ficha.component';
+import { VerEmparejamientoComponent } from './ver-emparejamiento/ver-emparejamiento.component';
 
 
 @NgModule({
-  declarations: [RegistroEmpresaComponent, CrearProyectoComponent, VerProyectosComponent, AsignarEmpleadoComponent, CrearFichaComponent],
+  declarations: [RegistroEmpresaComponent, CrearProyectoComponent, VerProyectosComponent, AsignarEmpleadoComponent, CrearFichaComponent, VerEmparejamientoComponent],
   imports: [
     CommonModule, ReactiveFormsModule, FormsModule
   ],

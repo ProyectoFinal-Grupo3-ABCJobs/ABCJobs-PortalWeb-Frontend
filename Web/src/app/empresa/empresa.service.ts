@@ -20,7 +20,8 @@ export class EmpresaService {
   constructor(private http: HttpClient) { }
 
   crearEmpresa(empresa: Empresa): Observable<Empresa> {
-    return this.http.post<Empresa>(`${this.backUrl}5002/company/register`, empresa)
+    return this.http.post<Empresa>(`${this.backUrl}
+    Juni`, empresa)
   }
 
   crearProyecto(proyecto: Proyecto): Observable<Proyecto> {
@@ -35,12 +36,12 @@ export class EmpresaService {
 
   verProyectos(): Observable<Proyecto> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log('El token es: ', token)
     if (token) {
       const decodedToken = jwtDecode(token);
       this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
     }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    console.log("token: " + token)
     return this.http.get<Proyecto>(`${this.backUrl}5002/company/${this.idEmpresa}/projects`, { headers })
   }
 
