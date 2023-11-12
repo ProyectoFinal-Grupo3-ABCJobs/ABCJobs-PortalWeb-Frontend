@@ -33,6 +33,10 @@ export class VerEmparejamientoComponent implements OnInit{
     this.router.navigate(['/empresa/main']);
   }
 
+  mensaje(proyecto){
+    console.log("El proyecto seleccionado es: ", proyecto)
+  }
+
 
 
 }
