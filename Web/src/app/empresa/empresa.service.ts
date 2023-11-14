@@ -45,6 +45,16 @@ export class EmpresaService {
     return this.http.get<Proyecto>(`${this.backUrl}5002/company/${this.idEmpresa}/projects`, { headers })
   }
 
+  verCandidatosEmparejadosPorIdProyecto(idProyecto: string): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log('El token es: ', token)
+    if (token) {
+      const decodedToken = jwtDecode(token);
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Proyecto>(`${this.backUrl}5002/company/motorEmparejamiento/proyectos/${idProyecto}`, { headers })
+  }
+
   asignarEmpleado(empleadoInterno: EmpleadoInterno): Observable<EmpleadoInterno> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     if (token) {
