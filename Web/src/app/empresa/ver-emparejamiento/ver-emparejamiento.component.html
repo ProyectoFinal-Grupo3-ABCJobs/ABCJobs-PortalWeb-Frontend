@@ -1,23 +1,67 @@
-<div>
+<div class="c-custom">
+  <div class="row ">
+    <h2>Resume de Creación de Ficha</h2>
+  </div>
+</div>
 
-  <h5 i18n class="mt-5 tituloMenu1">1. Seleccione un proyecto</h5>
+<div class="container col-md-12 main">
+  <div class="list-group">
+    <div class="centrar">
+      <h5><span class="grey">1</span></h5>
+      <h6><br>Seleccione proyecto</h6>
+      <hr>
+    </div>
 
-  <div class="list-group ">
-    <ul>
-      <li class="
+    <ul class="ul-custom">
+      <li 
+      class="      
       list-group-item 
-      list-group-item-action 
-      text-center"
-      (click)="mensaje(proyecto)"
-      *ngFor="let proyecto of datosProyecto; let i = index">
+      list-group-item-action " 
+      [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)" (mouseout)="cambiarEstadoPuntero(false)"
+      (click)="listarCandidatos(proyecto,i)" *ngFor="let proyecto of datosProyecto; let i = index"
+      [class.item-seleccionado]="i === itemSeleccionado"
+      >
         {{ proyecto['nombreProyecto'] | titlecase}}
+
       </li>
+
     </ul>
+  </div>
+
+
+  <div class="container col-md-8 listadoCandidatos">
+
+    <div class="list-group">
+      <div class="centrar">
+        <h5><span class="grey">2</span></h5>
+        <h6><br>Candidatos emparejados | Perfiles</h6>
+        <hr>
+
+        <div *ngFor="let candidatoEmparejado of candidatosEmparejados">
+          <ul class="ul-custom">
+            <li 
+            class="
+          bg-customcolor
+          text-white     
+          list-group-item 
+          list-group-item-action           
+          text-center"
+          >
+              {{ candidatoEmparejado.descripcionPerfil | titlecase}}
+            </li>
+
+            <li class="list-group-item
+          text-right
+          align-custom
+          " *ngFor="let candidato of candidatoEmparejado.candidatos">
+              {{candidato.nombreCandidato | titlecase}}
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
 
   </div>
-  <!-- <div class="buttons">
-
-    <button i18n class="btn_" (click)="irAMain()">Cerrar</button>
-  </div> -->
-
-</div>
