@@ -12,6 +12,7 @@ import { CrearProyectoComponent } from './empresa/crear-proyecto/crear-proyecto.
 import { AsignarEmpleadoComponent } from './empresa/asignar-empleado/asignar-empleado.component';
 import { CrearFichaComponent } from './empresa/crear-ficha/crear-ficha.component';
 import { VerEmparejamientoComponent } from './empresa/ver-emparejamiento/ver-emparejamiento.component';
+import { SeleccionCandidatoComponent } from './empresa/seleccion-candidato/seleccion-candidato.component';
 
 const routes: Routes = [
   {
@@ -66,11 +67,15 @@ const routes: Routes = [
   {
     path: 'empresa/crearFicha',
     component: CrearFichaComponent
-  }
-  ,
+  },
   {
     path: 'empresa/verEmparejamiento',
     component: VerEmparejamientoComponent
+  }
+  ,
+  {
+    path: 'empresa/seleccionCandidatos',
+    component: SeleccionCandidatoComponent
   }
 
 ];
