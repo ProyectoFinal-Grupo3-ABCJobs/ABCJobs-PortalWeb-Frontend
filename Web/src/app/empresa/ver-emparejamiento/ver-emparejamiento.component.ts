@@ -14,7 +14,7 @@ export class VerEmparejamientoComponent implements OnInit{
   proyectos: Array<Proyecto> = [];
   candidatosEmparejados: any;
   empresaId: number = 0 ;
-  objetoJSON = ""
+  objetoJSON = "";
   datosProyecto="";
   datosCandidato=""
   itemSeleccionado: any; 
@@ -39,7 +39,6 @@ export class VerEmparejamientoComponent implements OnInit{
 
   listarCandidatos(proyecto:string,index:number){
     this.itemSeleccionado = index;
-    console.log("El click es en el item", index)
     this.empresaService.verCandidatosEmparejadosPorIdProyecto(proyecto['idProyecto'])
     .subscribe((candidatos) => {
 

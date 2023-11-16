@@ -24,12 +24,11 @@ span.grey {
 
 .centrar{
   text-align: center;
-
 }
 
 
 .bg-customcolor{
-  background-color: #d04614;
+  background-color: #4f423e;
 }
 
 .align-custom{
@@ -37,7 +36,7 @@ span.grey {
 }
 
 .item-seleccionado {
-  background-color: #d04614; /* Cambia el color según tus preferencias */
+  background-color: #4f423e; /* Cambia el color según tus preferencias */
   color: white; /* Cambia el color del texto si es necesario */
 }
 

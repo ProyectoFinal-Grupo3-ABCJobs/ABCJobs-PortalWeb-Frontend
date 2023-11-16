@@ -1,6 +1,6 @@
 <div class="c-custom">
   <div class="row ">
-    <h2>Resume de Creación de Ficha</h2>
+    <h3>Resume de Creación de Ficha</h3>
   </div>
 </div>
 
@@ -8,7 +8,7 @@
   <div class="list-group">
     <div class="centrar">
       <h5><span class="grey">1</span></h5>
-      <h6><br>Seleccione proyecto</h6>
+      <h6>Seleccione un proyecto</h6>
       <hr>
     </div>
 
@@ -17,8 +17,11 @@
       class="      
       list-group-item 
       list-group-item-action " 
-      [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)" (mouseout)="cambiarEstadoPuntero(false)"
-      (click)="listarCandidatos(proyecto,i)" *ngFor="let proyecto of datosProyecto; let i = index"
+      [class.cursor-pointer]="mostrarPuntero" 
+      (mouseover)="cambiarEstadoPuntero(true)" 
+      (mouseout)="cambiarEstadoPuntero(false)"
+      (click)="listarCandidatos(proyecto,i)" 
+      *ngFor="let proyecto of datosProyecto; let i = index"
       [class.item-seleccionado]="i === itemSeleccionado"
       >
         {{ proyecto['nombreProyecto'] | titlecase}}
@@ -34,7 +37,7 @@
     <div class="list-group">
       <div class="centrar">
         <h5><span class="grey">2</span></h5>
-        <h6><br>Candidatos emparejados | Perfiles</h6>
+        <h6>Lista de perfiles y candidatos emparejados</h6>
         <hr>
 
         <div *ngFor="let candidatoEmparejado of candidatosEmparejados">
