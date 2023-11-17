@@ -3,6 +3,7 @@ import { EmpresaService } from '../empresa.service';
 import { Router } from '@angular/router';
 import { Proyecto } from '../proyecto';
 import { Contrato } from '../contrato';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-seleccion-candidato',
@@ -23,7 +24,7 @@ export class SeleccionCandidatoComponent implements OnInit{
   contrato: Array<Contrato> = []
   dicContrato = {}
   idPerfil=''
-  constructor(private empresaService: EmpresaService,private router: Router) { }
+  constructor(private empresaService: EmpresaService,private router: Router,private toastr: ToastrService) { }
   
 
   ngOnInit() {
@@ -76,8 +77,7 @@ export class SeleccionCandidatoComponent implements OnInit{
       idCargo:0
     }
     // this.router.navigate(['/empresa/main']);
-    // Paso 1: Registrar contrato
-    this.registrarContrato(this.dicContrato)
+
 
     // Paso 2: Cambiar estado candidato
     this.actualizarCandidato(this.idCandidatoContratar)
@@ -88,6 +88,8 @@ export class SeleccionCandidatoComponent implements OnInit{
     // Paso 4: Eliminar tabla de emparejamiento
     this.eliminarCandidatoEmparejamiento(this.listaPerfiles['idProyecto'],this.idCandidatoContratar)
     this.router.navigate(['/empresa/main']);
+        // Paso 1: Registrar contrato
+    this.registrarContrato(this.dicContrato)
   }
   cancelar(){
     // console.log("Contratado")
@@ -98,10 +100,30 @@ export class SeleccionCandidatoComponent implements OnInit{
   registrarContrato(contrato: any){
     this.empresaService.registrarContrato(contrato)
     .subscribe((contrato) => {
+      this.showSuccess()
       // this.contrato = contrato;
       // console.log("valor de contrato es:", contrato)
+    },
+    error => {
+      if (error.statusText === "CONFLICT") {
+        this.showError(`Ya existe un proyecto con ese nombre`)
+      } else {
+        this.showError(`Ha ocurrido un error: ${error.message}`)
+      }
+
     });
   }
+
+  showError(error: string) {
+    this.toastr.error(error, "Error")
+  }
+
+  showSuccess() {
+    this.toastr.success(`Contrato registrado`, "Registro exitoso");
+  }
+
+
+
   actualizarCandidato(idCandidato:string){
     this.empresaService.actualizarEstadoCandidato(idCandidato)
     .subscribe((candidato) => {
