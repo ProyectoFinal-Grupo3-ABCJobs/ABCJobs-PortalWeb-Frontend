@@ -13,6 +13,8 @@ import { AsignarEmpleadoComponent } from './empresa/asignar-empleado/asignar-emp
 import { CrearFichaComponent } from './empresa/crear-ficha/crear-ficha.component';
 import { VerEmparejamientoComponent } from './empresa/ver-emparejamiento/ver-emparejamiento.component';
 import { SeleccionCandidatoComponent } from './empresa/seleccion-candidato/seleccion-candidato.component';
+import { VerEntrevistasProgramadasComponent } from './candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component';
+import { VerResultadosEntrevistasComponent } from './candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component';
 
 const routes: Routes = [
   {
@@ -76,6 +78,14 @@ const routes: Routes = [
   {
     path: 'empresa/seleccionCandidatos',
     component: SeleccionCandidatoComponent
+  },
+  {
+    path: 'candidato/entrevistasProgramadas',
+    component: VerEntrevistasProgramadasComponent
+  },
+  {
+    path: 'candidato/resultadosEntrevistas',
+    component: VerResultadosEntrevistasComponent
   }
 
 ];

@@ -64,3 +64,30 @@
   </nav>
 
 </div>
+<div *ngIf="perfilUsuario === 'CANDIDATO' ">
+  <nav class="navbar navbar-expand-lg" style="background-color: #413939;">
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a i18n class="nav-link" routerLink="/candidato/main">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/candidato/entrevistasProgramadas" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ver Entrevistas Programadas
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/candidato/resultadosEntrevistas" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ver Resultados Entrevistas
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <a i18n class="nav-link" href="#">Salir</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
