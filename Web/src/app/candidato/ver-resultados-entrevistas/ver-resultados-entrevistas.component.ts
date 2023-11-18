@@ -4,11 +4,11 @@ import { CandidatoService } from '../candidato.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-ver-entrevistas-programadas',
-  templateUrl: './ver-entrevistas-programadas.component.html',
-  styleUrls: ['./ver-entrevistas-programadas.component.css']
+  selector: 'app-ver-resultados-entrevistas',
+  templateUrl: './ver-resultados-entrevistas.component.html',
+  styleUrls: ['./ver-resultados-entrevistas.component.css']
 })
-export class VerEntrevistasProgramadasComponent implements OnInit{
+export class VerResultadosEntrevistasComponent implements OnInit{
 
   entrevistas: Array<Entrevista> = [];
   candidatoId: number = 0 ;
