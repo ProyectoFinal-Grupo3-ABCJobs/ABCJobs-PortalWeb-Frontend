@@ -77,7 +77,7 @@
     <string name="ultimoEstudio">Last Study</string>
     <string name="acces_sub_text_registro_lab_candidato">Subtitle registering labor information</string>
     <string name="subtitulo_registro_lab_candidato">Working Information</string>
-    <string name="acces_ingrese_institucion">Ingrese institución de último estudio</string>
+    <string name="acces_ingrese_institucion">Enter institution of last study</string>
     <string name="institucion">Institution</string>
     <string name="acces_ingrese_anio_grado">Enter year of degree</string>
     <string name="anioGrado">Degree Year</string>
