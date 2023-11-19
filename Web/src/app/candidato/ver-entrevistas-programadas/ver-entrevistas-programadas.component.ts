@@ -27,8 +27,20 @@ export class VerEntrevistasProgramadasComponent implements OnInit{
       // this.datosEntrevista = JSON.parse(this.objetoJSON);
     });
   }
+
+  obtenerPruebas(){
+      this.candidatoService.verPruebas()
+      .subscribe((pruebas) => {
+  
+        console.log("pruebas",pruebas)
+  
+        // this.entrevistas.push(entrevistas)
+        // this.objetoJSON = JSON.stringify(this.entrevistas[0]);
+        // this.datosEntrevista = JSON.parse(this.objetoJSON);
+      });
+  }
   ngOnInit() {
-    this.obtenerEntrevistas()
+    //this.obtenerEntrevistas()
   }
 
 
