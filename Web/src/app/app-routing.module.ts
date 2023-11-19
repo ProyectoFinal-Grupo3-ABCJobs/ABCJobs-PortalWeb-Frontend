@@ -15,6 +15,7 @@ import { VerEmparejamientoComponent } from './empresa/ver-emparejamiento/ver-emp
 import { SeleccionCandidatoComponent } from './empresa/seleccion-candidato/seleccion-candidato.component';
 import { VerEntrevistasProgramadasComponent } from './candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component';
 import { VerResultadosEntrevistasComponent } from './candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component';
+import { VerResultadoPruebasComponent } from './candidato/ver-resultado-pruebas/ver-resultado-pruebas.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,10 @@ const routes: Routes = [
   {
     path: 'candidato/resultadosEntrevistas',
     component: VerResultadosEntrevistasComponent
+  },
+  {
+    path: 'candidato/resultadospruebas',
+    component: VerResultadoPruebasComponent
   }
 
 ];
