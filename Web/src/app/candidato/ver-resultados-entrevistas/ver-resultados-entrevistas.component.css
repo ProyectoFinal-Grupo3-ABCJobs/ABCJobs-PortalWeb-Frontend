@@ -1,35 +1,13 @@
-.buttons{
-  display: flex;
+.container{
+  display: block;
   justify-content: center; /* Centra los elementos horizontalmente */
   align-items: center; /* Centra los elementos verticalmente */
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.btn_ {
-  background-color: #d04614; /* Color de fondo azul (puedes cambiar el valor a tu preferencia) */
-  color: #ffffff; /* Color del texto blanco (puedes cambiar el valor si lo deseas) */
-  border: none; /* Quita el borde del botón */
-  padding: 5px 20px; /* Ajusta el relleno del botón según tus necesidades */
-  border-radius: 10px; /* Añade bordes redondeados (puedes ajustar el radio según tu preferencia) */
-
-
+.card{
+  background-color: transparent;
 }
 
-.custom-list-group{
-    width: 50%;
 
-    
-}
-
-.lista-entrevistas {
-    text-align: center; /* Centra horizontalmente los elementos de la lista */
-    margin: 0 auto;     /* Centra el contenedor al 50% del ancho del elemento padre */
-  }
-
-ul {
-    list-style: none;   /* Quita las viñetas de la lista */
-    padding: 0;         /* Elimina el relleno predeterminado de la lista */
-    width: 50%;
-    align-self: center;
-  }
