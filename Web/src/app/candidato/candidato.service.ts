@@ -6,6 +6,7 @@ import { jwtDecode } from "jwt-decode";
 import { Candidato } from './candidato';
 import { Usuario } from './usuario';
 import { Entrevista } from './entrevista';
+import { Prueba } from './prueba';
 
 
 @Injectable({
@@ -35,6 +36,17 @@ export class CandidatoService {
     }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get<Entrevista>(`${this.backUrl}5003/test/candidate/${this.idCandidato}/interviews`, { headers })
+  }
+
+  verPruebas(): Observable<Prueba> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log('El token es: ', token)
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idCandidato = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Prueba>(`${this.backUrl}5003/test/candidate/${this.idCandidato}`, { headers })
   }
 
 }

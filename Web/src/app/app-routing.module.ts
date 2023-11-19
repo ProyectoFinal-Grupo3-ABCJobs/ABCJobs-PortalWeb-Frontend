@@ -89,7 +89,7 @@ const routes: Routes = [
     component: VerResultadosEntrevistasComponent
   },
   {
-    path: 'candidato/resultadospruebas',
+    path: 'candidato/resultadosPruebas',
     component: VerResultadoPruebasComponent
   }
 

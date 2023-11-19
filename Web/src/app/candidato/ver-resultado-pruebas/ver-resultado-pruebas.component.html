@@ -1,3 +1,28 @@
-<p>
-  ver-resultado-pruebas works!
-</p>
+<div class="container">  
+  <h2 class="titulo">Resultado Pruebas</h2>
+  <div class="linea"></div>
+
+  <!-- Iterar sobre las empresas -->
+  <ng-container *ngFor="let empresa of empresas">
+    <h3>{{ empresa.nombre }}</h3>
+
+    <!-- Tabla de resultados -->
+    <table>
+      <thead>
+        <tr>
+          <th>Prueba</th>
+          <th>Resultado</th>
+          <th>Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iterar sobre las pruebas de la empresa -->
+        <tr *ngFor="let prueba of empresa.pruebas">
+          <td>{{ prueba.nombre }}</td>
+          <td>{{ prueba.resultado }}</td>
+          <td>{{ prueba.observaciones }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</div>
