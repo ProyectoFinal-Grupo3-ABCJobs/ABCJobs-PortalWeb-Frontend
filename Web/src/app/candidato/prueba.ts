@@ -5,7 +5,7 @@ export class Prueba {
     tipoPrueba: String;
     fechaPrueba: Date;
     resultado: String;
-    observacion: String;
+    observaciones: String;
     estado: String;
 
   
@@ -16,7 +16,7 @@ export class Prueba {
         tipoPrueba: String,
         fechaPrueba: Date,
         resultado: String,
-        observacion: String,
+        observaciones: String,
         estado: String
 
       ) {
@@ -26,7 +26,7 @@ export class Prueba {
           this.tipoPrueba = tipoPrueba;
           this.fechaPrueba = fechaPrueba;
           this.resultado = resultado;
-          this.observacion = observacion;
+          this.observaciones = observaciones;
           this.estado = estado;
 
 

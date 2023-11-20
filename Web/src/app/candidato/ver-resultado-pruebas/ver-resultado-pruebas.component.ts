@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Prueba } from '../prueba';
+import { CandidatoService } from '../candidato.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ver-resultado-pruebas',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerResultadoPruebasComponent implements OnInit {
 
-  constructor() { }
+  pruebas: Array<Prueba> = [];
+  candidatoId: number = 0 
+  objetoJSON = ""
+  constructor(private candidatoService: CandidatoService,private router: Router) { }
 
-  ngOnInit() {
+  obtenerpruebas(){
+    this.candidatoService.verPruebas()
+    .subscribe((pruebas) => {
+      this.pruebas = pruebas
+
+      console.log("pruebas",pruebas)
+    });
+    
   }
+  ngOnInit() {
+    this.obtenerpruebas()
+  }
+
 
 }
