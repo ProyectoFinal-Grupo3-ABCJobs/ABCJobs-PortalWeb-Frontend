@@ -147,23 +147,24 @@ export class CrearFichaComponent implements OnInit {
       );
 
 
-      this.empresaService.ejecutarMotorEmparejamiento().subscribe(
-        (res) => {
-          this.showSuccessEmparejamiento();
-          this.routerPath.navigate([`empresa/main`]);
-        },
-        (error) => {
-          this.showError(`Ha ocurrido un error al emparejar: ${error.message}`);
-        }
-      );
-
-
-
     }
     
     else{
       console.log("Falta seleccionar")
     }
+  }
+
+  iniciarEmparejamiento(){
+    this.empresaService.ejecutarMotorEmparejamiento().subscribe(
+      (result) => {
+        this.showSuccessEmparejamiento();
+        this.routerPath.navigate([`empresa/main`]);
+      },
+      (error) => {
+        this.showError(`Ha ocurrido un error al emparejar: ${error.message}`);
+      }
+    );
+
   }
 
   cancelCreate() {
