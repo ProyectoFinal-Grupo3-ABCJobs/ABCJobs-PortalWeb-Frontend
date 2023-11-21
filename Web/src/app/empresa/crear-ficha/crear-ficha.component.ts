@@ -23,10 +23,12 @@ export class CrearFichaComponent implements OnInit {
   proyectoSeleccionado: Proyecto;
   empleadosSeleccionados: EmpleadoInterno[] = [];
   perfilesSeleccionados: Perfil[] = [];
-  itemSeleccionado: any;
+  itemSeleccionado: number;
   itemSeleccionadoEmpleados:number[] = []
   itemSeleccionadoPerfil:number[] = []
   seleccionados: number[] = [];
+  listaEmpleadosInternos: EmpleadoInterno[] = [];
+  listaPerfiles: Perfil[] = [];
   constructor(
     private empresaService: EmpresaService,
     private routerPath: Router,
@@ -88,49 +90,80 @@ export class CrearFichaComponent implements OnInit {
 
 
   seleccionProyecto(proyecto:any,ixnumber:number){
-    // const index = this.seleccionados.indexOf(ixnumber);
     this.itemSeleccionado = ixnumber;
-    console.log("El item seleccionado es: ",this.itemSeleccionado)  
-    // if (index === -1) {
-    //   this.seleccionados.push(ixnumber);
-    // } else {
-    //   this.seleccionados.splice(ixnumber, 1);
-    // }
+    this.proyectoSeleccionado = proyecto;
   }
   
-  seleccionEmpleadosInternos(proyecto:any,ixnumber:number){
+  seleccionEmpleadosInternos(empleadoInterno:any,ixnumber:number){
+    
     const index = this.itemSeleccionadoEmpleados.indexOf(ixnumber);
     //this.itemSeleccionadoEmpleados = ixnumber;
-    console.log("El item seleccionado es: ",this.itemSeleccionadoEmpleados)  
+     
     if (index === -1) {
       this.itemSeleccionadoEmpleados.push(ixnumber);
+      this.listaEmpleadosInternos.push(empleadoInterno)
     } else {
       this.itemSeleccionadoEmpleados.splice(ixnumber, 1);
+      this.listaEmpleadosInternos.splice(empleadoInterno,1)
     }
+    // console.log("El array del empleado interno es: ",this.itemSeleccionadoEmpleados) 
+    console.log("Los empleados internos seleccionados son: ",this.listaEmpleadosInternos)
   }
 
-  seleccionPerfiles(proyecto:any,ixnumber:number){
+  seleccionPerfiles(perfil:any,ixnumber:number){
     const index = this.itemSeleccionadoPerfil.indexOf(ixnumber);
     //this.itemSeleccionadoEmpleados = ixnumber;
-    console.log("El item seleccionado es: ",this.itemSeleccionadoPerfil)  
+      
     if (index === -1) {
       this.itemSeleccionadoPerfil.push(ixnumber);
+      this.listaPerfiles.push(perfil)
     } else {
       this.itemSeleccionadoPerfil.splice(ixnumber, 1);
+      this.listaPerfiles.splice(perfil,1)
     }
+    console.log("Los perfiles seleccionados son: ",this.listaPerfiles)
   }
 
   crearFicha() {
-    this.ficha = new Ficha(this.proyectoSeleccionado.idProyecto, this.empleadosSeleccionados, this.perfilesSeleccionados);
+    if (this.proyectoSeleccionado && this.listaEmpleadosInternos.length>0 && this.listaPerfiles.length>0)  {      
+      
+      this.empleadosSeleccionados = this.listaEmpleadosInternos;
+      this.perfilesSeleccionados = this.listaPerfiles;
+      
+      this.ficha = new Ficha(
+        this.proyectoSeleccionado.idProyecto,
+        this.empleadosSeleccionados,
+        this.perfilesSeleccionados
+      );
+
+      this.empresaService.crearFicha(this.ficha).subscribe(
+        (res) => {
+          this.showSuccess();
+          this.routerPath.navigate([`empresa/main`]);
+        },
+        (error) => {
+          this.showError(`Ha ocurrido un error: ${error.message}`);
+        }
+      );
+
+
+      this.empresaService.ejecutarMotorEmparejamiento().subscribe(
+        (res) => {
+          this.showSuccessEmparejamiento();
+          this.routerPath.navigate([`empresa/main`]);
+        },
+        (error) => {
+          this.showError(`Ha ocurrido un error al emparejar: ${error.message}`);
+        }
+      );
+
+
+
+    }
     
-    this.empresaService.crearFicha(this.ficha)
-      .subscribe(res => {
-        this.showSuccess()
-        this.routerPath.navigate([`empresa/main`])
-      },
-        error => {
-          this.showError(`Ha ocurrido un error: ${error.message}`)
-        })
+    else{
+      console.log("Falta seleccionar")
+    }
   }
 
   cancelCreate() {
@@ -144,7 +177,13 @@ export class CrearFichaComponent implements OnInit {
   showSuccess() {
     this.toastr.success(`Se ha registrado exitosamente`, "Registro exitoso");
   }
+  
+  showSuccessEmparejamiento() {
+    this.toastr.success(`Emparejamiento ejecutado`, "Registro exitoso");
+  }
 
+
+  
   cambiarEstadoPuntero(estado: boolean): void {
     this.mostrarPuntero = estado;
   }

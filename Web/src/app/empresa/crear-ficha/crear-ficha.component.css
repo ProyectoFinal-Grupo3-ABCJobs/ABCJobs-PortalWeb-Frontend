@@ -41,6 +41,15 @@
   width: 33%; /* Ajusta el ancho según tus necesidades */
   padding: 10px;
   border: 1px solid #ddd; /* Agrega un borde para visualización */
+  
+}
+
+.centrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 

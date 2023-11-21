@@ -121,6 +121,16 @@ export class EmpresaService {
     return this.http.get<Perfil>(`${this.backUrl}5002/company/projects/${idProyecto}/profiles`, { headers })
   }
 
+  ejecutarMotorEmparejamiento(): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post<any>(`${this.backUrl}5002/company/motorEmparejamientoTempFicha`, { headers })
+  }
+
   verTodosPerfiles(): Observable<Perfil> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     if (token) {
