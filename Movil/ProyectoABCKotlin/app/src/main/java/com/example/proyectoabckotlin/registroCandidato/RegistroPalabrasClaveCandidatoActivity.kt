@@ -198,7 +198,7 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                             } else {
                                 Toast.makeText(
                                     this@RegistroPalabrasClaveCandidatoActivity,
-                                    getString(R.string.datos_incorrectos),
+                                    getString(R.string.datos_incorrectos_usuario),
                                     Toast.LENGTH_LONG
                                 ).show()
                             }
