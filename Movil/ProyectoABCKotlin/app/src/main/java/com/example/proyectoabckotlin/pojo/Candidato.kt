@@ -23,5 +23,6 @@ class Candidato {
     var anioRetiro: String? = null
     var estado: Boolean? = null
     var palabrasClave: String? = null
+    var idUsuario: String? = null
 
 }
