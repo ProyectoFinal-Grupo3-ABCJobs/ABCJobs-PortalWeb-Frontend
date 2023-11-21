@@ -71,6 +71,23 @@ span.grey {
   color: white; 
 }
 
+
+.item-seleccionado-proyecto {
+  background-color: #64734e;
+  color: white; 
+}
+
+
+.item-seleccionado-empleado {
+  background-color: #64734e;
+  color: white; 
+}
+
+.item-seleccionado-perfil {
+  background-color: #64734e;
+  color: white; 
+}
+
 .cursor-pointer {
   cursor: pointer; /* Puedes cambiar "pointer" por otros valores como "grab", "crosshair", etc. */
 }
@@ -97,3 +114,4 @@ span.grey {
   margin-right: 10px;
 
 }
+

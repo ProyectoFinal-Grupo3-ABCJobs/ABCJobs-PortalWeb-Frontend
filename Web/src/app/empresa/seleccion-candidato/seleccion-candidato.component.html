@@ -83,10 +83,10 @@
 
         <div class="ficha">
             <div class="campo text-center"><b>Resumen de contrato</b></div>
-            <div class="campo"><b>Contrato No.:</b> {{ numeroContrato }}</div>
-            <div class="campo"><b>Nombre:</b> {{ nombreCandidatoContratar }}</div>
-            <div class="campo"><b>Cargo:</b> {{ perfilCandidatoContratar }}</div>
-            <div class="campo"><b>Proyecto:</b> {{ nombreProyecto }}</div>
+            <div class="campo"><b>Contrato No:</b> {{ numeroContrato }}</div>
+            <div class="campo"><b>Nombre:</b> {{ nombreCandidatoContratar | titlecase}} </div>
+            <div class="campo"><b>Cargo:</b> {{ perfilCandidatoContratar | titlecase}} </div>
+            <div class="campo"><b>Proyecto:</b> {{ nombreProyecto | titlecase}} </div>
           </div>
 
           <div class="buttons">
