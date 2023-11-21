@@ -113,7 +113,8 @@
   <div class="row centrado">
     <div class="buttons">
 
-        <button i18n class="btn_" (click)="iniciarEmparejamiento()">Crear</button>
+        <button i18n class="btn_" (click)="crearFicha()" [disabled]="botonDesactivado"[ngStyle]="{'background-color': botonDesactivado ? '#de6a40' : '#d04614'}">Crear</button>
+        <button i18n class="btn_" (click)="iniciarEmparejamiento()" [disabled]="botonEmparejarDesactivado"[ngStyle]="{'background-color': botonEmparejarDesactivado ? '#de6a40' : '#d04614'}">Emparejar</button>
         <button i18n class="btn_" (click)="cancelCreate()">Volver</button>
       </div>
   </div>
