@@ -123,12 +123,12 @@ export class EmpresaService {
 
   ejecutarMotorEmparejamiento(): Observable<any> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    console.log("El toekn es: ",token)
     if (token) {
       const decodedToken = jwtDecode(token);
-      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
     }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.post<any>(`${this.backUrl}5002/company/motorEmparejamientoTempFicha`, { headers })
+    return this.http.post<Perfil>(`${this.backUrl}5002/company/motorEmparejamientoTempFicha`, { headers })
   }
 
   verTodosPerfiles(): Observable<Perfil> {
