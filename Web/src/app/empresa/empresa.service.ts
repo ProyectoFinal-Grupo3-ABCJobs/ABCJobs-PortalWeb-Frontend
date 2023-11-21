@@ -48,6 +48,17 @@ export class EmpresaService {
     return this.http.get<Proyecto>(`${this.backUrl}5002/company/${this.idEmpresa}/projects`, { headers })
   }
 
+  verProyectosSinFicha(): Observable<Proyecto> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log('El token es: ', token)
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Proyecto>(`${this.backUrl}5002/company/${this.idEmpresa}/projects/ficha`, { headers })
+  }
+
   verCandidatosEmparejadosPorIdProyecto(idProyecto: string): Observable<any> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     // console.log('El token es: ', token)
@@ -110,6 +121,15 @@ export class EmpresaService {
     return this.http.get<Perfil>(`${this.backUrl}5002/company/projects/${idProyecto}/profiles`, { headers })
   }
 
+  verTodosPerfiles(): Observable<Perfil> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Perfil>(`${this.backUrl}5002/company/profiles`, { headers })
+  }
   crearFicha(ficha: Ficha): Observable<Ficha> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     if (token) {
