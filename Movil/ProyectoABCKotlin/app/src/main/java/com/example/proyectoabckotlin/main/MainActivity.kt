@@ -11,6 +11,7 @@ import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityMainBinding
 import com.example.proyectoabckotlin.ingresar.IngresarActivity
 import com.example.proyectoabckotlin.pojo.Usuario
+import com.example.proyectoabckotlin.registroCandidato.CandidatoMainActivity
 import com.example.proyectoabckotlin.registroCandidato.RegistroCandidatoActivity
 import com.example.proyectoabckotlin.service.ApiAutenticacion
 import com.example.proyectoabckotlin.service.HeaderInterceptor
@@ -23,11 +24,15 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.Collections
+import io.jsonwebtoken.Jwts
+import io.jsonwebtoken.security.Keys
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                     val usuarioBody = Usuario()
                     usuarioBody.usuario = editUsuarioText
                     usuarioBody.contrasena = editContrasenaText
+                    val secretKey = Keys.hmacShaKeyFor("frase-secreta-token-2023".toByteArray())
                     val call = apiAutenticacion.login(usuarioBody)
 
                     call.enqueue(object : Callback<Usuario?> {
@@ -65,14 +71,34 @@ class MainActivity : AppCompatActivity() {
                             if (response.isSuccessful && response.body() != null) {
                                 edit_usuario.text.clear()
                                 edit_contrasena.text.clear()
+                                val usuario = response.body()!!
+                                val token = usuario.token
+                                println("token: ${token}")
+                                println("tipoUsuario: ${usuario.tipoUsuario}")
+
+                                val claims = Jwts.parserBuilder()
+                                    .setSigningKey(secretKey)
+                                    .build()
+                                    .parseClaimsJws(token)
+                                    .body
+
+                                val idUsuario = claims["idUsuario"]
+                                val tipoUsuario = claims["tipoUsuario"]
+                                val idEmpCanFunc = claims["idEmpCanFunc"]
+
+                                println("idEmpCanFunc: ${idEmpCanFunc}")
                                 //String token = response.body().getToken();
                                 //Llamar el Activity de Registro de Candidato
+
                                 Toast.makeText(
                                     this@MainActivity,
                                     getString(R.string.login_exitoso),
                                     Toast.LENGTH_LONG
                                 ).show()
-                                startActivity(Intent(this@MainActivity, IngresarActivity::class.java))
+                                if(response.body()!!.tipoUsuario=="CANDIDATO")
+                                    startActivity(Intent(this@MainActivity, CandidatoMainActivity::class.java))
+                                else
+                                    startActivity(Intent(this@MainActivity, IngresarActivity::class.java))
                             } else {
                                 Toast.makeText(
                                     this@MainActivity,

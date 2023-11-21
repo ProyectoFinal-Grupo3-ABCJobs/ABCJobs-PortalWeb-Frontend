@@ -126,6 +126,75 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                                 ).show()
                                 Log.d("Response", response.toString())
 
+                                val usuario = response.body()!!
+                                val idUsuario = usuario.id
+
+                                println("idUsuario: ${idUsuario}")
+
+                                val apiCandidato = getRetrofitCandidato().create(ApiCandidato::class.java)
+                                val candidatoBody = Candidato()
+                                candidatoBody.nombre = nombre
+                                candidatoBody.tipoIdentificacion = tipoIdentificacion
+                                candidatoBody.identificacion = identificacion
+                                candidatoBody.direccion = direccion
+                                candidatoBody.telefono = telefono
+                                candidatoBody.profesion = profesion
+                                candidatoBody.aniosExperiencia = aniosExperiencia
+                                candidatoBody.idCiudad = idCiudad
+                                candidatoBody.idDepartamento = idDepartamento
+                                candidatoBody.idPais = idPais
+                                candidatoBody.ultimoEstudio = ultimoEstudio
+                                candidatoBody.institucion = institucion
+                                candidatoBody.anioGrado = anioGrado
+                                candidatoBody.idCiudadInst = idCiudadInst
+                                candidatoBody.idDepartamentoInst = idDepartamentoInst
+                                candidatoBody.cargoUltimoEmpleo = cargoUltimoEmpleo
+                                candidatoBody.empresa = empresa
+                                candidatoBody.anioIngreso = anioIngreso
+                                candidatoBody.anioRetiro = anioRetiro
+                                candidatoBody.estado = false
+                                candidatoBody.palabrasClave = palabrasList.joinToString(", ")
+                                candidatoBody.idUsuario = idUsuario.toString()
+
+                                val callCandidato = apiCandidato.register(candidatoBody)
+
+                                callCandidato.enqueue(object : Callback<Candidato?> {
+                                    override fun onResponse(
+                                        callCandidato: Call<Candidato?>,
+                                        response: Response<Candidato?>
+                                    ) {
+                                        if (response.isSuccessful && response.body() != null) {
+
+                                            Toast.makeText(
+                                                this@RegistroPalabrasClaveCandidatoActivity,
+                                                getString(R.string.registro_candidato_exitoso),
+                                                Toast.LENGTH_LONG
+                                            ).show()
+                                            startActivity(
+                                                Intent(
+                                                    this@RegistroPalabrasClaveCandidatoActivity,
+                                                    CandidatoMainActivity::class.java
+                                                )
+                                            )
+                                        } else {
+                                            Toast.makeText(
+                                                this@RegistroPalabrasClaveCandidatoActivity,
+                                                getString(R.string.datos_incorrectos),
+                                                Toast.LENGTH_LONG
+                                            ).show()
+                                        }
+                                    }
+
+                                    override fun onFailure(callCandidato: Call<Candidato?>, t: Throwable) {
+                                        println("onFailure")
+                                        Toast.makeText(
+                                            this@RegistroPalabrasClaveCandidatoActivity,
+                                            getString(R.string.error_ingresando),
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                    }
+                                })
+
                             } else {
                                 Toast.makeText(
                                     this@RegistroPalabrasClaveCandidatoActivity,
@@ -145,68 +214,7 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                         }
                     })
 
-                    val apiCandidato = getRetrofitCandidato().create(ApiCandidato::class.java)
-                    val candidatoBody = Candidato()
-                    candidatoBody.nombre = nombre
-                    candidatoBody.tipoIdentificacion = tipoIdentificacion
-                    candidatoBody.identificacion = identificacion
-                    candidatoBody.direccion = direccion
-                    candidatoBody.telefono = telefono
-                    candidatoBody.profesion = profesion
-                    candidatoBody.aniosExperiencia = aniosExperiencia
-                    candidatoBody.idCiudad = idCiudad
-                    candidatoBody.idDepartamento = idDepartamento
-                    candidatoBody.idPais = idPais
-                    candidatoBody.ultimoEstudio = ultimoEstudio
-                    candidatoBody.institucion = institucion
-                    candidatoBody.anioGrado = anioGrado
-                    candidatoBody.idCiudadInst = idCiudadInst
-                    candidatoBody.idDepartamentoInst = idDepartamentoInst
-                    candidatoBody.cargoUltimoEmpleo = cargoUltimoEmpleo
-                    candidatoBody.empresa = empresa
-                    candidatoBody.anioIngreso = anioIngreso
-                    candidatoBody.anioRetiro = anioRetiro
-                    candidatoBody.estado = false
-                    candidatoBody.palabrasClave= palabrasList.toString()
 
-                    val callCandidato = apiCandidato.register(candidatoBody)
-
-                    callCandidato.enqueue(object : Callback<Candidato?> {
-                        override fun onResponse(
-                            callCandidato: Call<Candidato?>,
-                            response: Response<Candidato?>
-                        ) {
-                            if (response.isSuccessful && response.body() != null) {
-
-                                Toast.makeText(
-                                    this@RegistroPalabrasClaveCandidatoActivity,
-                                    getString(R.string.registro_candidato_exitoso),
-                                    Toast.LENGTH_LONG
-                                ).show()
-                                startActivity(
-                                    Intent(
-                                        this@RegistroPalabrasClaveCandidatoActivity,
-                                        CandidatoMainActivity::class.java
-                                    )
-                                )
-                            } else {
-                                Toast.makeText(
-                                    this@RegistroPalabrasClaveCandidatoActivity,
-                                    getString(R.string.datos_incorrectos),
-                                    Toast.LENGTH_LONG
-                                ).show()
-                            }
-                        }
-
-                        override fun onFailure(callCandidato: Call<Candidato?>, t: Throwable) {
-                            println("onFailure")
-                            Toast.makeText(
-                                this@RegistroPalabrasClaveCandidatoActivity,
-                                getString(R.string.error_ingresando),
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
-                    })
                 }
             })
         }

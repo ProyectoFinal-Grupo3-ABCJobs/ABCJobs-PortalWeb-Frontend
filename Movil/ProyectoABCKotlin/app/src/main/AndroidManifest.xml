@@ -17,6 +17,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".prueba.RegistroResultadoPruebaActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".service.ApiPrueba"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
             android:name=".registroCandidato.CandidatoMainActivity"
             android:exported="false" />
         <activity
