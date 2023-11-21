@@ -24,7 +24,9 @@ export class CrearFichaComponent implements OnInit {
   empleadosSeleccionados: EmpleadoInterno[] = [];
   perfilesSeleccionados: Perfil[] = [];
   itemSeleccionado: any;
-
+  itemSeleccionadoEmpleados:number[] = []
+  itemSeleccionadoPerfil:number[] = []
+  seleccionados: number[] = [];
   constructor(
     private empresaService: EmpresaService,
     private routerPath: Router,
@@ -82,6 +84,40 @@ export class CrearFichaComponent implements OnInit {
   seleccionarProyecto() {
     this.verEmpleadosInternos()
     this.verPerfiles()
+  }
+
+
+  seleccionProyecto(proyecto:any,ixnumber:number){
+    // const index = this.seleccionados.indexOf(ixnumber);
+    this.itemSeleccionado = ixnumber;
+    console.log("El item seleccionado es: ",this.itemSeleccionado)  
+    // if (index === -1) {
+    //   this.seleccionados.push(ixnumber);
+    // } else {
+    //   this.seleccionados.splice(ixnumber, 1);
+    // }
+  }
+  
+  seleccionEmpleadosInternos(proyecto:any,ixnumber:number){
+    const index = this.itemSeleccionadoEmpleados.indexOf(ixnumber);
+    //this.itemSeleccionadoEmpleados = ixnumber;
+    console.log("El item seleccionado es: ",this.itemSeleccionadoEmpleados)  
+    if (index === -1) {
+      this.itemSeleccionadoEmpleados.push(ixnumber);
+    } else {
+      this.itemSeleccionadoEmpleados.splice(ixnumber, 1);
+    }
+  }
+
+  seleccionPerfiles(proyecto:any,ixnumber:number){
+    const index = this.itemSeleccionadoPerfil.indexOf(ixnumber);
+    //this.itemSeleccionadoEmpleados = ixnumber;
+    console.log("El item seleccionado es: ",this.itemSeleccionadoPerfil)  
+    if (index === -1) {
+      this.itemSeleccionadoPerfil.push(ixnumber);
+    } else {
+      this.itemSeleccionadoPerfil.splice(ixnumber, 1);
+    }
   }
 
   crearFicha() {

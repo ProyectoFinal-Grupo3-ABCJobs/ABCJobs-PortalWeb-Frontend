@@ -49,7 +49,7 @@
   <div class="column">
       <div class="centrar">
           <h5><span class="grey">1</span></h5>
-          <h6>Seleccione proyecto</h6>
+          <h6>Seleccione proyecto sin ficha creada</h6>
           <hr>
       </div>
 
@@ -66,8 +66,9 @@
                 <li class="      
                 list-group-item 
                 list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
-                        (mouseout)="cambiarEstadoPuntero(false)"                        
-                        *ngFor="let proyecto of proyectos;let i = index" [class.item-seleccionado]="i === itemSeleccionado"
+                        (mouseout)="cambiarEstadoPuntero(false)" (click)="seleccionProyecto(proyecto,i)"                     
+                        *ngFor="let proyecto of proyectos;let i = index" 
+                        [class.item-seleccionado-proyecto]="i === itemSeleccionado"
                       >
 
                   {{ proyecto['nombreProyecto'] | titlecase}}
@@ -100,7 +101,8 @@
               list-group-item 
               list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
                       (mouseout)="cambiarEstadoPuntero(false)"                        
-                      *ngFor="let empleadointerno of empleadosInternos;let i = index" [class.item-seleccionado]="i === itemSeleccionado"
+                      *ngFor="let empleadointerno of empleadosInternos;let i = index" (click)="seleccionEmpleadosInternos(empleadointerno,i)" 
+                      [ngClass]="{'item-seleccionado-empleado': itemSeleccionadoEmpleados.includes(i)}"
                     >
 
                 <b>Nombre:</b> {{ empleadointerno.nombre | titlecase}} <br><b>Cargo:</b> {{ empleadointerno.cargo | titlecase}}
@@ -165,7 +167,8 @@
               list-group-item 
               list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
                       (mouseout)="cambiarEstadoPuntero(false)"                        
-                      *ngFor="let perfil of perfiles;let i = index" [class.item-seleccionado]="i === itemSeleccionado"
+                      *ngFor="let perfil of perfiles;let i = index" (click)="seleccionPerfiles(perfil,i)" 
+                      [ngClass]="{'item-seleccionado-perfil': itemSeleccionadoPerfil.includes(i)}"
                     >
 
                 <b>Nombre:</b> {{ perfil.nombre | titlecase}} 
