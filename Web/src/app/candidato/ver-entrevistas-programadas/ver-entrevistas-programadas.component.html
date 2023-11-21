@@ -16,21 +16,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr  *ngFor="let entrevista of datosEntrevista">
+        <tr  *ngFor="let entrevista of listaEntrevistas">
           <td scope="row">{{ entrevista.fechaEntrevista | date: 'MMM d, y' }}</td>
           <td>{{ entrevista.empresaNombre }}</td>
           <td>{{ entrevista.horaEntrevista }}</td>
         </tr>
-<!--         <tr>
-          <td scope="row"></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td scope="row"></td>
-          <td ></td>
-          <td></td>
-        </tr> -->
       </tbody>
     </table>
   </div>
@@ -49,14 +39,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td scope="row"></td>
-          <td></td>
+        <tr *ngFor="let prueba of listaPruebas">
+          <td scope="row">{{ prueba.empresaNombre }}</td>
+          <td>{{ prueba.fechaPrueba | date: 'MMM d, y' }} a las 10:00 pm</td>
           <td class="buttons">
             <button i18n class="btn-abc" [disabled]>Presentar pruebas</button>
           </td>
         </tr>
-        <tr>
+<!--         <tr>
           <td scope="row"></td>
           <td></td>
           <td class="buttons">
@@ -69,7 +59,7 @@
           <td class="buttons">
             <button i18n class="btn-abc" [disabled]>Presentar pruebas</button>
           </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
