@@ -7,6 +7,8 @@ export class Prueba {
     resultado: String;
     observaciones: String;
     estado: String;
+    empresaNombre: String;
+    idProyecto: number;
 
   
       constructor(
@@ -17,7 +19,9 @@ export class Prueba {
         fechaPrueba: Date,
         resultado: String,
         observaciones: String,
-        estado: String
+        estado: String,
+        empresaNombre: String,
+        idProyecto: number,
 
       ) {
           this.idPrueba = idPrueba;
@@ -28,6 +32,8 @@ export class Prueba {
           this.resultado = resultado;
           this.observaciones = observaciones;
           this.estado = estado;
+          this.empresaNombre = empresaNombre;
+          this.idProyecto = idProyecto;
 
 
       }

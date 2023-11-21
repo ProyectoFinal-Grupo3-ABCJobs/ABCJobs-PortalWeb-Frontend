@@ -6,11 +6,12 @@ export class Entrevista {
     empresaNombre: String;
     idProyecto: number;
     proyectoNombre: String;
-    fechaEntrevista: String;
+    fechaEntrevista: Date;
+    horaEntrevista: String;
     idPerfil: number;
     perfilDescripcion: String;
     detalles: String;
-    estado: String;
+    estado: Boolean;
     aprobado: String;
 
   
@@ -22,11 +23,12 @@ export class Entrevista {
         empresaNombre: String,
         idProyecto: number,
         proyectoNombre: String,
-        fechaEntrevista: String,
+        fechaEntrevista: Date,
+        horaEntrevista: String,
         idPerfil: number,
         perfilDescripcion: String,
         detalles: String,
-        estado: String,
+        estado: Boolean,
         aprobado: String,
 
       ) {
@@ -38,6 +40,7 @@ export class Entrevista {
           this.idProyecto = idProyecto;
           this.proyectoNombre = proyectoNombre;
           this.fechaEntrevista = fechaEntrevista;
+          this.horaEntrevista = horaEntrevista;
           this.idPerfil = idPerfil;
           this.perfilDescripcion = perfilDescripcion;
           this.detalles = detalles;
