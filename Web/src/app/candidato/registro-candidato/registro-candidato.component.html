@@ -46,8 +46,8 @@
             </div>
 
             <div class="buttons" style="margin-top: 20px;">
-                <button class="btn soyCandidato" (click)="registrarUsuario('candidato')" [disabled]="!usuarioForm.valid || contrasenaCoincide">Soy Candidato</button>
-                <button class="btn soyEmpresa" (click)="registrarUsuario('empresa')" [disabled]="!usuarioForm.valid || contrasenaCoincide">Soy Empresa</button>
+                <button class="btn soyCandidato" (click)="registrarUsuario('CANDIDATO')" [disabled]="!usuarioForm.valid || contrasenaCoincide">Soy Candidato</button>
+                <button class="btn soyEmpresa" (click)="registrarUsuario('EMPRESA')" [disabled]="!usuarioForm.valid || contrasenaCoincide">Soy Empresa</button>
                 <button class="btn regresar" (click)="cancelCreate()">Regresar</button>
             </div>
         </form>

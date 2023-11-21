@@ -37,8 +37,8 @@ export class RegistroCandidatoComponent implements OnInit {
 
   registrarUsuario(tipoUsuario: string) {
     const newUsuario: Usuario = this.usuarioForm.value;
-    if (tipoUsuario === 'candidato') {
-      newUsuario.tipoUsuario = "candidato"
+    if (tipoUsuario === 'CANDIDATO') {
+      newUsuario.tipoUsuario = "CANDIDATO"
       console.log(newUsuario)
       this.candidatoService.registrarUsuario(newUsuario)
         .subscribe(res => {
@@ -53,8 +53,8 @@ export class RegistroCandidatoComponent implements OnInit {
             }
   
           })
-    } else if (tipoUsuario === 'empresa') {
-      newUsuario.tipoUsuario = "empresa"
+    } else if (tipoUsuario === 'EMPRESA') {
+      newUsuario.tipoUsuario = "EMPRESA"
       this.candidatoService.registrarUsuario(newUsuario)
         .subscribe(res => {
           this.routerPath.navigate([`/empresa/registroInformacion`])

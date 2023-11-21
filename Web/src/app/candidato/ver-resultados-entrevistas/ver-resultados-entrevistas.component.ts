@@ -28,7 +28,7 @@ export class VerResultadosEntrevistasComponent implements OnInit{
     });
   }
   ngOnInit() {
-    this.obtenerEntrevistas()
+    //this.obtenerEntrevistas()
   }
 
 
