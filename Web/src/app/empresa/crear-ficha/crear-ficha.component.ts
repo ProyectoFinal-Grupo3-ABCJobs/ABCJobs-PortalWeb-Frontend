@@ -15,6 +15,8 @@ import { Perfil } from '../perfil';
   styleUrls: ['./crear-ficha.component.css']
 })
 export class CrearFichaComponent implements OnInit {
+  botonDesactivado = true;  
+  botonEmparejarDesactivado=true;
   mostrarPuntero = false;
   ficha: Ficha; 
   proyectos: Array<Proyecto> = [];
@@ -29,6 +31,7 @@ export class CrearFichaComponent implements OnInit {
   seleccionados: number[] = [];
   listaEmpleadosInternos: EmpleadoInterno[] = [];
   listaPerfiles: Perfil[] = [];
+  ejecutarEmparejamiento: boolean = false;
   constructor(
     private empresaService: EmpresaService,
     private routerPath: Router,
@@ -90,12 +93,18 @@ export class CrearFichaComponent implements OnInit {
 
 
   seleccionProyecto(proyecto:any,ixnumber:number){
+
     this.itemSeleccionado = ixnumber;
     this.proyectoSeleccionado = proyecto;
+    if (this.proyectoSeleccionado && this.listaEmpleadosInternos.length>0 && this.listaPerfiles.length>0)  {
+      this.botonDesactivado = false;
+    }else{
+      this.botonDesactivado = true;
+    }
   }
   
   seleccionEmpleadosInternos(empleadoInterno:any,ixnumber:number){
-    
+
     const index = this.itemSeleccionadoEmpleados.indexOf(ixnumber);
     //this.itemSeleccionadoEmpleados = ixnumber;
      
@@ -107,10 +116,17 @@ export class CrearFichaComponent implements OnInit {
       this.listaEmpleadosInternos.splice(empleadoInterno,1)
     }
     // console.log("El array del empleado interno es: ",this.itemSeleccionadoEmpleados) 
-    console.log("Los empleados internos seleccionados son: ",this.listaEmpleadosInternos)
+    // console.log("Los empleados internos seleccionados son: ",this.listaEmpleadosInternos)
+    if (this.proyectoSeleccionado && this.listaEmpleadosInternos.length>0 && this.listaPerfiles.length>0)  {
+      this.botonDesactivado = false;
+    }else{
+      this.botonDesactivado = true;
+    }
   }
 
   seleccionPerfiles(perfil:any,ixnumber:number){
+
+
     const index = this.itemSeleccionadoPerfil.indexOf(ixnumber);
     //this.itemSeleccionadoEmpleados = ixnumber;
       
@@ -121,12 +137,17 @@ export class CrearFichaComponent implements OnInit {
       this.itemSeleccionadoPerfil.splice(ixnumber, 1);
       this.listaPerfiles.splice(perfil,1)
     }
-    console.log("Los perfiles seleccionados son: ",this.listaPerfiles)
+    // console.log("Los perfiles seleccionados son: ",this.listaPerfiles)
+    if (this.proyectoSeleccionado && this.listaEmpleadosInternos.length>0 && this.listaPerfiles.length>0)  {
+      this.botonDesactivado = false;
+    }else{
+      this.botonDesactivado = true;
+    }
   }
 
   crearFicha() {
     if (this.proyectoSeleccionado && this.listaEmpleadosInternos.length>0 && this.listaPerfiles.length>0)  {      
-      
+     
       this.empleadosSeleccionados = this.listaEmpleadosInternos;
       this.perfilesSeleccionados = this.listaPerfiles;
       
@@ -138,15 +159,19 @@ export class CrearFichaComponent implements OnInit {
 
       this.empresaService.crearFicha(this.ficha).subscribe(
         (res) => {
-          this.showSuccess();
-          this.routerPath.navigate([`empresa/main`]);
+          this.botonEmparejarDesactivado=false;
+          this.botonDesactivado = true;
+          this.showSuccessCrearFicha();
+          // this.routerPath.navigate([`empresa/main`]);
+          
         },
         (error) => {
           this.showError(`Ha ocurrido un error: ${error.message}`);
         }
       );
 
-
+    
+    
     }
     
     else{
@@ -175,11 +200,21 @@ export class CrearFichaComponent implements OnInit {
     this.toastr.error(error, "Error")
   }
 
+
+ 
+
+  showSuccessCrearFicha() {
+    
+    this.toastr.success(`Se ha registrado exitosamente`, "Registro exitoso");
+  }
+
   showSuccess() {
+
     this.toastr.success(`Se ha registrado exitosamente`, "Registro exitoso");
   }
   
   showSuccessEmparejamiento() {
+    
     this.toastr.success(`Emparejamiento ejecutado`, "Registro exitoso");
   }
 
