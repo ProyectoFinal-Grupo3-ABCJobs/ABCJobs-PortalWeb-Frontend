@@ -1,5 +1,6 @@
 import { Component,OnInit  } from '@angular/core';
 import { Entrevista } from '../entrevista';
+import { Prueba } from '../prueba';
 import { CandidatoService } from '../candidato.service';
 import { Router } from '@angular/router';
 
@@ -11,36 +12,55 @@ import { Router } from '@angular/router';
 export class VerEntrevistasProgramadasComponent implements OnInit{
 
   entrevistas: Array<Entrevista> = [];
+  listaEntrevistas = [];
   candidatoId: number = 0 ;
-  objetoJSON = ""
-  datosEntrevista="";
+  pruebas: Array<Prueba> = [];
+  listaPruebas = [];
+  pruebaHoy = false;
+
+
   constructor(private candidatoService: CandidatoService,private router: Router) { }
 
   obtenerEntrevistas(){
     this.candidatoService.verEntrevistas()
     .subscribe((entrevistas) => {
 
-      console.log("entrevistas",entrevistas)
-
-      // this.entrevistas.push(entrevistas)
-      // this.objetoJSON = JSON.stringify(this.entrevistas[0]);
-      // this.datosEntrevista = JSON.parse(this.objetoJSON);
+      
+      this.entrevistas = entrevistas
+      this.entrevistas.forEach(element => {
+        if(!element.estado){
+          this.listaEntrevistas.push(element)
+        }
+        
+      });
+      console.log("entrevistas",this.listaEntrevistas)
     });
   }
-
   obtenerPruebas(){
       this.candidatoService.verPruebas()
       .subscribe((pruebas) => {
   
         console.log("pruebas",pruebas)
-  
-        // this.entrevistas.push(entrevistas)
-        // this.objetoJSON = JSON.stringify(this.entrevistas[0]);
-        // this.datosEntrevista = JSON.parse(this.objetoJSON);
+        this.pruebas = pruebas
+        this.pruebas.forEach(element => {
+          const existe = this.listaPruebas.some(e => e.idProyecto === element.idProyecto);
+
+          if(!element.estado && !existe){
+            this.listaPruebas.push(element)
+          }
+
+          
+        });
+        console.log("pruebas lista ",this.listaPruebas)
+
+
+
       });
+
   }
   ngOnInit() {
-    //this.obtenerEntrevistas()
+    this.obtenerEntrevistas()
+    this.obtenerPruebas()
   }
 
 
