@@ -15,7 +15,7 @@ import { Perfil } from '../perfil';
   styleUrls: ['./crear-ficha.component.css']
 })
 export class CrearFichaComponent implements OnInit {
-
+  mostrarPuntero = false;
   ficha: Ficha; 
   proyectos: Array<Proyecto> = [];
   empleadosInternos: EmpleadoInterno[] = [];
@@ -23,6 +23,7 @@ export class CrearFichaComponent implements OnInit {
   proyectoSeleccionado: Proyecto;
   empleadosSeleccionados: EmpleadoInterno[] = [];
   perfilesSeleccionados: Perfil[] = [];
+  itemSeleccionado: any;
 
   constructor(
     private empresaService: EmpresaService,
@@ -32,10 +33,12 @@ export class CrearFichaComponent implements OnInit {
 
   ngOnInit() {
     this.verProyectos()
+    this.verEmpleadosInternos()
+    this.verPerfiles()
   }
 
   verProyectos() {
-    this.empresaService.verProyectos()
+    this.empresaService.verProyectosSinFicha()
       .subscribe((data: any) => {
         this.proyectos = data;
       },
@@ -63,7 +66,7 @@ export class CrearFichaComponent implements OnInit {
   }
 
   verPerfiles() {
-    this.empresaService.verPerfiles(this.proyectoSeleccionado.idProyecto)
+    this.empresaService.verTodosPerfiles()
       .subscribe((data: any) => {
         this.perfiles = data;
       },
@@ -104,6 +107,10 @@ export class CrearFichaComponent implements OnInit {
 
   showSuccess() {
     this.toastr.success(`Se ha registrado exitosamente`, "Registro exitoso");
+  }
+
+  cambiarEstadoPuntero(estado: boolean): void {
+    this.mostrarPuntero = estado;
   }
 
 }
