@@ -11,23 +11,28 @@ import { Router } from '@angular/router';
 export class VerEntrevistasProgramadasComponent implements OnInit{
 
   entrevistas: Array<Entrevista> = [];
+  listaEntrevistas = [];
   candidatoId: number = 0 ;
   objetoJSON = ""
-  datosEntrevista="";
+  datosEntrevista=[];
   constructor(private candidatoService: CandidatoService,private router: Router) { }
 
   obtenerEntrevistas(){
     this.candidatoService.verEntrevistas()
     .subscribe((entrevistas) => {
 
-      console.log("entrevistas",entrevistas)
-
-      // this.entrevistas.push(entrevistas)
-      // this.objetoJSON = JSON.stringify(this.entrevistas[0]);
-      // this.datosEntrevista = JSON.parse(this.objetoJSON);
+      
+      this.entrevistas.push(entrevistas)
+      this.entrevistas.forEach(element => {
+        if(!element.estado){
+          this.listaEntrevistas.push(element)
+        }
+        
+      });
+      console.log("entrevistas",this.listaEntrevistas)
+      this.datosEntrevista = this.listaEntrevistas[0];
     });
   }
-
   obtenerPruebas(){
       this.candidatoService.verPruebas()
       .subscribe((pruebas) => {
@@ -40,7 +45,7 @@ export class VerEntrevistasProgramadasComponent implements OnInit{
       });
   }
   ngOnInit() {
-    //this.obtenerEntrevistas()
+    this.obtenerEntrevistas()
   }
 
 

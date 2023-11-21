@@ -16,12 +16,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td scope="row"></td>
-          <td></td>
-          <td></td>
+        <tr  *ngFor="let entrevista of datosEntrevista">
+          <td scope="row">{{ entrevista.fechaEntrevista | date: 'MMM d, y' }}</td>
+          <td>{{ entrevista.empresaNombre }}</td>
+          <td>{{ entrevista.horaEntrevista }}</td>
         </tr>
-        <tr>
+<!--         <tr>
           <td scope="row"></td>
           <td></td>
           <td></td>
@@ -30,7 +30,7 @@
           <td scope="row"></td>
           <td ></td>
           <td></td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
