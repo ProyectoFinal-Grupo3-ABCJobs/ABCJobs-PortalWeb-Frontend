@@ -1,41 +1,3 @@
-<!-- <div class="container">
-  <div class="titulo">
-    <h2 i18n class="col-12">Creación Ficha</h2>
-
-    <div style="background-color: transparent;">
-
-      <div class="container">
-        <div class="col">
-          <h5 i18n>1. Proyecto seleccionado</h5>
-          <select [(ngModel)]="proyectoSeleccionado" name="proyectoSeleccionado"
-            (ngModelChange)="seleccionarProyecto()" [ngClass]="'select-ancho-fijo'">
-            <option *ngFor="let proyecto of proyectos" [ngValue]="proyecto">{{ proyecto.nombreProyecto }}</option>
-          </select>
-        </div>
-        <div class="col">
-          <h5 i18n>2. Empleados internos asignados</h5>
-          <select [(ngModel)]="empleadosSeleccionados" name="empleadosSeleccionados" multiple="multiple" [ngClass]="'select-ancho-fijo'">
-            <option *ngFor="let empleadoInterno of empleadosInternos" [ngValue]="empleadoInterno">{{
-              empleadoInterno.nombre }} | {{ empleadoInterno.cargo }}</option>
-          </select>
-        </div>
-        <div class="col">
-          <h5 i18n>3. Perfil requerido para contratación</h5>
-          <select [(ngModel)]="perfilesSeleccionados" name="perfilesSeleccionados" multiple="multiple" [ngClass]="'select-ancho-fijo'">
-            <option *ngFor="let perfil of perfiles" [ngValue]="perfil">{{perfil.nombre }}</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="buttons justify-content-center">
-      <button i18n class="btn btn-warning" (click)="crearFicha()">Crear Ficha</button>
-      <button i18n class="btn btn-danger" (click)="cancelCreate()">Cancelar</button>
-    </div>
-    
-  </div>
-</div> -->
-
-
 <div>
   <div class="row text-center">
       <p></p>
@@ -105,43 +67,11 @@
                       [ngClass]="{'item-seleccionado-empleado': itemSeleccionadoEmpleados.includes(i)}"
                     >
 
-                <b>Nombre:</b> {{ empleadointerno.nombre | titlecase}} <br><b>Cargo:</b> {{ empleadointerno.cargo | titlecase}}
+                <b>Colaborador:</b> {{ empleadointerno.nombre | titlecase}} <br><b>Cargo:</b> {{ empleadointerno.cargo | titlecase}}
             </li>
 
         </ul>
     </div>
-
-      <!-- <div *ngFor="let listaperfil of listaPerfiles['perfiles']" class="list-group">
-          
-          <ul class="ul-custom">
-              <li 
-              class="
-            bg-customcolor
-            text-white     
-            list-group-item 
-            list-group-item-action           
-            text-center"
-            >
-                {{ listaperfil['perfilNombre'] | titlecase}}
-              </li>
-  
-            <li class="list-group-item
-            text-right
-            align-custom
-            list-group-item-action
-            "
-            [class.cursor-pointer]="mostrarPuntero" 
-            (mouseover)="cambiarEstadoPuntero(true)"
-            (mouseout)="cambiarEstadoPuntero(false)"
-            (click)="candidatoSeleccionado(candidato,listaperfil['perfilNombre'])"
-            *ngFor="let candidato of listaperfil.candidatos"              
-            >
-                {{candidato.nombreCandidato | titlecase}} 
-            </li> 
-  
-            </ul>
-      </div> -->
-
 
   </div>
 
@@ -171,30 +101,20 @@
                       [ngClass]="{'item-seleccionado-perfil': itemSeleccionadoPerfil.includes(i)}"
                     >
 
-                <b>Nombre:</b> {{ perfil.nombre | titlecase}} 
+                <b>Perfil:</b> {{ perfil.nombre | titlecase}} 
             </li>
 
         </ul>
     </div>
-      <!-- <div class="ficha">
-          <div class="campo text-center"><b>Resumen de contrato</b></div>
-          <div class="campo"><b>Contrato No.:</b> {{ numeroContrato }}</div>
-          <div class="campo"><b>Nombre:</b> {{ nombreCandidatoContratar }}</div>
-          <div class="campo"><b>Cargo:</b> {{ perfilCandidatoContratar }}</div>
-          <div class="campo"><b>Proyecto:</b> {{ nombreProyecto }}</div>
-        </div>
-
-        <div class="buttons">
-
-          <button i18n class="btn_" (click)="contratarCandidato()">Contratar</button>
-          <button i18n class="btn_" (click)="cancelar()">Volver</button>
-        </div> -->
-
   </div>
 </div>
 
 <div>
-  <div class="row">
-      <p></p>
+  <div class="row centrado">
+    <div class="buttons">
+
+        <button i18n class="btn_" (click)="crearFicha()">Crear</button>
+        <button i18n class="btn_" (click)="cancelCreate()">Volver</button>
+      </div>
   </div>
 </div>
