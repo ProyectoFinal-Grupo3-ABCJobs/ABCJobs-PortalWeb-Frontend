@@ -48,7 +48,7 @@ const routes: Routes = [
     component: RegistroInfoCandidatoComponent
   },
   {
-    path: 'empresa/registroInformacion',
+    path: 'empresa/registroInformacion/:userId',
     component: RegistroEmpresaComponent
   },
   {

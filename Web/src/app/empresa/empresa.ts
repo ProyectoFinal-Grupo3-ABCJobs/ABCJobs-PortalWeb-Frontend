@@ -8,6 +8,7 @@ export class Empresa {
     telefono: number;
     idCiudad: number;
     proyecto: Proyecto;
+    idUsuario: number;
   
       constructor(
         idEmpresa: number,
@@ -16,7 +17,9 @@ export class Empresa {
         direccion: String,
         telefono: number,
         idCiudad: number,
-        proyecto: Proyecto
+        proyecto: Proyecto,
+        idUsuario: number,
+
       ) {
           this.idEmpresa = idEmpresa;
           this.razonSocial = razonSocial;
@@ -25,5 +28,6 @@ export class Empresa {
           this.telefono = telefono;
           this.idCiudad = idCiudad;
           this.proyecto = proyecto;
+          this.idUsuario = idUsuario;
       }
   }

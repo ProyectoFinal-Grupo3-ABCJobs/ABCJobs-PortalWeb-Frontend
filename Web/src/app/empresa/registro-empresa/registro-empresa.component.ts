@@ -16,6 +16,7 @@ export class RegistroEmpresaComponent implements OnInit {
 
   helper = new JwtHelperService();
   empresaForm: FormGroup = new FormGroup({});
+  userId: string;
 
   constructor(
     private empresaService:EmpresaService,
@@ -26,6 +27,8 @@ export class RegistroEmpresaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.userId = this.router.snapshot.paramMap.get('userId');
+    console.log(this.userId);
     this.empresaForm = this.formBuilder.group({
       razonSocial: ["", [Validators.required, Validators.maxLength(100), Validators.minLength(4)]],
       nit: ["", [Validators.required, Validators.maxLength(20)]],
@@ -34,6 +37,7 @@ export class RegistroEmpresaComponent implements OnInit {
       idPais: ["", [Validators.required]],
       idDepartamento: ["", [Validators.required]],
       idCiudad: ["", [Validators.required]],
+      idUsuario: this.userId ,
     })
   }
 
@@ -57,7 +61,7 @@ export class RegistroEmpresaComponent implements OnInit {
 
   cancelCreate() {
     this.empresaForm.reset()
-    this.routerPath.navigate([`empresa/registroInformacion`])
+    this.routerPath.navigate([`login`])
   }  
 
   showError(error: string) {

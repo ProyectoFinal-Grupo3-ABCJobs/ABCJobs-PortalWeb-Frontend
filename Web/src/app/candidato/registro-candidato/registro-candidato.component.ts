@@ -56,9 +56,11 @@ export class RegistroCandidatoComponent implements OnInit {
     } else if (tipoUsuario === 'empresa') {
       newUsuario.tipoUsuario = "empresa"
       this.candidatoService.registrarUsuario(newUsuario)
-        .subscribe(res => {
-          this.routerPath.navigate([`/empresa/registroInformacion`])
-          this.showSuccess()
+      .subscribe(
+          (res: any) => {
+            const userId = res.id;
+          this.routerPath.navigate([`/empresa/registroInformacion`, userId]);
+          this.showSuccess();
         },
           error => {
             if (error.statusText === "CONFLICT") {

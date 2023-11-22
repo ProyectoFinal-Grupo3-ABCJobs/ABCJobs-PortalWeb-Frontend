@@ -1,12 +1,12 @@
 <div class="container">
   <div class="titulo">
-      <h2>Formulario de registro de información de empresa</h2>
+      <h2 i18n>Formulario de registro de información de empresa</h2>
       <form [formGroup]="empresaForm" (ngSubmit)="registrarEmpresa(empresaForm.value)">
 
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-lg-9  ">
-              <input formControlName="nit" type="text" class="form-control" placeholder="NIT de la empresa *">
+              <input formControlName="nit" type="text" class="form-control" i18n-placeholder placeholder="NIT de la empresa *">
             </div>
           </div>
           <div class="alert alert-danger my-3"
@@ -20,7 +20,7 @@
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-lg-9  ">
-              <input formControlName="razonSocial" type="text" class="form-control" placeholder="Razón Social *">
+              <input formControlName="razonSocial" type="text" class="form-control" i18n-placeholder placeholder="Razón Social *">
             </div>
           </div>  
           <div class="alert alert-danger my-3"
@@ -34,7 +34,7 @@
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-lg-9  ">
-              <input formControlName="direccion" type="text" class="form-control" placeholder="Dirección de empresa *">
+              <input formControlName="direccion" type="text" class="form-control" i18n-placeholder placeholder="Dirección de empresa *">
             </div>
           </div>  
           <div class="alert alert-danger my-3"
@@ -48,7 +48,7 @@
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-lg-9  ">
-              <input formControlName="telefono" type="text" class="form-control" placeholder="Número de teléfono *">
+              <input formControlName="telefono" type="text" class="form-control" i18n-placeholder placeholder="Número de teléfono *">
             </div>
           </div>  
           <div class="alert alert-danger my-3"
@@ -59,7 +59,7 @@
         <div class="form-group my-2">
           <div class="row">
             <div class="col-10">
-              <select formControlName="idPais" class="form-select">
+              <select formControlName="idPais" class="form-select" aria-label="País">
                   <option value="">Seleccionar País</option>
                   <option value="1">Colombia</option>
                   <option value="2">México</option>
@@ -79,7 +79,7 @@
         <div class="form-group my-2">
           <div class="row">
             <div class="col-10">
-              <select formControlName="idDepartamento" class="form-select">
+              <select formControlName="idDepartamento" class="form-select" aria-label="Departamento">
                 <option value="">Seleccionar Departamento</option>
                 <option value="1">Antioquia</option>
                 <option value="2">Cundinamarca</option>
@@ -99,7 +99,7 @@
         <div class="form-group my-2">
           <div class="row">
             <div class="col-10">
-              <select formControlName="idCiudad" class="form-select">
+              <select formControlName="idCiudad" class="form-select" aria-label="Ciudad">
                 <option value="">Seleccionar Ciudad</option>
                   <option value="1">Medellín</option>
                   <option value="2">Bogotá</option>
@@ -118,8 +118,8 @@
         </div>
       
         <div class="buttons">        
-          <button type="submit" class="btn btn-warning" [disabled]="!empresaForm.valid">Aceptar</button>
-          <button class="btn btn-danger" (click)="cancelCreate()">Cancelar</button>
+          <button i18n type="submit" class="btn btn-warning" [disabled]="!empresaForm.valid">Aceptar</button>
+          <button i18n class="btn btn-danger" (click)="cancelCreate()">Cancelar</button>
         </div>
     </form>
   </div>
