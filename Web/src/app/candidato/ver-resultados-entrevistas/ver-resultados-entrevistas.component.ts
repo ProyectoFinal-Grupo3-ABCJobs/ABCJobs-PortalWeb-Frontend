@@ -12,23 +12,20 @@ export class VerResultadosEntrevistasComponent implements OnInit{
 
   entrevistas: Array<Entrevista> = [];
   candidatoId: number = 0 ;
-  objetoJSON = ""
-  datosEntrevista="";
+  textoEstado="Pendiente";
+  textoDetalles="";
   constructor(private candidatoService: CandidatoService,private router: Router) { }
 
   obtenerEntrevistas(){
     this.candidatoService.verEntrevistas()
-    .subscribe((entrevistas) => {
+      .subscribe((entrevistas) => {
+        console.log("entrevistas", entrevistas);
+        this.entrevistas = entrevistas;
 
-      console.log("entrevistas",entrevistas)
-
-      // this.entrevistas.push(entrevistas)
-      // this.objetoJSON = JSON.stringify(this.entrevistas[0]);
-      // this.datosEntrevista = JSON.parse(this.objetoJSON);
-    });
+      });
   }
   ngOnInit() {
-    //this.obtenerEntrevistas()
+    this.obtenerEntrevistas()
   }
 
 
