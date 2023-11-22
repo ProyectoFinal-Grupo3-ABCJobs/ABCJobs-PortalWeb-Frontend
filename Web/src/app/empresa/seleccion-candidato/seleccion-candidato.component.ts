@@ -72,6 +72,7 @@ export class SeleccionCandidatoComponent implements OnInit{
     this.dicContrato = {
       numeroContrato:parseInt(this.numeroContrato),
       idCandidato:this.idCandidatoContratar,
+      nombreCandidato:this.nombreCandidatoContratar,
       idEmpresa:0,
       idProyecto:this.listaPerfiles['idProyecto'],
       idCargo:0
