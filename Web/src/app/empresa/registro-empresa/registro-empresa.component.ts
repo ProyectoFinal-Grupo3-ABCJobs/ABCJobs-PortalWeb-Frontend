@@ -42,6 +42,8 @@ export class RegistroEmpresaComponent implements OnInit {
   }
 
   registrarEmpresa(newEmpresa:Empresa) {
+    console.log("registrarEmpresa", newEmpresa)
+
     this.empresaService.crearEmpresa(newEmpresa)
       .subscribe(res => {
         this.showSuccess()
