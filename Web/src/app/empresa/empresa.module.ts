@@ -8,13 +8,14 @@ import { AsignarEmpleadoComponent } from './asignar-empleado/asignar-empleado.co
 import { CrearFichaComponent } from './crear-ficha/crear-ficha.component';
 import { VerEmparejamientoComponent } from './ver-emparejamiento/ver-emparejamiento.component';
 import { SeleccionCandidatoComponent } from './seleccion-candidato/seleccion-candidato.component';
+import { RegistrarDesempenoCandidatoComponent } from './registro-desempeno-candidato/registro-desempeno-candidato.component';
 
 
 @NgModule({
-  declarations: [RegistroEmpresaComponent, CrearProyectoComponent, VerProyectosComponent, AsignarEmpleadoComponent, CrearFichaComponent, VerEmparejamientoComponent, SeleccionCandidatoComponent],
+  declarations: [RegistroEmpresaComponent, CrearProyectoComponent, VerProyectosComponent, AsignarEmpleadoComponent, CrearFichaComponent, VerEmparejamientoComponent, SeleccionCandidatoComponent, RegistrarDesempenoCandidatoComponent],
   imports: [
     CommonModule, ReactiveFormsModule, FormsModule
   ],
-  exports: [RegistroEmpresaComponent, CrearProyectoComponent,VerProyectosComponent, AsignarEmpleadoComponent, CrearFichaComponent]
+  exports: [RegistroEmpresaComponent, CrearProyectoComponent,VerProyectosComponent, AsignarEmpleadoComponent, CrearFichaComponent, RegistrarDesempenoCandidatoComponent]
 })
 export class EmpresaModule { }
