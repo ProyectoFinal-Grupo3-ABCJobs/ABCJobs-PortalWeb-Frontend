@@ -11,6 +11,7 @@ import { Perfil } from './perfil';
 import { Entrevista } from '../candidato/entrevista';
 import { Contrato } from './contrato';
 import { Candidato } from '../candidato/candidato';
+import { DesempenoEmpleado } from './desempenoEmpleado';
 
 
 
@@ -196,6 +197,27 @@ export class EmpresaService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.delete<any>(`${this.backUrl}5002/company/motorEmparejamiento/proyectos/${idProyecto}/candidatos/${idCandidato}`,{ headers })
 
+  }
+
+  verCandidatosContratados(): Observable<Contrato> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log('El token es: ', token)
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Contrato>(`${this.backUrl}5002/company/${this.idEmpresa}/contratos`, { headers })
+  }
+
+  registrarDesempenoCandidato(idContrato: string): Observable<DesempenoEmpleado> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post<DesempenoEmpleado>(`${this.backUrl}5002/company/contrato/${idContrato}/desempenoEmpleado`, { headers })
   }
 
 
