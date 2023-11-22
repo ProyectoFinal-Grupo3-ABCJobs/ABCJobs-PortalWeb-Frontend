@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmpresaService } from '../empresa.service';
 import { Proyecto } from '../proyecto';
 import { Router } from '@angular/router';
+import { Candidato } from 'src/app/candidato/candidato';
 
 @Component({
   selector: 'app-ver-emparejamiento',
@@ -9,11 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./ver-emparejamiento.component.css']
 })
 export class VerEmparejamientoComponent implements OnInit{
-
+  mostrarPuntero = false;
   proyectos: Array<Proyecto> = [];
+  candidatosEmparejados: any;
   empresaId: number = 0 ;
-  objetoJSON = ""
+  objetoJSON = "";
   datosProyecto="";
+  datosCandidato=""
+  itemSeleccionado: any; 
   constructor(private empresaService: EmpresaService,private router: Router) { }
 
   obtenerProyectos(){
@@ -33,10 +37,22 @@ export class VerEmparejamientoComponent implements OnInit{
     this.router.navigate(['/empresa/main']);
   }
 
-  mensaje(proyecto){
-    console.log("El proyecto seleccionado es: ", proyecto)
+  listarCandidatos(proyecto:string,index:number){
+    this.itemSeleccionado = index;
+    this.empresaService.verCandidatosEmparejadosPorIdProyecto(proyecto['idProyecto'])
+    .subscribe((candidatos) => {
+
+      if(!candidatos['Mensaje 200']){
+        this.candidatosEmparejados = candidatos;
+      }else{
+        this.candidatosEmparejados= [];
+      }
+     
+
+    });
   }
 
-
-
+  cambiarEstadoPuntero(estado: boolean): void {
+    this.mostrarPuntero = estado;
+  }
 }

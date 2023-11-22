@@ -1,0 +1,25 @@
+<!-- <app-navbar></app-navbar> -->
+
+<div class="container">
+
+  <h3 i18n class="mt-5 text-center">Resultados Entrevistas</h3>
+
+  <div class="row justify-content-center">
+    <div class="card col-md-5 m-3" *ngFor="let entrevista of entrevistas">
+      <h5 class="card-title m-2">Empresa</h5>
+      <div class="card-body">
+        <div><strong>Cargo al que aplica: </strong>{{ entrevista.perfilDescripcion }}</div>
+        <div><strong>Proyecto asociado: </strong>{{ entrevista.proyectoNombre }}</div>
+        <div *ngIf='entrevista.estado'>
+          <div><strong>Estado: </strong>Finalizada</div>
+          <div><strong>Detalles: </strong>{{ entrevista.detalles }}</div>
+        </div>
+        <div *ngIf='!entrevista.estado'>
+          <div ><strong>Estado: </strong>Pendiente</div>
+          <div><strong>Detalles: </strong></div>
+        </div>
+      </div>
+    </div>
+
+
+</div>

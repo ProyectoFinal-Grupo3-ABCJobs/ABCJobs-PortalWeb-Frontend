@@ -1,0 +1,67 @@
+.column-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye las columnas de manera uniforme */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .column {
+    width: 33%; /* Ajusta el ancho según tus necesidades */
+    padding: 10px;
+    border: 1px solid #ddd; /* Agrega un borde para visualización */
+  }
+
+
+  span.grey {
+    background: #4a4340;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    /* margin-right: 0; */
+    /* text-align: center; */
+    width: 1.6em; 
+  }
+
+  .centrar{
+    text-align: center;
+  }
+
+  .ul-custom{
+    padding-left: 0;
+  }
+
+  .item-seleccionado {
+    background-color: #64734e;
+    color: white; 
+  }
+
+  .cursor-pointer {
+    cursor: pointer; /* Puedes cambiar "pointer" por otros valores como "grab", "crosshair", etc. */
+  }
+
+  .bg-customcolor{
+    background-color: #4f423e;
+  }
+  
+
+  .ficha {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .btn_ {
+    background-color: #d04614; 
+    color: #ffffff;
+    border: none;
+    padding: 5px 20px; 
+    border-radius: 10px; 
+    margin-right: 10px;
+
+}

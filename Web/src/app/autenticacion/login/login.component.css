@@ -25,13 +25,16 @@
   }
 
 .btn {
-    background-color: #d04614; /* Color de fondo azul (puedes cambiar el valor a tu preferencia) */
+    background-color: #d04614 ; /* Color de fondo azul (puedes cambiar el valor a tu preferencia) */
     color: #fff; /* Color del texto blanco (puedes cambiar el valor si lo deseas) */
     border: none; /* Quita el borde del botón */
     padding: 10px 20px; /* Ajusta el relleno del botón según tus necesidades */
     border-radius: 10px; /* Añade bordes redondeados (puedes ajustar el radio según tu preferencia) */
 
 }
+
+
+
 
 .btnRegistrarse{
 

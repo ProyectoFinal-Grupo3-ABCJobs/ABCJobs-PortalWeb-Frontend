@@ -8,6 +8,9 @@ import { EmpleadoInterno } from './empleadoInterno';
 import { jwtDecode } from "jwt-decode";
 import { Ficha } from './ficha';
 import { Perfil } from './perfil';
+import { Entrevista } from '../candidato/entrevista';
+import { Contrato } from './contrato';
+import { Candidato } from '../candidato/candidato';
 
 
 
@@ -45,6 +48,49 @@ export class EmpresaService {
     return this.http.get<Proyecto>(`${this.backUrl}5002/company/${this.idEmpresa}/projects`, { headers })
   }
 
+  verProyectosSinFicha(): Observable<Proyecto> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log('El token es: ', token)
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Proyecto>(`${this.backUrl}5002/company/${this.idEmpresa}/projects/ficha`, { headers })
+  }
+
+  verCandidatosEmparejadosPorIdProyecto(idProyecto: string): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log('El token es: ', token)
+    if (token) {
+      const decodedToken = jwtDecode(token);
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Proyecto>(`${this.backUrl}5002/company/motorEmparejamiento/proyectos/${idProyecto}`, { headers })
+  }
+
+  verCandidatosAprobadosPorIdEmpresa(idEmpresa: string): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log('El token es: ', token)
+    if (token) {
+      const decodedToken = jwtDecode(token);
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Entrevista>(`${this.backUrl}5003/test/company/${idEmpresa}/interviews`, { headers })
+  }
+
+  obtenerDataCandidatosAprobadosPorIdEmpresa(): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log('El token es: ', token)
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Entrevista>(`${this.backUrl}5003/test/company/${this.idEmpresa}/interviews`, { headers })
+  }
+
+
   asignarEmpleado(empleadoInterno: EmpleadoInterno): Observable<EmpleadoInterno> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     if (token) {
@@ -75,6 +121,15 @@ export class EmpresaService {
     return this.http.get<Perfil>(`${this.backUrl}5002/company/projects/${idProyecto}/profiles`, { headers })
   }
 
+  verTodosPerfiles(): Observable<Perfil> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Perfil>(`${this.backUrl}5002/company/profiles`, { headers })
+  }
   crearFicha(ficha: Ficha): Observable<Ficha> {
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     if (token) {
@@ -82,6 +137,66 @@ export class EmpresaService {
       this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
     }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    
     return this.http.post<Ficha>(`${this.backUrl}5002/company/projects/${ficha.idProyecto}/files`, ficha, { headers })
   }
+
+  ejecutarMotorEmparejamiento(): Observable<any> {
+    // const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    // console.log("El token es Gct: ",token)
+    // if (token) {
+      // const decodedToken = jwtDecode(token);
+    // }
+    // const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);    
+    // return this.http.post<any>(`${this.backUrl}5002/company/motorEmparejamientoTempFicha`, { headers })
+    return this.http.post<any>(`${this.backUrl}5002/company/motorEmparejamientoTempFicha`,Headers)
+  }
+
+  registrarContrato(contrato: Contrato): Observable<Contrato> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    contrato['idEmpresa'] = parseInt(this.idEmpresa)
+    return this.http.post<Contrato>(`${this.backUrl}5002/company/contratoCandidato`, contrato, { headers })
+  }
+
+  actualizarEstadoCandidato(candidato: string): Observable<Candidato> {
+
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.put<Candidato>(`${this.backUrl}5001/candidate/isHired/${candidato}`,candidato, { headers })
+  }
+
+  eliminarCandidatoEntrevista(idProyecto: string, idCandidato:string): Observable<any> {
+
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.delete<any>(`${this.backUrl}5003/test/proyectos/${idProyecto}/candidatos/${idCandidato}/empresas/${this.idEmpresa}`,{ headers })
+
+  }
+
+  eliminarCandidatoEmparejamiento(idProyecto: string, idCandidato:string): Observable<any> {
+
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.delete<any>(`${this.backUrl}5002/company/motorEmparejamiento/proyectos/${idProyecto}/candidatos/${idCandidato}`,{ headers })
+
+  }
+
+
 }

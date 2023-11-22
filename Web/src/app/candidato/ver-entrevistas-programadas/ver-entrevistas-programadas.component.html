@@ -1,18 +1,54 @@
 <!-- <app-navbar></app-navbar> -->
 
-<div>
+<div class="container">
 
-  <h2 i18n class="mt-5 text-center">Entrevistas Programadas</h2>
+  <div class="entrevistas">
 
-  <div class="list-group  lista-entrevistas" >
-    <ul>
-  <li
-        class="list-group-item text-center" 
-        *ngFor="let entrevista of datosEntrevista" >
-        {{ entrevista['fechaEntrevista'] }}
-    </li>
-  </ul>
+    <h3 i18n class="row mt-5 text-center">Entrevistas Programadas</h3>
+  
+    <table class="table table-bordered entrevistas-programadas mt-5">
+      <thead>
+        <tr>
+          <th scope="col" i18n>Fecha</th>
+          <th scope="col" i18n>Empresa</th>
+          <th scope="col" i18n>Hora</th>
+  
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let entrevista of listaEntrevistas">
+          <td scope="row">{{ entrevista.fechaEntrevista | date: 'MMM d, y' }}</td>
+          <td>{{ entrevista.empresaNombre }}</td>
+          <td>{{ entrevista.horaEntrevista }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
+  <div class="pruebas" style="margin-top: 100px;">
+
+    <h3 i18n class="row mt-5 text-center">Pruebas Programadas</h3>
+  
+    <table class="table table-bordered entrevistas-programadas mt-5 mb-5">
+      <thead>
+        <tr>
+          <th scope="col" i18n>Empresa</th>
+          <th scope="col" i18n>Fecha límite</th>
+          <th scope="col" i18n></th>
+  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prueba of listaPruebas">
+          <td scope="row">{{ prueba.empresaNombre }}</td>
+          <td>{{ prueba.fechaPrueba | date: 'MMM d, y' }} a las 10:00 pm</td>
+          <td class="buttons">
+            <button i18n class="btn-abc" [disabled]>Presentar pruebas</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
   </div>
 
 </div>

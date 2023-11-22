@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.proyectoabckotlin"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -56,6 +56,11 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation ("androidx.test.ext:junit-ktx:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation ("androidx.test:runner:1.5.2")
+    androidTestImplementation ("androidx.test:core-ktx:1.5.0")
+    implementation ("io.jsonwebtoken:jjwt-api:0.11.2")
+    implementation ("io.jsonwebtoken:jjwt-impl:0.11.2")
+    implementation ("io.jsonwebtoken:jjwt-jackson:0.11.2")
 }

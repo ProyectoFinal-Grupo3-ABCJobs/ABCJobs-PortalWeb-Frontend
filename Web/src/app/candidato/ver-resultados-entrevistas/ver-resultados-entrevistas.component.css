@@ -1,0 +1,13 @@
+.container{
+  display: block;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card{
+  background-color: transparent;
+}
+
+

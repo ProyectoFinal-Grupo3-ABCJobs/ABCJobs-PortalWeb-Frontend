@@ -12,6 +12,10 @@ import { CrearProyectoComponent } from './empresa/crear-proyecto/crear-proyecto.
 import { AsignarEmpleadoComponent } from './empresa/asignar-empleado/asignar-empleado.component';
 import { CrearFichaComponent } from './empresa/crear-ficha/crear-ficha.component';
 import { VerEmparejamientoComponent } from './empresa/ver-emparejamiento/ver-emparejamiento.component';
+import { SeleccionCandidatoComponent } from './empresa/seleccion-candidato/seleccion-candidato.component';
+import { VerEntrevistasProgramadasComponent } from './candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component';
+import { VerResultadosEntrevistasComponent } from './candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component';
+import { VerResultadoPruebasComponent } from './candidato/ver-resultado-pruebas/ver-resultado-pruebas.component';
 
 const routes: Routes = [
   {
@@ -66,11 +70,27 @@ const routes: Routes = [
   {
     path: 'empresa/crearFicha',
     component: CrearFichaComponent
-  }
-  ,
+  },
   {
     path: 'empresa/verEmparejamiento',
     component: VerEmparejamientoComponent
+  }
+  ,
+  {
+    path: 'empresa/seleccionCandidatos',
+    component: SeleccionCandidatoComponent
+  },
+  {
+    path: 'candidato/entrevistasProgramadas',
+    component: VerEntrevistasProgramadasComponent
+  },
+  {
+    path: 'candidato/resultadosEntrevistas',
+    component: VerResultadosEntrevistasComponent
+  },
+  {
+    path: 'candidato/resultadosPruebas',
+    component: VerResultadoPruebasComponent
   }
 
 ];
