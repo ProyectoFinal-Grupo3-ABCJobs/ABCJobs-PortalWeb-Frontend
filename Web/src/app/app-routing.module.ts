@@ -16,6 +16,7 @@ import { SeleccionCandidatoComponent } from './empresa/seleccion-candidato/selec
 import { VerEntrevistasProgramadasComponent } from './candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component';
 import { VerResultadosEntrevistasComponent } from './candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component';
 import { VerResultadoPruebasComponent } from './candidato/ver-resultado-pruebas/ver-resultado-pruebas.component';
+import { RegistrarDesempenoCandidatoComponent } from './empresa/registro-desempeno-candidato/registro-desempeno-candidato.component';
 
 const routes: Routes = [
   {
@@ -91,6 +92,10 @@ const routes: Routes = [
   {
     path: 'candidato/resultadosPruebas',
     component: VerResultadoPruebasComponent
+  },
+  {
+    path: 'empresa/registroDesempeno',
+    component: RegistrarDesempenoCandidatoComponent
   }
 
 ];

@@ -54,3 +54,8 @@
     width: 25%;
     margin: 0 10px;
   }
+
+  .item-seleccionado-contrato {
+    background-color: #64734e;
+    color: white; 
+  }
