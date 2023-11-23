@@ -102,4 +102,6 @@
     <string name="acces_boton_resultado_pruebas">boton para ir al registro de resultado pruebas</string>
     <string name="evaluacion_desempeno_empleado">Evaluacion Desempeño Empleado</string>
     <string name="acces_boton_desempeno_empleado">Boton para ir al registro evaluacion desempeño empleado</string>
+    <string name="titulo_evaluacion_desempeno">Evaluación Desempeño Empleado</string>
+    <string name="acces_text_evaluacion_desempeno">Título de evaluación desempeño empleado</string>
 </resources>

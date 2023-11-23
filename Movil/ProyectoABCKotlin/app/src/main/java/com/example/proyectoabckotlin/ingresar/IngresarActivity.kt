@@ -42,6 +42,11 @@ class IngresarActivity : AppCompatActivity() {
             binding.evaluacionDesempenoButton.setOnClickListener {
                 startActivity(Intent(this@IngresarActivity, RegistroDesempenoEmpleadoActivity::class.java))
             }
+
+            binding.regresarButton.setOnClickListener {
+                finish()
+            }
+
         } catch (ex: Exception) {
             Toast.makeText(
                 this@IngresarActivity,

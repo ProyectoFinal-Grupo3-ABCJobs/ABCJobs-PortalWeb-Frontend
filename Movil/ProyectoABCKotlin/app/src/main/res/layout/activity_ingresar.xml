@@ -42,17 +42,32 @@
         android:background="@drawable/ic_button_rounded"
         android:contentDescription="@string/acces_boton_desempeno_empleado"
         android:fontFamily="sans-serif-black"
+        android:text="@string/evaluacion_desempeno_empleado"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:text="@string/evaluacion_desempeno_empleado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultado_pruebas_button"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.136" />
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/regresar_button"
+        android:layout_width="246dp"
+        android:layout_height="41dp"
+        android:background="@drawable/ic_button_rounded"
+        android:contentDescription="@string/acces_boton_regresar"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/regresar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/evaluacion_desempeno_button"
+        app:layout_constraintVertical_bias="0.128" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

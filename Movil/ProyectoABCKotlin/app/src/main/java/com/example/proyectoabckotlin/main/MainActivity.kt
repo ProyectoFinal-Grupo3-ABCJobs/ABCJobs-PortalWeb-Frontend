@@ -15,6 +15,7 @@ import com.example.proyectoabckotlin.registroCandidato.CandidatoMainActivity
 import com.example.proyectoabckotlin.registroCandidato.RegistroCandidatoActivity
 import com.example.proyectoabckotlin.service.ApiAutenticacion
 import com.example.proyectoabckotlin.service.HeaderInterceptor
+import com.example.proyectoabckotlin.utilidades.PreferencesUtil
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                     val usuarioBody = Usuario()
                     usuarioBody.usuario = editUsuarioText
                     usuarioBody.contrasena = editContrasenaText
+
                     val secretKey = Keys.hmacShaKeyFor("frase-secreta-token-2023-frase-secreta-token-2023-backend-abcjobs".toByteArray())
                     val call = apiAutenticacion.login(usuarioBody)
 
@@ -74,6 +76,10 @@ class MainActivity : AppCompatActivity() {
                                 val usuario = response.body()!!
                                 val token = usuario.token
 
+                                if (token != null) {
+                                    PreferencesUtil.guardarTokenEnSharedPreferences(this@MainActivity, token)
+                                }
+
                                 val decodedToken = Jwts.parserBuilder()
                                     .setSigningKey(secretKey)
                                     .setAllowedClockSkewSeconds(60) // Permitir una diferencia de hasta 60 segundos
@@ -85,7 +91,6 @@ class MainActivity : AppCompatActivity() {
                                 println("Decoded Token: ${decodedToken.body}")
                                 val subClaim = claims["sub"] as Map<String, Any>
 
-                                val tipoUsuario = subClaim["tipoUsuario"]
                                 val idEmpCanFunc = subClaim["idEmpCanFunc"]
 
                                 println("idEmpCanFunc: ${idEmpCanFunc}")
