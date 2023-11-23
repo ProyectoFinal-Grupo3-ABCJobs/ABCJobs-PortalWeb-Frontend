@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                     val usuarioBody = Usuario()
                     usuarioBody.usuario = editUsuarioText
                     usuarioBody.contrasena = editContrasenaText
-                    val secretKey = Keys.hmacShaKeyFor("frase-secreta-token-2023".toByteArray())
+                    val secretKey = Keys.hmacShaKeyFor("frase-secreta-token-2023-frase-secreta-token-2023-backend-abcjobs".toByteArray())
                     val call = apiAutenticacion.login(usuarioBody)
 
                     call.enqueue(object : Callback<Usuario?> {
@@ -73,21 +73,23 @@ class MainActivity : AppCompatActivity() {
                                 edit_contrasena.text.clear()
                                 val usuario = response.body()!!
                                 val token = usuario.token
-                                println("token: ${token}")
-                                println("tipoUsuario: ${usuario.tipoUsuario}")
 
-                                val claims = Jwts.parserBuilder()
+                                val decodedToken = Jwts.parserBuilder()
                                     .setSigningKey(secretKey)
+                                    .setAllowedClockSkewSeconds(60) // Permitir una diferencia de hasta 60 segundos
                                     .build()
                                     .parseClaimsJws(token)
-                                    .body
 
-                                val idUsuario = claims["idUsuario"]
-                                val tipoUsuario = claims["tipoUsuario"]
-                                val idEmpCanFunc = claims["idEmpCanFunc"]
+
+                                val claims = decodedToken.body
+                                println("Decoded Token: ${decodedToken.body}")
+                                val subClaim = claims["sub"] as Map<String, Any>
+
+                                val tipoUsuario = subClaim["tipoUsuario"]
+                                val idEmpCanFunc = subClaim["idEmpCanFunc"]
 
                                 println("idEmpCanFunc: ${idEmpCanFunc}")
-                                //String token = response.body().getToken();
+
                                 //Llamar el Activity de Registro de Candidato
 
                                 Toast.makeText(

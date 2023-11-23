@@ -98,4 +98,8 @@
     <string name="nombre">Nombre</string>
     <string name="registro_candidato_exitoso">Registro Candidato Exitoso</string>
     <string name="datos_incorrectos_usuario">No se puede crear el usuario. El usuario ya existe</string>
+    <string name="registrarResultadosPruebas">Registrar Resultados Pruebas</string>
+    <string name="acces_boton_resultado_pruebas">boton para ir al registro de resultado pruebas</string>
+    <string name="evaluacion_desempeno_empleado">Evaluacion Desempeño Empleado</string>
+    <string name="acces_boton_desempeno_empleado">Boton para ir al registro evaluacion desempeño empleado</string>
 </resources>
