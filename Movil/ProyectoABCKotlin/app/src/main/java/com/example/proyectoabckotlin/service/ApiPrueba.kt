@@ -12,5 +12,5 @@ interface ApiPrueba {
     fun registerPrueba(@Path("idPrueba") idPrueba: String, @Body prueba: Prueba): Call<Prueba>
 
     @GET("/test/company/{idEmpresa}")
-    fun getPruebasCandidato(@Path("idEmpresa") idCandidato: String, @Body prueba: Prueba): Call<Prueba>
+    fun getPruebasCandidato(@Path("idEmpresa") idEmpresa: String, @Body prueba: Prueba): Call<Prueba>
 }

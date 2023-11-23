@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".desempenoEmpleado.RegistroDatDesempenoEmpleadoActivity"
+            android:exported="false" />
+        <activity
             android:name=".desempenoEmpleado.RegistroDesempenoEmpleadoActivity"
             android:exported="false" />
 
