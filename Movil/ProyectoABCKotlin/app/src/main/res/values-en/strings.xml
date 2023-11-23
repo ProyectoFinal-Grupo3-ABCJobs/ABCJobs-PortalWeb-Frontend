@@ -103,4 +103,6 @@
     <string name="acces_boton_resultado_pruebas">button to go to the test result record</string>
     <string name="evaluacion_desempeno_empleado">Employee Performance Evaluation</string>
     <string name="acces_boton_desempeno_empleado">Button to go to the employee performance evaluation record</string>
+    <string name="titulo_evaluacion_desempeno">Employee Performance Evaluation</string>
+    <string name="acces_text_evaluacion_desempeno">Employee performance evaluation title</string>
 </resources>
