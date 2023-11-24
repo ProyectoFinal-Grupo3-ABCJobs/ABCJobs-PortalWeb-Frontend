@@ -3,8 +3,11 @@ package com.example.proyectoabckotlin.desempenoEmpleado
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityRegistroDesempenoEmpleadoBinding
@@ -70,6 +73,8 @@ class RegistroDesempenoEmpleadoActivity : AppCompatActivity() {
                         val contratos: List<Contrato>? = response.body()
 
                         if (contratos != null) {
+                            val mensajeTextView: TextView = findViewById(R.id.mensajeTextView)
+                            mensajeTextView.visibility = View.GONE
                             // Inicializa el adaptador
                             adapter = ArrayAdapter(
                                 this@RegistroDesempenoEmpleadoActivity,
@@ -101,7 +106,8 @@ class RegistroDesempenoEmpleadoActivity : AppCompatActivity() {
                                 }
                             }
                         } else {
-                            // Manejar el caso en que la lista de contratos sea nula
+                            val mensajeTextView: TextView = findViewById(R.id.mensajeTextView)
+                            mensajeTextView.visibility = View.VISIBLE
                         }
                     } else {
                         // Manejar la respuesta no exitosa aquí
@@ -112,13 +118,27 @@ class RegistroDesempenoEmpleadoActivity : AppCompatActivity() {
                     // Manejar el fallo de la llamada aquí
                 }
             })
+
         }
+        try{
+            binding.regresarDesempenoButton.setOnClickListener {
+                finish()
+            }
+        } catch (ex: Exception) {
+            Toast.makeText(
+                this@RegistroDesempenoEmpleadoActivity,
+                ex.toString(),
+                Toast.LENGTH_LONG
+            ).show()
+        }
+
     }
 
     private fun abrirFormulario(contrato: Contrato) {
         // Abre la actividad del formulario y pasa el contrato seleccionado
         val intent = Intent(this@RegistroDesempenoEmpleadoActivity, RegistroDatDesempenoEmpleadoActivity::class.java)
-        intent.putExtra("idCandidato", contrato.idCandidato)
+        intent.putExtra("idContrato", contrato.idContrato)
+        intent.putExtra("nombreCandidato", contrato.nombreCandidato)
         startActivity(intent)
     }
     private fun getRetrofit(): Retrofit {

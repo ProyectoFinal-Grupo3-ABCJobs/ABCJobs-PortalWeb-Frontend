@@ -90,7 +90,7 @@
     <string name="anioRetiro">Año Retiro</string>
     <string name="acces_ingrese_anio_retiro">Ingrese año de retiro</string>
     <string name="guardar_info_candidato">Guardar</string>
-    <string name="acces_boton_guardar_candidato">Botón para guardar la información del candidato</string>
+    <string name="acces_boton_guardar_candidato">"Botón para guardar "</string>
     <string name="acces_sub_text_registro_palabra_candidato">Subtitulo conociminetos y aptitudes del candidato</string>
     <string name="subtitulo_registro_palabra_candidato">Conocimientos y Aptitudes</string>
     <string name="valida_claves">Debe Ingresar conocimientos y aptitudes</string>
@@ -105,4 +105,16 @@
     <string name="acces_boton_desempeno_empleado">Boton para ir al registro evaluacion desempeño empleado</string>
     <string name="titulo_evaluacion_desempeno">Evaluación Desempeño Empleado</string>
     <string name="acces_text_evaluacion_desempeno">Título de evaluación desempeño empleado</string>
+    <string name="calificacion">Calificación</string>
+    <string name="acces_ingrese_calificacion">Ingrese una calificación</string>
+    <string name="aspectos_resaltar">Aspectos a Resaltar</string>
+    <string name="acces_ingrese_aspectos_resaltar">Ingrese aspectos a resaltar</string>
+    <string name="aspectos_mejorar">Aspectos a Mejorar</string>
+    <string name="acces_aspectos_mejorar">Ingrese aspectos a mejorar</string>
+    <string name="valida_calificacion">Debe ingresar una calificación</string>
+    <string name="valida_aspectos_resaltar">Debe ingresar aspectos a resaltar</string>
+    <string name="valida_aspectos_mejorar">Debe ingresar aspectos a mejorar</string>
+    <string name="desempeno_empleado_exitoso">Registro de datos exitoso</string>
+    <string name="datos_incorrectos_desempeno">Error registrando datos, intente de nuevo</string>
+    <string name="mensaje_empleado_contrato">No se encuentran empleados contratados para esta empresa</string>
 </resources>

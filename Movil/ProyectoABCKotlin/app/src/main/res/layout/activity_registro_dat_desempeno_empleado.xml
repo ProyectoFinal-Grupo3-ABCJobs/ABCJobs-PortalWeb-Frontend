@@ -1,9 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".desempenoEmpleado.RegistroDatDesempenoEmpleadoActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".desempenoEmpleado.RegistroDatDesempenoEmpleadoActivity"
+        android:background="#F0ECEC">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imagen2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="72dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/imagen1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/registro_desempeno"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/acces_text_evaluacion_desempeno"
+            android:gravity="center"
+            android:text="@string/titulo_evaluacion_desempeno"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagen2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nombreCandidatoTextView"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/acces_text_evaluacion_desempeno"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registro_desempeno" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/calificacion_registro_edit"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="28dp"
+            android:hint="@string/calificacion"
+            android:contentDescription="@string/acces_ingrese_calificacion"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:background="@drawable/ic_edittext_background_v2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nombreCandidatoTextView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/aspectosResaltar_registro_edit"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="28dp"
+            android:inputType="text"
+            android:hint="@string/aspectos_resaltar"
+            android:contentDescription="@string/acces_ingrese_aspectos_resaltar"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:background="@drawable/ic_edittext_background_v2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calificacion_registro_edit" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/aspectos_mejorar_registro_edit"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="28dp"
+            android:inputType="text"
+            android:hint="@string/aspectos_mejorar"
+            android:contentDescription="@string/acces_aspectos_mejorar"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:background="@drawable/ic_edittext_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aspectosResaltar_registro_edit" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/registro_desempeno_button"
+            android:layout_width="246dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:text="@string/guardar_info_candidato"
+            android:contentDescription="@string/acces_boton_guardar_candidato"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aspectos_mejorar_registro_edit"
+            android:background="@drawable/ic_button_rounded"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/regresar_desempeno_button"
+            android:layout_width="246dp"
+            android:layout_height="41dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:background="@drawable/ic_button_rounded"
+            android:contentDescription="@string/acces_boton_regresar"
+            android:text="@string/regresar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.515"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registro_desempeno_button"
+            app:layout_constraintVertical_bias="0.204" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
