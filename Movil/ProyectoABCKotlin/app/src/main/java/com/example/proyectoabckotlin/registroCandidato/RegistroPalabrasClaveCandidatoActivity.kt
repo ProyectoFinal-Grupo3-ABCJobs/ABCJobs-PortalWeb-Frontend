@@ -26,6 +26,8 @@ import com.example.proyectoabckotlin.service.ApiAutenticacion
 import com.example.proyectoabckotlin.service.ApiCandidato
 import com.example.proyectoabckotlin.service.ApiUsuario
 import com.example.proyectoabckotlin.service.HeaderInterceptor
+import com.example.proyectoabckotlin.utilidades.PreferencesUtil
+import io.jsonwebtoken.security.Keys
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
@@ -46,6 +48,11 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroPalabrasClaveCandidatoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val secretKey = Keys.hmacShaKeyFor("frase-secreta-token-2023-frase-secreta-token-2023-backend-abcjobs".toByteArray())
+        val token =
+            PreferencesUtil.obtenerTokenDesdeSharedPreferences(this@RegistroPalabrasClaveCandidatoActivity)
+
         try {
             palabraClaveEditText = findViewById(R.id.palabraClaveEditText)
             agregarPalabraButton = findViewById(R.id.agregarPalabraButton)
@@ -111,7 +118,8 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                     usuarioBody.usuario = usuario
                     usuarioBody.contrasena = contrasena
                     usuarioBody.tipoUsuario = "CANDIDATO"
-                    val call = apiUsuario.register(usuarioBody)
+                    val call = apiUsuario.register(usuarioBody,
+                        "Bearer $token")
 
                     call.enqueue(object : Callback<Usuario?> {
                         override fun onResponse(
@@ -156,7 +164,8 @@ class RegistroPalabrasClaveCandidatoActivity : AppCompatActivity() {
                                 candidatoBody.palabrasClave = palabrasList.joinToString(", ")
                                 candidatoBody.idUsuario = idUsuario.toString()
 
-                                val callCandidato = apiCandidato.register(candidatoBody)
+                                val callCandidato = apiCandidato.register(candidatoBody,
+                                    "Bearer $token")
 
                                 callCandidato.enqueue(object : Callback<Candidato?> {
                                     override fun onResponse(
