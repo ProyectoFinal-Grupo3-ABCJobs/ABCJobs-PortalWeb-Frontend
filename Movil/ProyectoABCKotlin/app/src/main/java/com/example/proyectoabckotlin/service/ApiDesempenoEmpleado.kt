@@ -11,9 +11,11 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiDesempenoEmpleado {
-    @POST("/company/desempenoEmpleado")
-    @Headers("Authorization: Bearer {token}")
-    fun register(@Body desempenoEmpleado: DesempenoEmpleado): Call<DesempenoEmpleado>
+    @POST("/company/contrato/{idContrato}/desempenoEmpleado")
+    fun register(@Body desempenoEmpleado: DesempenoEmpleado,
+                 @Path("idContrato") idContrato: String,
+                 @Header("Authorization") authorization: String
+    ): Call<DesempenoEmpleado>
 
     @GET("/company/{idEmpresa}/contratos")
     fun obtenerEmpleados(

@@ -90,7 +90,7 @@
     <string name="anioRetiro">Retirement Year</string>
     <string name="acces_ingrese_anio_retiro">Enter retirement year</string>
     <string name="guardar_info_candidato">Save</string>
-    <string name="acces_boton_guardar_candidato">Button to save candidate information</string>
+    <string name="acces_boton_guardar_candidato">"Button to save "</string>
     <string name="acces_sub_text_registro_palabra_candidato">Subtitle knowledge and skills of the candidate</string>
     <string name="subtitulo_registro_palabra_candidato">Knowledge and Skills</string>
     <string name="valida_claves">You must enter knowledge and skills</string>
@@ -105,4 +105,16 @@
     <string name="acces_boton_desempeno_empleado">Button to go to the employee performance evaluation record</string>
     <string name="titulo_evaluacion_desempeno">Employee Performance Evaluation</string>
     <string name="acces_text_evaluacion_desempeno">Employee performance evaluation title</string>
+    <string name="calificacion">Score</string>
+    <string name="acces_ingrese_calificacion">Enter a score</string>
+    <string name="aspectos_resaltar">Aspects to Highlight</string>
+    <string name="acces_ingrese_aspectos_resaltar">Enter aspects to highlight</string>
+    <string name="aspectos_mejorar">Aspects to improve</string>
+    <string name="acces_aspectos_mejorar">Enter aspects to improve</string>
+    <string name="valida_calificacion">You must enter a grade</string>
+    <string name="valida_aspectos_resaltar">You must enter aspects to highlight</string>
+    <string name="valida_aspectos_mejorar">You must enter aspects to improve</string>
+    <string name="desempeno_empleado_exitoso">Successful data registration</string>
+    <string name="datos_incorrectos_desempeno">Error logging data, try again</string>
+    <string name="mensaje_empleado_contrato">There are no employees hired for this company</string>
 </resources>

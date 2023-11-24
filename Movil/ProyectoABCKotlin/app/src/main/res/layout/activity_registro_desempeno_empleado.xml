@@ -1,57 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".desempenoEmpleado.RegistroDesempenoEmpleadoActivity"
+    android:background="#F0ECEC">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titulo_evaluacion_desempeno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/acces_text_evaluacion_desempeno"
+        android:gravity="center"
+        android:text="@string/titulo_evaluacion_desempeno"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".desempenoEmpleado.RegistroDesempenoEmpleadoActivity"
-        android:background="#F0ECEC">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:iconifiedByDefault="false"
+        android:textColorHint="@color/grey"
+        android:textColor="@color/black"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_evaluacion_desempeno" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/titulo_evaluacion_desempeno"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:contentDescription="@string/acces_text_evaluacion_desempeno"
-            android:gravity="center"
-            android:text="@string/titulo_evaluacion_desempeno"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:iconifiedByDefault="false"
-            android:textColorHint="@color/grey"
-            android:textColor="@color/black"
-            android:background="@drawable/ic_edittext_background_v2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titulo_evaluacion_desempeno" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mensajeTextView"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="@string/mensaje_empleado_contrato"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <!-- Agrega un ListView para mostrar los resultados de búsqueda -->
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="391dp"
-        android:layout_height="540dp"
+        android:layout_height="400dp"
         android:layout_below="@id/searchView"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/regresar_desempeno_button"
+        android:layout_width="246dp"
+        android:layout_height="41dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:background="@drawable/ic_button_rounded"
+        android:contentDescription="@string/acces_boton_regresar"
+        android:text="@string/regresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        app:layout_constraintVertical_bias="0.204" />
 </androidx.constraintlayout.widget.ConstraintLayout>
