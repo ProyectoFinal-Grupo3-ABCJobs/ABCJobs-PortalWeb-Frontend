@@ -92,4 +92,22 @@
   
   }
   
-  
+  .cursor-pointer {
+    cursor: pointer; /* Puedes cambiar "pointer" por otros valores como "grab", "crosshair", etc. */
+  }
+
+  .ficha {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .btn_ {
+    background-color: #d04614; 
+    color: #ffffff;
+    border: none;
+    padding: 5px 20px; 
+    border-radius: 10px; 
+}

@@ -34,6 +34,7 @@ export class SeleccionCandidatoComponent implements OnInit{
   obtenerProyectos(){
     this.empresaService.obtenerDataCandidatosAprobadosPorIdEmpresa()
     .subscribe((proyectos) => {
+      console.log("Hole que estas mostrando", proyectos)
       this.proyectos = proyectos;
 
     });

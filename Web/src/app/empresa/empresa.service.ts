@@ -49,7 +49,8 @@ export class EmpresaService {
     return this.http.get<Proyecto>(`${this.backUrl}5002/company/${this.idEmpresa}/projects`, { headers })
   }
 
-  verCadidatosPorPerfil(idProyecto): Observable<Proyecto> {
+  verCadidatosPorPerfil(idProyecto:any): Observable<Proyecto> {
+    
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     // console.log('El token es: ', token)
     if (token) {
@@ -92,12 +93,14 @@ export class EmpresaService {
   }
 
   obtenerDataCandidatosAprobadosPorIdEmpresa(): Observable<any> {
+    
     const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
     // console.log('El token es: ', token)
     if (token) {
       const decodedToken = jwtDecode(token);
       this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
     }
+    console.log("El id de la empresa es:",this.idEmpresa)
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get<Entrevista>(`${this.backUrl}5003/test/company/${this.idEmpresa}/interviews`, { headers })
   }
@@ -229,6 +232,17 @@ export class EmpresaService {
     }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.post<DesempenoEmpleado>(`${this.backUrl}5002/company/contrato/${desempeno.idContrato}/desempenoEmpleado`, desempeno, { headers })
+  }
+
+
+  registrarResultadoPruebaTecnicaCandidato(idProyecto:number, idCandidato:number, idPerfil:number, data:string): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtener el token JWT de localStorage
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      this.idEmpresa = decodedToken['sub']['idEmpCanFunc'];
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.put<any>(`${this.backUrl}5003/test/proyectos/${idProyecto}/candidatos/${idCandidato}/empresas/${this.idEmpresa}/perfiles/${idPerfil}/pruebatecnica`, data, { headers })
   }
 
 

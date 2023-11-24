@@ -1,125 +1,166 @@
 <div>
-    <div class="row text-center">
-        <p></p>
-        <h4> Formulario de registro de resultado de prueba técnica</h4>
-        <p></p>
-  
-    </div>
+  <div class="row text-center">
+    <p></p>
+    <h4> Formulario de registro de resultado de prueba técnica</h4>
+    <p></p>
+
   </div>
-  
-  <div class="column-container">
-    <div class="column">
-        <div class="centrar">
-            <h5><span class="grey">1</span></h5>
-            <h6>Seleccione proyecto</h6>
-            <hr>
-        </div>
-  
-        <div class="list-group">
-  
-            <ul class="ul-custom">
+</div>
 
-                <!-- <li class="      
-                list-group-item 
-                list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
-                        (mouseout)="cambiarEstadoPuntero(false)" (click)="seleccionProyecto(proyecto,i)"                     
-                        *ngFor="let proyecto of proyectos;let i = index" 
-                        [class.item-seleccionado-proyecto]="i === itemSeleccionado"
-                      >
 
-                  {{ proyecto['nombreProyecto'] | titlecase}}
-              </li> -->
+<div class="column-container">
+  <div class="column">
+    <div class="centrar">
+      <h5><span class="grey">1</span></h5>
+      <h6>Seleccione proyecto</h6>
+      <hr>
+    </div>
 
-  
-                  <li class="      
+    <div class="list-group">
+
+      <ul class="ul-custom">
+
+        <li class="      
                   list-group-item 
-                  list-group-item-action"
-                  *ngFor="let proyecto of datosProyecto;let i = index" 
-                  >
-  
-                    {{ proyecto['nombreProyecto'] | titlecase}}
-                </li>
-  
-            </ul>
-        </div>
-    </div>
-  
-    <div class="column">
-  
-        <div class="centrar">
-            <h5><span class="grey">2</span></h5>
-            <h6>Seleccione El perfil </h6>
-            <hr>
-        </div>
-  
-  
-        <div class="list-group">
-  
-          <ul class="ul-custom">
-              <!-- <li class="      
-          list-group-item 
-          list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
-                  (mouseout)="cambiarEstadoPuntero(false)" (click)="listarPerfilesCandidatos(proyecto,i)"
-                  *ngFor="let proyecto of proyectos;let i = index" [class.item-seleccionado]="i === itemSeleccionado"
-                > -->
-  
-                <!-- <li class="      
-                list-group-item 
-                list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
-                        (mouseout)="cambiarEstadoPuntero(false)"                        
-                        *ngFor="let empleadointerno of empleadosInternos;let i = index" (click)="seleccionEmpleadosInternos(empleadointerno,i)" 
-                        [ngClass]="{'item-seleccionado-empleado': itemSeleccionadoEmpleados.includes(i)}"
-                      >
-  
-                  <b>Colaborador:</b> {{ empleadointerno.nombre | titlecase}} <br><b>Cargo:</b> {{ empleadointerno.cargo | titlecase}}
-              </li> -->
-  
-          </ul>
-      </div>
-  
-    </div>
-  
-    <div class="column">
-        <div class="centrar">
-            <h5><span class="grey">3</span></h5>
-            <h6>Seleccione los perfiles requeridos</h6>
-            <hr>
-        </div>
-  
-  
-        <div class="list-group">
-  
-          <ul class="ul-custom">
-              <!-- <li class="      
-          list-group-item 
-          list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
-                  (mouseout)="cambiarEstadoPuntero(false)" (click)="listarPerfilesCandidatos(proyecto,i)"
-                  *ngFor="let proyecto of proyectos;let i = index" [class.item-seleccionado]="i === itemSeleccionado"
-                > -->
-  
-                <!-- <li class="      
-                list-group-item 
-                list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
-                        (mouseout)="cambiarEstadoPuntero(false)"                        
-                        *ngFor="let perfil of perfiles;let i = index" (click)="seleccionPerfiles(perfil,i)" 
-                        [ngClass]="{'item-seleccionado-perfil': itemSeleccionadoPerfil.includes(i)}"
-                      >
-  
-                  <b>Perfil:</b> {{ perfil.nombre | titlecase}} 
-              </li> -->
-  
-          </ul>
-      </div>
+                  list-group-item-action" [class.cursor-pointer]="mostrarPuntero"
+          *ngFor="let proyecto of datosProyecto;let i = index" (click)="listarCandidatosPerfil(proyecto)"
+          (mouseover)="cambiarEstadoPuntero(true)" (mouseout)="cambiarEstadoPuntero(false)"
+          (click)="listarCandidatosPerfil(proyecto)">
+
+          {{ proyecto['nombreProyecto'] | titlecase}}
+        </li>
+
+      </ul>
     </div>
   </div>
-  
-  <div>
-    <div class="row centrado">
-      <div class="buttons">
-  
-          <!-- <button i18n class="btn_" (click)="crearFicha()" [disabled]="botonDesactivado"[ngStyle]="{'background-color': botonDesactivado ? '#de6a40' : '#d04614'}">Crear</button>
-          <button i18n class="btn_" (click)="iniciarEmparejamiento()" [disabled]="botonEmparejarDesactivado"[ngStyle]="{'background-color': botonEmparejarDesactivado ? '#de6a40' : '#d04614'}">Emparejar</button>
-          <button i18n class="btn_" (click)="cancelCreate()">Volver</button> -->
-        </div>
+
+  <div class="column">
+
+    <div class="centrar">
+      <h5><span class="grey">2</span></h5>
+      <h6>Seleccione candidato a evaluar </h6>
+      <hr>
     </div>
+
+
+    <div *ngFor="let candidato of listaTotalCandidatos" class="list-group">
+
+      <ul class="ul-custom">
+        <li class="
+                bg-customcolor
+                text-white     
+                list-group-item 
+                list-group-item-action           
+                text-center">
+          {{ candidato['perfilDescripcion'] | titlecase}}
+        </li>
+
+        <li class="list-group-item
+                text-right
+                align-custom
+                list-group-item-action
+                " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
+          (mouseout)="cambiarEstadoPuntero(false)" (click)="seleccionCandidato(listacandidato,candidato)"
+          *ngFor="let listacandidato of candidato.candidatos">
+          {{listacandidato.candidatoNombre | titlecase}}
+        </li>
+
+
+
+      </ul>
+    </div>
+
+
   </div>
+
+  <!-- Inicio -->
+  <div class="column">
+    <div class="centrar">
+      <h5><span class="grey">3</span></h5>
+      <h6>Registre prueba técnica</h6>
+      <hr>
+    </div>
+
+    
+
+
+    <form class="col-12" [formGroup]="registroResultadoPruebaForm"
+      (ngSubmit)="registrarResultadoPruebaCandidato(registroResultadoPruebaForm.value)">
+      <div class="offset-md-1 col-md-9" [hidden]="!formulario">
+        <!-- <h5 i18n class="col-12 mb-4">Registrar evaluación técnica</h5> -->
+
+        <div class="ficha">
+          <div class="campo text-center"><b>Registro</b></div>
+          <div class="campo"><b>Candidato:</b> {{ nombreCandidato }}</div>
+
+        </div>
+
+
+        <div class="form-group">
+          <div class="mb-3 row">
+            <div class="col-12">
+              <input formControlName="resultado" type="text" class="form-control" placeholder="Resultado prueba *">
+            </div>
+          </div>
+          <div i18n class="alert alert-danger my-3"
+            *ngIf="registroResultadoPruebaForm.get('resultado')?.hasError('required') && registroResultadoPruebaForm.get('resultado')?.touched">
+            Debe ingresar una calificación
+          </div>
+          <div i18n class="alert alert-danger my-3"
+            *ngIf="registroResultadoPruebaForm.get('resultado')?.hasError('maxlength')">
+            La calificación no debe exceder los 100 carácteres
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="mb-3 row">
+            <div class="col-12">
+              <input formControlName="observaciones" type="text" class="form-control" placeholder="Observación *">
+            </div>
+          </div>
+          <div i18n class="alert alert-danger my-3"
+            *ngIf="registroResultadoPruebaForm.get('observaciones')?.hasError('required') && registroResultadoPruebaForm.get('observaciones')?.touched">
+            Debe ingresar observación
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="mb-3 row">
+            <div class="col-md-10 offset-md-1">
+              <p><b>Estado prueba:</b></p>
+              <select formControlName="aprobado" class="form-select">
+                <option i18n value="true">Aprobado</option>
+                <option i18n value="false">No aprobado</option>
+              </select>
+            </div>
+          </div>
+          <div i18n class="alert alert-danger my-3"
+            *ngIf="registroResultadoPruebaForm.get('aprobado')?.hasError('required') && registroResultadoPruebaForm.get('aprobado')?.touched">
+            Debe seleccionar un estado
+          </div>
+        </div>
+
+        <div class="row centrado">
+          <div class="buttons">
+
+            <div class="buttons justify-content-center">
+              <button i18n type="submit" class="btn btn-warning btn_"
+                [disabled]="!registroResultadoPruebaForm.valid">Registrar</button>
+              <button i18n class="btn btn-danger btn_" (click)="cancelCreate()">Cancelar</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+
+
+
+
+
+
+  </div>
+  <!-- hasta aca -->
+</div>
