@@ -17,6 +17,7 @@ import { VerEntrevistasProgramadasComponent } from './candidato/ver-entrevistas-
 import { VerResultadosEntrevistasComponent } from './candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component';
 import { VerResultadoPruebasComponent } from './candidato/ver-resultado-pruebas/ver-resultado-pruebas.component';
 import { RegistrarDesempenoCandidatoComponent } from './empresa/registro-desempeno-candidato/registro-desempeno-candidato.component';
+import { RegistroResPruebaTecnicaComponent } from './empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component';
 
 const routes: Routes = [
   {
@@ -96,8 +97,14 @@ const routes: Routes = [
   {
     path: 'empresa/registroDesempeno',
     component: RegistrarDesempenoCandidatoComponent
+  },
+  {
+    path: 'empresa/registroResultadoPruebaTecnicaCand',
+    component: RegistroResPruebaTecnicaComponent
   }
 
+
+  
 ];
 
 @NgModule({
