@@ -1,1 +1,125 @@
-<p>registro-res-prueba-tecnica works!</p>
+<div>
+    <div class="row text-center">
+        <p></p>
+        <h4> Formulario de registro de resultado de prueba técnica</h4>
+        <p></p>
+  
+    </div>
+  </div>
+  
+  <div class="column-container">
+    <div class="column">
+        <div class="centrar">
+            <h5><span class="grey">1</span></h5>
+            <h6>Seleccione proyecto</h6>
+            <hr>
+        </div>
+  
+        <div class="list-group">
+  
+            <ul class="ul-custom">
+
+                <!-- <li class="      
+                list-group-item 
+                list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
+                        (mouseout)="cambiarEstadoPuntero(false)" (click)="seleccionProyecto(proyecto,i)"                     
+                        *ngFor="let proyecto of proyectos;let i = index" 
+                        [class.item-seleccionado-proyecto]="i === itemSeleccionado"
+                      >
+
+                  {{ proyecto['nombreProyecto'] | titlecase}}
+              </li> -->
+
+  
+                  <li class="      
+                  list-group-item 
+                  list-group-item-action"
+                  *ngFor="let proyecto of datosProyecto;let i = index" 
+                  >
+  
+                    {{ proyecto['nombreProyecto'] | titlecase}}
+                </li>
+  
+            </ul>
+        </div>
+    </div>
+  
+    <div class="column">
+  
+        <div class="centrar">
+            <h5><span class="grey">2</span></h5>
+            <h6>Seleccione El perfil </h6>
+            <hr>
+        </div>
+  
+  
+        <div class="list-group">
+  
+          <ul class="ul-custom">
+              <!-- <li class="      
+          list-group-item 
+          list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
+                  (mouseout)="cambiarEstadoPuntero(false)" (click)="listarPerfilesCandidatos(proyecto,i)"
+                  *ngFor="let proyecto of proyectos;let i = index" [class.item-seleccionado]="i === itemSeleccionado"
+                > -->
+  
+                <!-- <li class="      
+                list-group-item 
+                list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
+                        (mouseout)="cambiarEstadoPuntero(false)"                        
+                        *ngFor="let empleadointerno of empleadosInternos;let i = index" (click)="seleccionEmpleadosInternos(empleadointerno,i)" 
+                        [ngClass]="{'item-seleccionado-empleado': itemSeleccionadoEmpleados.includes(i)}"
+                      >
+  
+                  <b>Colaborador:</b> {{ empleadointerno.nombre | titlecase}} <br><b>Cargo:</b> {{ empleadointerno.cargo | titlecase}}
+              </li> -->
+  
+          </ul>
+      </div>
+  
+    </div>
+  
+    <div class="column">
+        <div class="centrar">
+            <h5><span class="grey">3</span></h5>
+            <h6>Seleccione los perfiles requeridos</h6>
+            <hr>
+        </div>
+  
+  
+        <div class="list-group">
+  
+          <ul class="ul-custom">
+              <!-- <li class="      
+          list-group-item 
+          list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
+                  (mouseout)="cambiarEstadoPuntero(false)" (click)="listarPerfilesCandidatos(proyecto,i)"
+                  *ngFor="let proyecto of proyectos;let i = index" [class.item-seleccionado]="i === itemSeleccionado"
+                > -->
+  
+                <!-- <li class="      
+                list-group-item 
+                list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
+                        (mouseout)="cambiarEstadoPuntero(false)"                        
+                        *ngFor="let perfil of perfiles;let i = index" (click)="seleccionPerfiles(perfil,i)" 
+                        [ngClass]="{'item-seleccionado-perfil': itemSeleccionadoPerfil.includes(i)}"
+                      >
+  
+                  <b>Perfil:</b> {{ perfil.nombre | titlecase}} 
+              </li> -->
+  
+          </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <div class="row centrado">
+      <div class="buttons">
+  
+          <!-- <button i18n class="btn_" (click)="crearFicha()" [disabled]="botonDesactivado"[ngStyle]="{'background-color': botonDesactivado ? '#de6a40' : '#d04614'}">Crear</button>
+          <button i18n class="btn_" (click)="iniciarEmparejamiento()" [disabled]="botonEmparejarDesactivado"[ngStyle]="{'background-color': botonEmparejarDesactivado ? '#de6a40' : '#d04614'}">Emparejar</button>
+          <button i18n class="btn_" (click)="cancelCreate()">Volver</button> -->
+        </div>
+    </div>
+  </div>
