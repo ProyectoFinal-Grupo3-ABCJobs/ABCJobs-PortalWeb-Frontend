@@ -117,4 +117,11 @@
     <string name="desempeno_empleado_exitoso">Successful data registration</string>
     <string name="datos_incorrectos_desempeno">Error logging data, try again</string>
     <string name="mensaje_empleado_contrato">There are no employees hired for this company</string>
+    <string name="ver_resultado_entrevistas">See Result Interviews</string>
+    <string name="acces_boton_resultado_entrevistas">Button to see the results of the interviews</string>
+    <string name="ver_entrevistas_programadas">View Scheduled Interviews</string>
+    <string name="acces_boton_entrevistas_programadas">Button to see scheduled interviews</string>
+    <string name="titulo_resultado_pruebas">Test Results</string>
+    <string name="acces_text_resultados_pruebas">Test result title</string>
+    <string name="mensaje_pruebas_resultado">The candidate does not have registered tests</string>
 </resources>

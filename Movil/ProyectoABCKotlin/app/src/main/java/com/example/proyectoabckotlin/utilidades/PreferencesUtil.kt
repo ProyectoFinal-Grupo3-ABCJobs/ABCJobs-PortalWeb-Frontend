@@ -17,4 +17,5 @@ object PreferencesUtil {
         val sharedPreferences = context.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
         return sharedPreferences.getString("token", null)
     }
+
 }
