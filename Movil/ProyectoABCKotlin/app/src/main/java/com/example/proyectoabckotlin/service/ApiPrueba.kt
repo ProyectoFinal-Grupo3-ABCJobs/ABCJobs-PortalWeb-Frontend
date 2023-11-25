@@ -1,5 +1,6 @@
 package com.example.proyectoabckotlin.service
 
+import com.example.proyectoabckotlin.pojo.Contrato
 import com.example.proyectoabckotlin.pojo.Prueba
 import retrofit2.Call
 import retrofit2.http.Body
@@ -15,9 +16,9 @@ interface ApiPrueba {
                        @Header("Authorization") authorization: String
     ): Call<Prueba>
 
-    @GET("/test/company/{idEmpresa}")
-    fun getPruebasCandidato(@Path("idEmpresa") idEmpresa: String,
-                            @Body prueba: Prueba,
-                            @Header("Authorization") authorization: String
-    ): Call<Prueba>
+    @GET("/test/candidate/{idCandidato}")
+    fun obtenerPruebasCandidato(
+        @Path("idCandidato") idCandidato: String,
+        @Header("Authorization") authorization: String
+    ): Call<List<Prueba>>
 }
