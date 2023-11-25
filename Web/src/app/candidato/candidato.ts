@@ -21,6 +21,7 @@ export class Candidato {
     anioRetiro: number;
     estado: Boolean;
     palabrasClave: String;
+    idUsuario: number;
   
       constructor(
         idCandidato: number,
@@ -44,7 +45,8 @@ export class Candidato {
         anioIngreso: number,
         anioRetiro: number,
         estado: Boolean,
-        palabrasClave: String
+        palabrasClave: String,
+        idUsuario: number
       ) {
           this.idCandidato = idCandidato;
           this.tipoIdentificacion = tipoIdentificacion;
@@ -68,5 +70,6 @@ export class Candidato {
           this.anioRetiro = anioRetiro;
           this.estado = estado;
           this.palabrasClave = palabrasClave;
+          this.idUsuario = idUsuario;
       }
   }

@@ -50,7 +50,7 @@ const routes: Routes = [
     component: RegistroCandidatoComponent
   },
   {
-    path: 'candidato/registroInformacion',
+    path: 'candidato/registroInformacion/:userId',
     component: RegistroInfoCandidatoComponent
   },
   {

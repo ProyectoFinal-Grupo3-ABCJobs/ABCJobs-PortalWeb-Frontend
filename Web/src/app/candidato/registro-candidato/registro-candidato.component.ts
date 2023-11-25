@@ -41,8 +41,9 @@ export class RegistroCandidatoComponent implements OnInit {
       newUsuario.tipoUsuario = "CANDIDATO"
       console.log(newUsuario)
       this.candidatoService.registrarUsuario(newUsuario)
-        .subscribe(res => {
-          this.routerPath.navigate([`/candidato/registroInformacion`])
+        .subscribe((res: any) => {
+          const userId = res.id;
+          this.routerPath.navigate([`/candidato/registroInformacion`, userId])
           this.showSuccess()
         },
           error => {

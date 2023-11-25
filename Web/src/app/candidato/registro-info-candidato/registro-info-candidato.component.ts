@@ -19,6 +19,7 @@ export class RegistroInfoCandidatoComponent implements OnInit {
   mostrarParte2: boolean = false;
   palabrasClaveList: string[] = [];
   palabrasClaveValid: boolean = false;
+  userId: string;
 
   constructor(
     private candidatoService:CandidatoService,
@@ -30,6 +31,8 @@ export class RegistroInfoCandidatoComponent implements OnInit {
 
 
   ngOnInit() {
+    this.userId = this.router.snapshot.paramMap.get('userId');
+    console.log(this.userId);
     this.candidatoForm = this.formBuilder.group({
       tipoIdentificacion: ["", [Validators.required]],
       identificacion: ["", [Validators.required, Validators.maxLength(20)]],
@@ -51,6 +54,7 @@ export class RegistroInfoCandidatoComponent implements OnInit {
       anioIngreso: ["", [Validators.required]],
       anioRetiro: [""],
       palabrasClave: [""],
+      idUsuario: this.userId ,
     })
   }
 
