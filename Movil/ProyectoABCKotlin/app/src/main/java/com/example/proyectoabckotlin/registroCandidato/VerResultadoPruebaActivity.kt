@@ -1,5 +1,6 @@
 package com.example.proyectoabckotlin.registroCandidato
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.SearchView
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityRegistroResultadoPruebaBinding
 import com.example.proyectoabckotlin.pojo.Contrato
@@ -32,6 +34,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.Collections
+
 
 
 class VerResultadoPruebaActivity : AppCompatActivity() {
@@ -83,51 +86,36 @@ class VerResultadoPruebaActivity : AppCompatActivity() {
                             // Iterar sobre la lista de pruebas y crear tarjetas
                             pruebas.forEach { prueba ->
                                 // Crear una instancia de CardView
-                                val cardView = CardView(this@VerResultadoPruebaActivity)
-                                cardView.layoutParams = ViewGroup.LayoutParams(
-                                    ViewGroup.LayoutParams.MATCH_PARENT,
-                                    ViewGroup.LayoutParams.WRAP_CONTENT
+                                val cardViewLayout = layoutInflater.inflate(R.layout.cardview_layout, null) as CardView
+
+                                val layoutParams = LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
                                 )
-                                cardView.cardElevation = resources.getDimension(R.dimen.card_elevation)
 
-                                // Crear un LinearLayout vertical para la tarjeta
-                                val linearLayout = LinearLayout(this@VerResultadoPruebaActivity)
-                                linearLayout.layoutParams = ViewGroup.LayoutParams(
-                                    ViewGroup.LayoutParams.MATCH_PARENT,
-                                    ViewGroup.LayoutParams.WRAP_CONTENT
-                                )
-                                linearLayout.orientation = LinearLayout.VERTICAL
-                                linearLayout.setPadding(
-                                    resources.getDimensionPixelSize(R.dimen.card_padding),
-                                    resources.getDimensionPixelSize(R.dimen.card_padding),
-                                    resources.getDimensionPixelSize(R.dimen.card_padding),
-                                    resources.getDimensionPixelSize(R.dimen.card_padding)
-                                )
-                                cardView.radius = 16f
-                                // Crear instancias de TextView para cada dato
-                                val nombreEmpresaTextView = AppCompatTextView(this@VerResultadoPruebaActivity)
-                                nombreEmpresaTextView.text = "Nombre Empresa: ${prueba.empresaNombre}"
 
-                                val pruebaTextView = AppCompatTextView(this@VerResultadoPruebaActivity)
-                                pruebaTextView.text = "Prueba: ${prueba.tipoPrueba}"
+                                val marginInPixels = 12
+                                layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels)
 
-                                val resultadoTextView = AppCompatTextView(this@VerResultadoPruebaActivity)
-                                resultadoTextView.text = "Resultado: ${prueba.resultado}"
 
-                                val observacionesTextView = AppCompatTextView(this@VerResultadoPruebaActivity)
-                                observacionesTextView.text = "Observaciones: ${prueba.observaciones}"
+                                cardViewLayout.layoutParams = layoutParams
+                                // Obtener las vistas del layout inflado
+                                val nombreEmpresaTextView: AppCompatTextView = cardViewLayout.findViewById(R.id.nombreEmpresaTextView)
+                                val pruebaTextView: AppCompatTextView = cardViewLayout.findViewById(R.id.pruebaTextView)
+                                val resultadoTextView: AppCompatTextView = cardViewLayout.findViewById(R.id.resultadoTextView)
+                                val observacionesTextView: AppCompatTextView = cardViewLayout.findViewById(R.id.observacionesTextView)
 
-                                // Agregar TextViews al LinearLayout
-                                linearLayout.addView(nombreEmpresaTextView)
-                                linearLayout.addView(pruebaTextView)
-                                linearLayout.addView(resultadoTextView)
-                                linearLayout.addView(observacionesTextView)
+                                // Establecer datos en las vistas
+                                nombreEmpresaTextView.text = "${prueba.empresaNombre ?: ""}"
+                                pruebaTextView.text = "Prueba: ${prueba.tipoPrueba ?: ""}"
+                                resultadoTextView.text = "Resultado: ${prueba.resultado ?: ""}"
+                                observacionesTextView.text = "Observaciones: ${prueba.observaciones ?: ""}"
 
-                                // Agregar el LinearLayout a la CardView
-                                cardView.addView(linearLayout)
+                                val nuevoColor = Color.parseColor("#FFFFFF")
+                                cardViewLayout.setCardBackgroundColor(nuevoColor)
 
-                                // Agregar la CardView al contenedor de tarjetas
-                                cardContainer.addView(cardView)
+                                // Agregar la tarjeta al contenedor
+                                cardContainer.addView(cardViewLayout)
                             }
 
 

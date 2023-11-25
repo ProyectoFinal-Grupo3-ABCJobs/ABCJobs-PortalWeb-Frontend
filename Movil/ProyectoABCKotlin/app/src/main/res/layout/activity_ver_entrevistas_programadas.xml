@@ -10,12 +10,12 @@
             android:id="@+id/imagen2"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/imagen1" />
+            app:srcCompat="@drawable/logo" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/ver_resultados_pruebas"
