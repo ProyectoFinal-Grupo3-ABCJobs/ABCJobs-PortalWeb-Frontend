@@ -29,13 +29,13 @@ class CandidatoMainActivity : AppCompatActivity() {
             binding.resultadoEntrevistasButton.setOnClickListener(object : View.OnClickListener {
 
                 override fun onClick(view: View) {
-                    startActivity(Intent(this@CandidatoMainActivity, VerEntrevistasProgramadasActivity::class.java))
+                    startActivity(Intent(this@CandidatoMainActivity, VerResultadosEntrevistasActivity::class.java))
                 }
 
             })
 
             binding.entrevistasProgramadasButton.setOnClickListener {
-                startActivity(Intent(this@CandidatoMainActivity, VerResultadosEntrevistasActivity::class.java))
+                startActivity(Intent(this@CandidatoMainActivity,VerEntrevistasProgramadasActivity::class.java))
             }
 
             binding.regresarButton.setOnClickListener {

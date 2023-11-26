@@ -98,8 +98,8 @@
     <string name="nombre">Nombre</string>
     <string name="registro_candidato_exitoso">Registro Candidato Exitoso</string>
     <string name="datos_incorrectos_usuario">No se puede crear el usuario. El usuario ya existe</string>
-    <string name="registrarResultadosPruebas">Registrar Resultados Pruebas</string>
-    <string name="acces_boton_resultado_pruebas">boton para ir al registro de resultado pruebas</string>
+    <string name="registrarResultadosPruebas">Ver Resultados Pruebas</string>
+    <string name="acces_boton_resultado_pruebas">boton para ir al resultado de pruebas</string>
     <string name="evaluacion_desempeno_empleado">Evaluacion Desempeño Empleado</string>
     <string name="acces_boton_desempeno_empleado">Boton para ir al registro evaluacion desempeño empleado</string>
     <string name="titulo_evaluacion_desempeno">Evaluación Desempeño Empleado</string>
@@ -123,4 +123,7 @@
     <string name="titulo_resultado_pruebas">Resultado Pruebas</string>
     <string name="acces_text_resultados_pruebas">Título de resultado de pruebas</string>
     <string name="mensaje_pruebas_resultado">El candidato no tiene pruebas registradas</string>
+    <string name="acces_text_resultados_entrevistas">Titulo de resultado de entrevistas</string>
+    <string name="titulo_resultado_entrevistas">Resultado de Entrevistas</string>
+    <string name="mensaje_entrevistas_resultado">El candidato no tiene entrevistas  registradas</string>
 </resources>
