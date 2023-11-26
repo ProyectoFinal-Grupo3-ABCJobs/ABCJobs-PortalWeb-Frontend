@@ -12,18 +12,46 @@
       </trans-unit>
       <trans-unit id="786480387026161087" datatype="html">
         <source>Correo electrónico *</source>
-          <target>Email</target>
+        <target>Email *</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/autenticacion/login/login.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5627076320921600414" datatype="html">
+        <source> Debe ingresar un usuario </source>
+        <target>You must enter a username</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/autenticacion/login/login.component.html</context>
+          <context context-type="linenumber">14,16</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="8629774670916872745" datatype="html">
         <source>Contraseña *</source>
-         <target>Password</target>
+        <target>Password *</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/autenticacion/login/login.component.html</context>
           <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4224103193976724893" datatype="html">
+        <source> Debe ingresar una contraseña </source>
+        <target>You must enter a password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/autenticacion/login/login.component.html</context>
+          <context context-type="linenumber">26,28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">25,27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5752331855682104921" datatype="html">
@@ -42,37 +70,1480 @@
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1824343322741992092" datatype="html">
+        <source>Registro</source>
+        <target>Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9144804517074512646" datatype="html">
+        <source> Debe ingresar un correo </source>
+        <target>You must enter an email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2807287111455675161" datatype="html">
+        <source> La contraseña debe tener mínimo 5 caracteres </source>
+        <target>The password must be at least 5 characters long</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9120512205488494125" datatype="html">
+        <source>Confirmar Contraseña *</source>
+        <target>Confirm Password *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5549719436361401196" datatype="html">
+        <source> Debe repetir la contraseña </source>
+        <target>You must repeat the password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">40,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2120854701985117807" datatype="html">
+        <source> Las contraseñas no coinciden </source>
+        <target>The passwords do not match</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">43,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1980809761948723006" datatype="html">
+        <source>Soy Candidato</source>
+        <target>I'm a Candidate</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2947746823947664592" datatype="html">
+        <source>Soy Empresa</source>
+        <target>I'm a Company</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7403260184488650209" datatype="html">
+        <source>Regresar</source>
+        <target>Back</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-candidato/registro-candidato.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2416885745916729803" datatype="html">
+        <source>Formulario de registro de información del candidato</source>
+        <target>Candidate information registration form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="99190041010817482" datatype="html">
+        <source>Información personal</source>
+        <target>Personal information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5539425950176031037" datatype="html">
+        <source>Nombre Completo *</source>
+        <target>Full Name *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="663401826930538320" datatype="html">
+        <source> Debe ingresar un nombre </source>
+        <target>You must enter a name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">40,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1248261139071144839" datatype="html">
+        <source>Seleccionar tipo documento *</source>
+        <target>Select document type *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3440327819703049163" datatype="html">
+        <source>Cédula de Ciudadanía</source>
+        <target>Colombian Citizenship card</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="416911152174459009" datatype="html">
+        <source>Cédula de Extranjería</source>
+        <target>Foreigner ID</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1568315179528969756" datatype="html">
+        <source>Pasaporte</source>
+        <target>Passport</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6594251227089821697" datatype="html">
+        <source> Debe seleccionar un tipo de documento </source>
+        <target>You must select a document type</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8511949877178302864" datatype="html">
+        <source>Nº Identificación *</source>
+        <target>ID Number *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8118377064476212449" datatype="html">
+        <source> Debe ingresar un número de identificación </source>
+        <target>You must enter an ID number</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">47,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4796122266109483852" datatype="html">
+        <source>Dirección de residencia *</source>
+        <target>Residence address *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="213900784919302340" datatype="html">
+        <source> Debe ingresar una dirección </source>
+        <target>You must enter an address</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">59,61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5406988617045411921" datatype="html">
+        <source>Número de teléfono *</source>
+        <target>Phone number *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3549108264375263191" datatype="html">
+        <source> Debe ingresar un número de teléfono </source>
+        <target>You must enter a phone number</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">71,73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">55,57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3998371021290315471" datatype="html">
+        <source>Seleccionar País *</source>
+        <target>Select Country *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4827259591339144630" datatype="html">
+        <source>México</source>
+        <target>Mexico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7277825573718999091" datatype="html">
+        <source>Estados Unidos</source>
+        <target>United States</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4397282261055886841" datatype="html">
+        <source> Debe seleccionar un país </source>
+        <target>You must select a country</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">88,90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">73,75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4086110737336285412" datatype="html">
+        <source>Seleccionar Departamento *</source>
+        <target>Select Department *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">199</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7465158796763734109" datatype="html">
+        <source>Valle del Cauca</source>
+        <target>Valle del Cauca</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">202</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1372987857248474253" datatype="html">
+        <source> Debe seleccionar un departamento </source>
+        <target>You must select a department</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">105,107</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">207,209</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">93,95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">113,115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8313140236827539955" datatype="html">
+        <source>Seleccionar Ciudad *</source>
+        <target>Select City *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">216</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8919730119415538280" datatype="html">
+        <source>Medellín</source>
+        <target>Medellin</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">217</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4833540312464781919" datatype="html">
+        <source>Bogotá</source>
+        <target>Bogota</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">218</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7176790041691127924" datatype="html">
+        <source> Debe seleccionar una ciudad </source>
+        <target>You must select a city</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">123,125</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">224,226</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4237401980438832237" datatype="html">
+        <source>Profesión *</source>
+        <target>Profession *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6516642865173268151" datatype="html">
+        <source> Debe ingresar una profesión </source>
+        <target>You must enter a profession</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">136,138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2470724765049653582" datatype="html">
+        <source>Años de experiencia *</source>
+        <target>Years of experience *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2384485245388385554" datatype="html">
+        <source> Debe ingresar un valor </source>
+        <target>You must enter a value</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">149,151</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6247950905185402673" datatype="html">
+        <source>Educación</source>
+        <target>Education</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6567913243716109487" datatype="html">
+        <source>Último nivel de estudio *</source>
+        <target>Last level of study *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">161</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4207103231259136998" datatype="html">
+        <source> Debe ingresar un nivel de estudio </source>
+        <target>You must enter a level of study</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">165,167</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6534085844146792102" datatype="html">
+        <source>Institución *</source>
+        <target>Institution *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">173</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7247792617519177025" datatype="html">
+        <source> Debe ingresar una institución </source>
+        <target>You must enter an institution</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">177,179</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2159414656188692015" datatype="html">
+        <source>Año de grado *</source>
+        <target>Year of degree *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">185</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3053751710424080484" datatype="html">
+        <source> Debe ingresar un año de grado </source>
+        <target>You must enter a year of degree</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">189,191</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8206661263781632121" datatype="html">
+        <source>Información laboral</source>
+        <target>Work information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">233</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5520722270339039448" datatype="html">
+        <source>Cargo de su último empleo *</source>
+        <target>Last job position *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">238</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4646350347563564353" datatype="html">
+        <source> Debe ingresar un cargo </source>
+        <target>You must enter a position</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">242,244</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">54,56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5909053125841889068" datatype="html">
+        <source>Última empresa *</source>
+        <target>Last company *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">250</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4294415813106692087" datatype="html">
+        <source> Debe ingresar una empresa </source>
+        <target>You must enter a company</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">254,256</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8406996154648150619" datatype="html">
+        <source>Año de ingreso *</source>
+        <target>Year of entry *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">262</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4037385845466734317" datatype="html">
+        <source> Debe ingresar un año </source>
+        <target>You must enter a year</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">266,268</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3404906170378128319" datatype="html">
+        <source>Año de retiro (si aplica)</source>
+        <target>Year of retirement (if applicable)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">274</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2899365529941228158" datatype="html">
+        <source>Conocimientos y aptitudes</source>
+        <target>Knowledge and skills</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">279</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7074990975594385256" datatype="html">
+        <source>Agregue conocimientos *</source>
+        <target>Add knowledge *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">284</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8524201838416230611" datatype="html">
+        <source>Agregar</source>
+        <target>Add</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">285</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6608316203192231004" datatype="html">
+        <source>Palabras Clave:</source>
+        <target>Keywords:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">291</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="476379910919387856" datatype="html">
+        <source>Quitar</source>
+        <target>Remove</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">295</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2114604552319597883" datatype="html">
+        <source> Siguiente </source>
+        <target>Next</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">309,311</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1372173599787735409" datatype="html">
+        <source>Guardar</source>
+        <target>Save</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">312</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6402951927316857780" datatype="html">
+        <source>Cancelar</source>
+        <target>Cancel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/registro-info-candidato/registro-info-candidato.component.html</context>
+          <context context-type="linenumber">313</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5809438201123329580" datatype="html">
+        <source>Entrevistas Programadas</source>
+        <target>Scheduled Interviews</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7944442845393176638" datatype="html">
+        <source>Fecha</source>
+        <target>Date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1456727077432700741" datatype="html">
+        <source>Empresa</source>
+        <target>Company</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4550363912694193808" datatype="html">
+        <source>Hora</source>
+        <target>Time</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2581066216366112244" datatype="html">
+        <source>Pruebas Programadas</source>
+        <target>Scheduled Tests</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2833174116642647240" datatype="html">
+        <source>Fecha límite</source>
+        <target>Deadline</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3262242611927315962" datatype="html">
+        <source>Presentar pruebas</source>
+        <target>Take tests</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3283805527345742834" datatype="html">
+        <source>Resultados Pruebas</source>
+        <target>Test Results</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultado-pruebas/ver-resultado-pruebas.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4783996657918315614" datatype="html">
+        <source>Nombre Empresa</source>
+        <target>Company Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultado-pruebas/ver-resultado-pruebas.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8280124176344036529" datatype="html">
+        <source>Prueba</source>
+        <target>Test</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultado-pruebas/ver-resultado-pruebas.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5821355534384874282" datatype="html">
+        <source>Resultado</source>
+        <target>Result</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultado-pruebas/ver-resultado-pruebas.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2182608854672241685" datatype="html">
+        <source>Observaciones</source>
+        <target>Observations</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultado-pruebas/ver-resultado-pruebas.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4909461414455201363" datatype="html">
+        <source>Resultados Entrevistas</source>
+        <target>Interview Results</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="304099944701652803" datatype="html">
+        <source>Cargo al que aplica: </source>
+        <target>Position applied for: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5312952906676036275" datatype="html">
+        <source>Proyecto asociado: </source>
+        <target>Associated project: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="319892141435368585" datatype="html">
+        <source>Estado: </source>
+        <target>Status: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7445749916444517417" datatype="html">
+        <source>Detalles: </source>
+        <target>Details: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="305741029999361980" datatype="html">
+        <source>2023 Proyecto ABC Jobs.</source>
+        <target>2023 Project ABC Jobs.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/footer/footer.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1926157928707021468" datatype="html">
         <source>Inicio</source>
-         <target>Home</target>
+        <target>Home</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
       </trans-unit>
-      <trans-unit id="7062780906978521540" datatype="html">
-        <source> Ver Proyectos </source>
-         <target>View Projects</target>
+      <trans-unit id="952958608288772052" datatype="html">
+        <source> Crear proyecto </source>
+        <target>Create project</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
           <context context-type="linenumber">25,27</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7561060183100598492" datatype="html">
-        <source>Salir</source>
-         <target>Logout</target>
+      <trans-unit id="6767942781080746801" datatype="html">
+        <source> Ver proyectos </source>
+        <target>See projects</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">32,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3794829148740775988" datatype="html">
+        <source> Crear empleados </source>
+        <target>Create employees</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">39,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7461964586929659145" datatype="html">
+        <source> Crear ficha </source>
+        <target>Create card</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">45,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8658333545790182337" datatype="html">
+        <source> Ver emparejamiento </source>
+        <target>See matching</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">51,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="35871035710690897" datatype="html">
+        <source> Registrar prueba </source>
+        <target>Register test</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">57,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6564098965296352643" datatype="html">
+        <source> Contratación </source>
+        <target>Hiring</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">63,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4214087971103658167" datatype="html">
+        <source> Registrar desempeño </source>
+        <target>Register performance</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">69,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7561060183100598492" datatype="html">
+        <source>Salir</source>
+        <target>Exit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2619118853407785269" datatype="html">
+        <source> Ver Entrevistas Programadas </source>
+        <target>See Scheduled Interviews</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">93,95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8265299641871283438" datatype="html">
+        <source> Ver Resultados Entrevistas </source>
+        <target>See Interview Results</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">99,101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2622188857464541016" datatype="html">
+        <source> Ver Resultados Pruebas </source>
+        <target>See Test Results</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/compartido/navbar/navbar.component.html</context>
+          <context context-type="linenumber">105,107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7675118944046027084" datatype="html">
+        <source>Formulario de creación de empleados</source>
+        <target>Employee creation form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7709411072264174165" datatype="html">
+        <source>Identificación</source>
+        <target>Identification</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7256688583635889910" datatype="html">
+        <source> Debe ingresar un número de documento </source>
+        <target>You must enter a document number</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">29,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5357661269973482487" datatype="html">
+        <source>Nombre</source>
+        <target>Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3078517682520571450" datatype="html">
+        <source> El nombre no debe exceder los 100 carácteres </source>
+        <target>The name must not exceed 100 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">43,45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5110730265212800889" datatype="html">
+        <source>Cargo</source>
+        <target>Position</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7405149621034662837" datatype="html">
+        <source> El cargo no debe exceder los 100 carácteres </source>
+        <target>The position must not exceed 100 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">57,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8284705088749866157" datatype="html">
+        <source>Crear</source>
+        <target>Create</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/asignar-empleado/asignar-empleado.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5520521375838988861" datatype="html">
+        <source> Crear ficha</source>
+        <target>Create card</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2321338169510060436" datatype="html">
+        <source>Seleccione proyecto sin ficha creada</source>
+        <target>Select project without card created</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4597196577668410786" datatype="html">
+        <source>Seleccione los empleados internos</source>
+        <target>Select internal employees</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="673224290837121156" datatype="html">
+        <source>Colaborador:</source>
+        <target>Collaborator:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6590405212869233219" datatype="html">
+        <source>Cargo:</source>
+        <target>Position:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4126885188996076821" datatype="html">
+        <source>Seleccione los perfiles requeridos</source>
+        <target>Select required profiles</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4226908042584247525" datatype="html">
+        <source>Perfil:</source>
+        <target>Profile:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4658572892996346329" datatype="html">
+        <source>Emparejar</source>
+        <target>Match</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7329584700537079690" datatype="html">
+        <source>Volver</source>
+        <target>Back</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-ficha/crear-ficha.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2648352479907629531" datatype="html">
+        <source>Creación Proyecto</source>
+        <target>Project Creation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3915286981482437131" datatype="html">
+        <source>Nombre del proyecto *</source>
+        <target>Project name *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="267046169693983756" datatype="html">
+        <source> Debe ingresar un nombre para el proyecto </source>
+        <target>You must enter a name for the project</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6132179842722129733" datatype="html">
+        <source>Fecha de inicio</source>
+        <target>Start date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2687710414194472181" datatype="html">
+        <source> Debe ingresar una fecha </source>
+        <target>You must enter a date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">32,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7088675702713646273" datatype="html">
+        <source>Desempeño candidato</source>
+        <target>Candidate performance</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6874033895085249553" datatype="html">
+        <source>Candidatos</source>
+        <target>Candidates</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ nombreCandidatoSeleccionado | titlecase }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3146471327130124520" datatype="html">
+        <source>Calificación *</source>
+        <target>Qualification *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7318582774577767210" datatype="html">
+        <source> Debe ingresar una calificación </source>
+        <target>You must enter a qualification</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">106,108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5075570420328593325" datatype="html">
+        <source> La calificación no debe exceder los 100 carácteres </source>
+        <target>The qualification must not exceed 100 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">110,112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1546244026877659586" datatype="html">
+        <source>Aspectos a resaltar *</source>
+        <target>Aspects to highlight *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="710619902195281314" datatype="html">
+        <source> Debe ingresar aspectos a resaltar </source>
+        <target>You must enter aspects to highlight</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">56,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7832532236770873718" datatype="html">
+        <source>Aspectos a mejorar *</source>
+        <target>Aspects to improve *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="976803493496422546" datatype="html">
+        <source> Debe ingresar aspectos a mejorar </source>
+        <target>You must enter aspects to improve</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-desempeno-candidato/registro-desempeno-candidato.component.html</context>
+          <context context-type="linenumber">68,70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6503123173142107756" datatype="html">
+        <source>Formulario de registro de información de empresa</source>
+        <target>Company information registration form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2884992538699004906" datatype="html">
+        <source>NIT de la empresa *</source>
+        <target>Company NIT *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="830077183561195651" datatype="html">
+        <source> Debe ingresar un nit </source>
+        <target>You must enter a nit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2784092402637501151" datatype="html">
+        <source> El nit no debe exceder los 20 carácteres </source>
+        <target>The nit must not exceed 20 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4800256675027418185" datatype="html">
+        <source>Razón Social *</source>
+        <target>Company Name *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6913466468841935786" datatype="html">
+        <source> Debe ingresar una razón social </source>
+        <target>You must enter a company name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">27,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="491118559578809769" datatype="html">
+        <source> La razón social no debe exceder los 100 carácteres </source>
+        <target>The company name must not exceed 100 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3651432152298394273" datatype="html">
+        <source>Dirección de empresa *</source>
+        <target>Company address *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8119196175905367159" datatype="html">
+        <source> La dirección no debe exceder los 100 carácteres </source>
+        <target>The address must not exceed 100 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8517544670221746072" datatype="html">
+        <source>Seleccionar País</source>
+        <target>Select Country</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4945701822057943431" datatype="html">
+        <source>Seleccionar Departamento</source>
+        <target>Select Department</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3482887081213080908" datatype="html">
+        <source>Seleccionar Ciudad</source>
+        <target>Select City</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3905178848571662288" datatype="html">
+        <source>Aceptar</source>
+        <target>Accept</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-empresa/registro-empresa.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5935442305798607806" datatype="html">
+        <source> Formulario de registro de resultado de prueba técnica</source>
+        <target>Technical test result registration form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7366812639090463650" datatype="html">
+        <source>Seleccione proyecto</source>
+        <target>Select project</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4404488251830050163" datatype="html">
+        <source>Seleccione candidato a evaluar </source>
+        <target>Select candidate to evaluate</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6075758056670516178" datatype="html">
+        <source>Registre prueba técnica</source>
+        <target>Register technical test</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2393633207333573581" datatype="html">
+        <source>Candidato:</source>
+        <target>Candidate:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4174777623651627845" datatype="html">
+        <source>Resultado prueba *</source>
+        <target>Test result *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1594870931369524158" datatype="html">
+        <source>Observación *</source>
+        <target>Observation *</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7856846086821465141" datatype="html">
+        <source> Debe ingresar observación </source>
+        <target>You must enter an observation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">122,124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6170254815533480618" datatype="html">
+        <source>Estado prueba:</source>
+        <target>Test status:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5603696190534826526" datatype="html">
+        <source>Aprobado</source>
+        <target>Approved</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7933317966314556933" datatype="html">
+        <source>No aprobado</source>
+        <target>Not approved</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4982987874471338456" datatype="html">
+        <source> Debe seleccionar un estado </source>
+        <target>You must select a status</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">138,140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4670165424868688046" datatype="html">
+        <source>Registrar</source>
+        <target>Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component.html</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7124361529509538083" datatype="html">
+        <source> Seleccion de candidatos</source>
+        <target>Candidate selection</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2941703402545189473" datatype="html">
+        <source>Seleccione candidato a contratar</source>
+        <target>Select candidate to hire</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4565304700357609746" datatype="html">
+        <source>Generación de contrato</source>
+        <target>Contract generation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="451025134565970884" datatype="html">
+        <source>Resumen de contrato</source>
+        <target>Contract summary</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5018611456086738128" datatype="html">
+        <source>Contrato No:</source>
+        <target>Contract Number:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5988527754735881488" datatype="html">
+        <source>Nombre:</source>
+        <target>Name:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2240987393970033738" datatype="html">
+        <source>Proyecto:</source>
+        <target>Project:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6451576182061305679" datatype="html">
+        <source>Contratar</source>
+        <target>Hire</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/seleccion-candidato/seleccion-candidato.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2146796356522355485" datatype="html">
+        <source>Resumen de emparejamiento</source>
+        <target>Matching summary</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/ver-emparejamiento/ver-emparejamiento.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4998231583914676553" datatype="html">
+        <source>Seleccione un proyecto</source>
+        <target>Select a project</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/ver-emparejamiento/ver-emparejamiento.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7348502589621752208" datatype="html">
+        <source>Lista de perfiles y candidatos emparejados</source>
+        <target>List of matched profiles and candidates</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/ver-emparejamiento/ver-emparejamiento.component.html</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="614064995678289947" datatype="html">
         <source>Listado de proyectos</source>
-         <target>Projects list</target>
+        <target>Project list</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/ver-proyectos/ver-proyectos.component.html</context>
           <context context-type="linenumber">5</context>
@@ -80,7 +1551,7 @@
       </trans-unit>
       <trans-unit id="4798961227159743968" datatype="html">
         <source>Cerrar</source>
-         <target>Close</target>
+        <target>Close</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/ver-proyectos/ver-proyectos.component.html</context>
           <context context-type="linenumber">19</context>
