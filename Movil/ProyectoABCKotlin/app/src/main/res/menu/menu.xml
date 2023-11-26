@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_pruebas_tecnicas"
+        android:icon="@drawable/icon_menu"
+        android:title="Pruebas Técnicas"
+        app:showAsAction="ifRoom">
+
+        <menu>
+            <item
+                android:id="@+id/nav_item_resultados_pruebas"
+                android:title="Ver Resultados Pruebas Técnicas" />
+            <item
+                android:id="@+id/nav_item_entrevistas_programadas"
+                android:title="Consultar Entrevistas Programadas" />
+            <item
+                android:id="@+id/nav_item_entrevista_resultados"
+                android:title="Consultar Resultados Entrevista" />
+        </menu>
+
+    </item>
+</menu>

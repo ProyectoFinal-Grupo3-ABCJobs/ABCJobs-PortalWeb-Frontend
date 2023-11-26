@@ -3,14 +3,16 @@ package com.example.proyectoabckotlin.main
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityMainBinding
-import com.example.proyectoabckotlin.ingresar.IngresarActivity
 import com.example.proyectoabckotlin.pojo.Usuario
+import com.example.proyectoabckotlin.pruebas.EntrevistasProgramadasActivity
 import com.example.proyectoabckotlin.registroCandidato.RegistroCandidatoActivity
 import com.example.proyectoabckotlin.service.ApiAutenticacion
 import com.example.proyectoabckotlin.service.HeaderInterceptor
@@ -72,7 +74,9 @@ class MainActivity : AppCompatActivity() {
                                     getString(R.string.login_exitoso),
                                     Toast.LENGTH_LONG
                                 ).show()
-                                startActivity(Intent(this@MainActivity, IngresarActivity::class.java))
+                                //startActivity(Intent(this@MainActivity, IngresarActivity::class.java))
+                                //startActivity(Intent(this@MainActivity, EntrevistasProgramadasActivity::class.java))
+                                startActivity(Intent(this@MainActivity, EntrevistasProgramadasActivity::class.java))
                             } else {
                                 Toast.makeText(
                                     this@MainActivity,
@@ -122,5 +126,33 @@ class MainActivity : AppCompatActivity() {
             .addInterceptor(HeaderInterceptor())
             .addInterceptor(loggingInterceptor)
             .build()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_item_resultados_pruebas -> Toast.makeText(
+                this,
+                "Consultar Pruebas Técnicas",
+                Toast.LENGTH_SHORT
+            ).show()
+
+            R.id.nav_item_entrevistas_programadas -> Toast.makeText(
+                this,
+                "Consultar Entrevistas Programadas",
+                Toast.LENGTH_SHORT
+            ).show()
+
+            R.id.nav_item_entrevista_resultados -> Toast.makeText(
+                this,
+                "Consultar Resultados Entrevista",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -98,4 +98,11 @@
     <string name="acces_ingrese_nombre">Enter Name</string>
     <string name="nombre">Name</string>
     <string name="registro_candidato_exitoso">Successful Candidate Registration</string>
+    <string name="columna_prueba">Test</string>
+    <string name="columna_resultado">Result</string>
+    <string name="columna_observaciones">Observations</string>
+    <string name="acces_text_resultados_pruebas">Tittle Test Results</string>
+    <string name="titulo_resultados_pruebas">Test Results</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
 </resources>
