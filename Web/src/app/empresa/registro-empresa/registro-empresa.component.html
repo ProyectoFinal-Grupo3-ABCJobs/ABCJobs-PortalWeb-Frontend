@@ -6,52 +6,52 @@
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-lg-9  ">
-              <input formControlName="nit" type="text" class="form-control" i18n-placeholder placeholder="NIT de la empresa *">
+              <input i18n-placeholder formControlName="nit" type="text" class="form-control" i18n-placeholder placeholder="NIT de la empresa *">
             </div>
           </div>
-          <div class="alert alert-danger my-3"
+          <div i18n class="alert alert-danger my-3"
             *ngIf="empresaForm.get('nit')?.hasError('required') && empresaForm.get('nit')?.touched">
             Debe ingresar un nit
           </div>
-          <div class="alert alert-danger my-3" *ngIf="empresaForm.get('nit')?.hasError('maxlength')">
+          <div i18n class="alert alert-danger my-3" *ngIf="empresaForm.get('nit')?.hasError('maxlength')">
             El nit no debe exceder los 20 carácteres
           </div>
         </div>
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-lg-9  ">
-              <input formControlName="razonSocial" type="text" class="form-control" i18n-placeholder placeholder="Razón Social *">
+              <input i18n-placeholder formControlName="razonSocial" type="text" class="form-control" i18n-placeholder placeholder="Razón Social *">
             </div>
           </div>  
-          <div class="alert alert-danger my-3"
+          <div i18n class="alert alert-danger my-3"
             *ngIf="empresaForm.get('razonSocial')?.hasError('required') && empresaForm.get('razonSocial')?.touched">
             Debe ingresar una razón social
           </div>
-          <div class="alert alert-danger my-3" *ngIf="empresaForm.get('razonSocial')?.hasError('maxlength')">
+          <div i18n class="alert alert-danger my-3" *ngIf="empresaForm.get('razonSocial')?.hasError('maxlength')">
             La razón social no debe exceder los 100 carácteres
           </div>
         </div>
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-lg-9  ">
-              <input formControlName="direccion" type="text" class="form-control" i18n-placeholder placeholder="Dirección de empresa *">
+              <input i18n-placeholder formControlName="direccion" type="text" class="form-control" i18n-placeholder placeholder="Dirección de empresa *">
             </div>
           </div>  
-          <div class="alert alert-danger my-3"
+          <div i18n class="alert alert-danger my-3"
             *ngIf="empresaForm.get('direccion')?.hasError('required') && empresaForm.get('direccion')?.touched">
             Debe ingresar una dirección
           </div>
-          <div class="alert alert-danger my-3" *ngIf="empresaForm.get('direccion')?.hasError('maxlength')">
+          <div i18n class="alert alert-danger my-3" *ngIf="empresaForm.get('direccion')?.hasError('maxlength')">
             La dirección no debe exceder los 100 carácteres
           </div>
         </div>
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-lg-9  ">
-              <input formControlName="telefono" type="text" class="form-control" i18n-placeholder placeholder="Número de teléfono *">
+              <input i18n-placeholder formControlName="telefono" type="text" class="form-control" i18n-placeholder placeholder="Número de teléfono *">
             </div>
           </div>  
-          <div class="alert alert-danger my-3"
+          <div i18n class="alert alert-danger my-3"
             *ngIf="empresaForm.get('telefono')?.hasError('required') && empresaForm.get('telefono')?.touched">
             Debe ingresar un número de teléfono
           </div>
@@ -60,7 +60,7 @@
           <div class="row">
             <div class="col-10">
               <select formControlName="idPais" class="form-select" aria-label="País">
-                  <option value="">Seleccionar País</option>
+                  <option i18n value="">Seleccionar País</option>
                   <option value="1">Colombia</option>
                   <option value="2">México</option>
                   <option value="3">Estados Unidos</option>
@@ -69,7 +69,7 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-8">
-              <div class="alert alert-danger my-3"
+              <div i18n class="alert alert-danger my-3"
                 *ngIf="empresaForm.get('idPais')?.hasError('required') && empresaForm.get('idPais')?.touched">
                 Debe seleccionar un país
               </div>
@@ -80,7 +80,7 @@
           <div class="row">
             <div class="col-10">
               <select formControlName="idDepartamento" class="form-select" aria-label="Departamento">
-                <option value="">Seleccionar Departamento</option>
+                <option i18n value="">Seleccionar Departamento</option>
                 <option value="1">Antioquia</option>
                 <option value="2">Cundinamarca</option>
                 <option value="3">Valle del Cauca</option>
@@ -89,7 +89,7 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-8">
-              <div class="alert alert-danger my-3"
+              <div i18n class="alert alert-danger my-3"
                 *ngIf="empresaForm.get('idDepartamento')?.hasError('required') && empresaForm.get('idDepartamento')?.touched">
                 Debe seleccionar un departamento
               </div>
@@ -100,7 +100,7 @@
           <div class="row">
             <div class="col-10">
               <select formControlName="idCiudad" class="form-select" aria-label="Ciudad">
-                <option value="">Seleccionar Ciudad</option>
+                <option i18n value="">Seleccionar Ciudad</option>
                   <option value="1">Medellín</option>
                   <option value="2">Bogotá</option>
                   <option value="3">Cali</option>
@@ -109,7 +109,7 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-8">
-              <div class="alert alert-danger my-3"
+              <div i18n class="alert alert-danger my-3"
                 *ngIf="empresaForm.get('idCiudad')?.hasError('required') && empresaForm.get('idCiudad')?.touched">
                 Debe seleccionar un departamento
               </div>

@@ -1,7 +1,7 @@
 <div>
   <div class="row text-center">
       <p></p>
-      <h4> Crear ficha</h4>
+      <h4 i18n> Crear ficha</h4>
       <p></p>
 
   </div>
@@ -11,7 +11,7 @@
   <div class="column">
       <div class="centrar">
           <h5><span class="grey">1</span></h5>
-          <h6>Seleccione proyecto sin ficha creada</h6>
+          <h6 i18n>Seleccione proyecto sin ficha creada</h6>
           <hr>
       </div>
 
@@ -39,7 +39,7 @@
 
       <div class="centrar">
           <h5><span class="grey">2</span></h5>
-          <h6>Seleccione los empleados internos</h6>
+          <h6 i18n>Seleccione los empleados internos</h6>
           <hr>
       </div>
 
@@ -57,7 +57,7 @@
                       [ngClass]="{'item-seleccionado-empleado': itemSeleccionadoEmpleados.includes(i)}"
                     >
 
-                <b>Colaborador:</b> {{ empleadointerno.nombre | titlecase}} <br><b>Cargo:</b> {{ empleadointerno.cargo | titlecase}}
+                <b i18n>Colaborador:</b> {{ empleadointerno.nombre | titlecase}} <br><b i18n>Cargo:</b> {{ empleadointerno.cargo | titlecase}}
             </li>
 
         </ul>
@@ -68,7 +68,7 @@
   <div class="column">
       <div class="centrar">
           <h5><span class="grey">3</span></h5>
-          <h6>Seleccione los perfiles requeridos</h6>
+          <h6 i18n>Seleccione los perfiles requeridos</h6>
           <hr>
       </div>
 
@@ -86,7 +86,7 @@
                       [ngClass]="{'item-seleccionado-perfil': itemSeleccionadoPerfil.includes(i)}"
                     >
 
-                <b>Perfil:</b> {{ perfil.nombre | titlecase}} 
+                <b i18n>Perfil:</b> {{ perfil.nombre | titlecase}} 
             </li>
 
         </ul>

@@ -1,7 +1,7 @@
 <div>
   <div class="row text-center">
     <p></p>
-    <h4> Formulario de registro de resultado de prueba técnica</h4>
+    <h4 i18n> Formulario de registro de resultado de prueba técnica</h4>
     <p></p>
 
   </div>
@@ -12,7 +12,7 @@
   <div class="column">
     <div class="centrar">
       <h5><span class="grey">1</span></h5>
-      <h6>Seleccione proyecto</h6>
+      <h6 i18n>Seleccione proyecto</h6>
       <hr>
     </div>
 
@@ -38,7 +38,7 @@
 
     <div class="centrar">
       <h5><span class="grey">2</span></h5>
-      <h6>Seleccione candidato a evaluar </h6>
+      <h6 i18n>Seleccione candidato a evaluar </h6>
       <hr>
     </div>
 
@@ -77,7 +77,7 @@
   <div class="column">
     <div class="centrar">
       <h5><span class="grey">3</span></h5>
-      <h6>Registre prueba técnica</h6>
+      <h6 i18n>Registre prueba técnica</h6>
       <hr>
     </div>
 
@@ -90,8 +90,8 @@
         <!-- <h5 i18n class="col-12 mb-4">Registrar evaluación técnica</h5> -->
 
         <div class="ficha">
-          <div class="campo text-center"><b>Registro</b></div>
-          <div class="campo"><b>Candidato:</b> {{ nombreCandidato }}</div>
+          <div class="campo text-center"><b i18n>Registro</b></div>
+          <div class="campo"><b i18n>Candidato:</b> {{ nombreCandidato }}</div>
 
         </div>
 
@@ -99,7 +99,7 @@
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-12">
-              <input formControlName="resultado" type="text" class="form-control" placeholder="Resultado prueba *">
+              <input i18n-placeholder formControlName="resultado" type="text" class="form-control" placeholder="Resultado prueba *">
             </div>
           </div>
           <div i18n class="alert alert-danger my-3"
@@ -115,7 +115,7 @@
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-12">
-              <input formControlName="observaciones" type="text" class="form-control" placeholder="Observación *">
+              <input i18n-placeholder formControlName="observaciones" type="text" class="form-control" placeholder="Observación *">
             </div>
           </div>
           <div i18n class="alert alert-danger my-3"
@@ -127,7 +127,7 @@
         <div class="form-group">
           <div class="mb-3 row">
             <div class="col-md-10 offset-md-1">
-              <p><b>Estado prueba:</b></p>
+              <p><b i18n>Estado prueba:</b></p>
               <select formControlName="aprobado" class="form-select">
                 <option i18n value="true">Aprobado</option>
                 <option i18n value="false">No aprobado</option>

@@ -1,7 +1,7 @@
 <div>
     <div class="row text-center">
         <p></p>
-        <h4> Seleccion de candidatos</h4>
+        <h4 i18n> Seleccion de candidatos</h4>
         <p></p>
 
     </div>
@@ -11,7 +11,7 @@
     <div class="column">
         <div class="centrar">
             <h5><span class="grey">1</span></h5>
-            <h6>Seleccione proyecto</h6>
+            <h6 i18n>Seleccione proyecto</h6>
             <hr>
         </div>
 
@@ -35,7 +35,7 @@
 
         <div class="centrar">
             <h5><span class="grey">2</span></h5>
-            <h6>Seleccione candidato a contratar</h6>
+            <h6 i18n>Seleccione candidato a contratar</h6>
             <hr>
         </div>
 
@@ -76,17 +76,17 @@
     <div class="column">
         <div class="centrar">
             <h5><span class="grey">3</span></h5>
-            <h6>Generación de contrato</h6>
+            <h6 i18n>Generación de contrato</h6>
             <hr>
         </div>
 
 
         <div class="ficha">
-            <div class="campo text-center"><b>Resumen de contrato</b></div>
-            <div class="campo"><b>Contrato No:</b> {{ numeroContrato }}</div>
-            <div class="campo"><b>Nombre:</b> {{ nombreCandidatoContratar | titlecase}} </div>
-            <div class="campo"><b>Cargo:</b> {{ perfilCandidatoContratar | titlecase}} </div>
-            <div class="campo"><b>Proyecto:</b> {{ nombreProyecto | titlecase}} </div>
+            <div class="campo text-center"><b i18n>Resumen de contrato</b></div>
+            <div class="campo"><b i18n>Contrato No:</b> {{ numeroContrato }}</div>
+            <div class="campo"><b i18n>Nombre:</b> {{ nombreCandidatoContratar | titlecase}} </div>
+            <div class="campo"><b i18n>Cargo:</b> {{ perfilCandidatoContratar | titlecase}} </div>
+            <div class="campo"><b i18n>Proyecto:</b> {{ nombreProyecto | titlecase}} </div>
           </div>
 
           <div class="buttons">
