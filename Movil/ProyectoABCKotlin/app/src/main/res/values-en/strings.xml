@@ -127,4 +127,6 @@
     <string name="acces_text_resultados_entrevistas">Title of interview results</string>
     <string name="titulo_resultado_entrevistas">Interview Results</string>
     <string name="mensaje_entrevistas_resultado">The candidate does not have recorded interviews</string>
+    <string name="acces_text_entrevistas_programadas">Title of scheduled interviews</string>
+    <string name="titulo_entrevistas_programadas">Scheduled Interviews</string>
 </resources>

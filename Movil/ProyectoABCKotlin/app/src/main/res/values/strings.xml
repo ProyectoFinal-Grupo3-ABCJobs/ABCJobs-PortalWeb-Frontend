@@ -126,4 +126,6 @@
     <string name="acces_text_resultados_entrevistas">Titulo de resultado de entrevistas</string>
     <string name="titulo_resultado_entrevistas">Resultado de Entrevistas</string>
     <string name="mensaje_entrevistas_resultado">El candidato no tiene entrevistas  registradas</string>
+    <string name="acces_text_entrevistas_programadas">Titulo de entrevistas programadas</string>
+    <string name="titulo_entrevistas_programadas">Entrevistas Programadas</string>
 </resources>
