@@ -11,9 +11,11 @@ import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityMainBinding
 import com.example.proyectoabckotlin.ingresar.IngresarActivity
 import com.example.proyectoabckotlin.pojo.Usuario
+import com.example.proyectoabckotlin.registroCandidato.CandidatoMainActivity
 import com.example.proyectoabckotlin.registroCandidato.RegistroCandidatoActivity
 import com.example.proyectoabckotlin.service.ApiAutenticacion
 import com.example.proyectoabckotlin.service.HeaderInterceptor
+import com.example.proyectoabckotlin.utilidades.PreferencesUtil
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
@@ -23,11 +25,15 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.Collections
+import io.jsonwebtoken.Jwts
+import io.jsonwebtoken.security.Keys
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +61,8 @@ class MainActivity : AppCompatActivity() {
                     val usuarioBody = Usuario()
                     usuarioBody.usuario = editUsuarioText
                     usuarioBody.contrasena = editContrasenaText
+
+                    val secretKey = Keys.hmacShaKeyFor("frase-secreta-token-2023-frase-secreta-token-2023-backend-abcjobs".toByteArray())
                     val call = apiAutenticacion.login(usuarioBody)
 
                     call.enqueue(object : Callback<Usuario?> {
@@ -65,14 +73,39 @@ class MainActivity : AppCompatActivity() {
                             if (response.isSuccessful && response.body() != null) {
                                 edit_usuario.text.clear()
                                 edit_contrasena.text.clear()
-                                //String token = response.body().getToken();
+                                val usuario = response.body()!!
+                                val token = usuario.token
+
+                                if (token != null) {
+                                    PreferencesUtil.guardarTokenEnSharedPreferences(this@MainActivity, token)
+                                }
+
+                                val decodedToken = Jwts.parserBuilder()
+                                    .setSigningKey(secretKey)
+                                    .setAllowedClockSkewSeconds(60) // Permitir una diferencia de hasta 60 segundos
+                                    .build()
+                                    .parseClaimsJws(token)
+
+
+                                val claims = decodedToken.body
+                                println("Decoded Token: ${decodedToken.body}")
+                                val subClaim = claims["sub"] as Map<String, Any>
+
+                                val idEmpCanFunc = subClaim["idEmpCanFunc"]
+
+                                println("idEmpCanFunc: ${idEmpCanFunc}")
+
                                 //Llamar el Activity de Registro de Candidato
+
                                 Toast.makeText(
                                     this@MainActivity,
                                     getString(R.string.login_exitoso),
                                     Toast.LENGTH_LONG
                                 ).show()
-                                startActivity(Intent(this@MainActivity, IngresarActivity::class.java))
+                                if(response.body()!!.tipoUsuario=="CANDIDATO")
+                                    startActivity(Intent(this@MainActivity, CandidatoMainActivity::class.java))
+                                else
+                                    startActivity(Intent(this@MainActivity, IngresarActivity::class.java))
                             } else {
                                 Toast.makeText(
                                     this@MainActivity,

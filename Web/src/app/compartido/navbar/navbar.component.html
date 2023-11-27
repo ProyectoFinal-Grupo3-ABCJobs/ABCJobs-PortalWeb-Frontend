@@ -17,19 +17,93 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a i18n class="nav-link" href="#">Inicio</a>
+        </li> -->
+
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/empresa/crearProyecto" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Crear proyecto
+          </a>
+
         </li>
 
         <li class="nav-item">
           <a  i18n class="nav-link " routerLink="/empresa/verProyectos" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Ver Proyectos
+            Ver proyectos
+          </a>
+
+        </li>
+
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/empresa/asignarEmpleado" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Crear empleados
           </a>
 
         </li>
         <li class="nav-item">
-          <a  i18n class="nav-link " routerLink="/empresa/crearProyecto" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Crear Proyecto
+          <a  i18n class="nav-link " routerLink="/empresa/crearFicha" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Crear ficha
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/empresa/verEmparejamiento" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ver emparejamiento
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/empresa/registroResultadoPruebaTecnicaCand" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Registrar prueba
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/empresa/seleccionCandidatos" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Contratación
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/empresa/registroDesempeno" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Registrar desempeño
+          </a>
+        </li>
+
+        
+
+        <li class="nav-item">
+          <a i18n class="nav-link" href="#">Salir</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</div>
+<div *ngIf="perfilUsuario === 'CANDIDATO' ">
+  <nav class="navbar navbar-expand-lg" style="background-color: #413939;">
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <!-- <li class="nav-item active">
+          <a i18n class="nav-link" routerLink="/candidato/main">Inicio</a>
+        </li> -->
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/candidato/entrevistasProgramadas" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ver Entrevistas Programadas
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/candidato/resultadosEntrevistas" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ver Resultados Entrevistas
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <a  i18n class="nav-link " routerLink="/candidato/resultadosPruebas" id="navbarDropdownMenuLink" role="button" data-ts-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ver Resultados Pruebas
           </a>
 
         </li>
@@ -39,5 +113,4 @@
       </ul>
     </div>
   </nav>
-
 </div>

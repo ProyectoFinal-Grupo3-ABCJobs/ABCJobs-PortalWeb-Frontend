@@ -1,0 +1,105 @@
+<div>
+    <div class="row text-center">
+        <p></p>
+        <h4 i18n> Seleccion de candidatos</h4>
+        <p></p>
+
+    </div>
+</div>
+
+<div class="column-container">
+    <div class="column">
+        <div class="centrar">
+            <h5><span class="grey">1</span></h5>
+            <h6 i18n>Seleccione proyecto</h6>
+            <hr>
+        </div>
+
+        <div class="list-group">
+
+            <ul class="ul-custom">
+                <li class="      
+            list-group-item 
+            list-group-item-action " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
+                    (mouseout)="cambiarEstadoPuntero(false)" (click)="listarPerfilesCandidatos(proyecto,i)"
+                    *ngFor="let proyecto of proyectos;let i = index" [class.item-seleccionado]="i === itemSeleccionado">
+
+                    {{ proyecto['proyectoNombre'] | titlecase}}
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="column">
+
+        <div class="centrar">
+            <h5><span class="grey">2</span></h5>
+            <h6 i18n>Seleccione candidato a contratar</h6>
+            <hr>
+        </div>
+
+        <div *ngFor="let listaperfil of listaPerfiles['perfiles']" class="list-group">
+            
+            <ul class="ul-custom">
+                <li 
+                class="
+              bg-customcolor
+              text-white     
+              list-group-item 
+              list-group-item-action           
+              text-center"
+              >
+                  {{ listaperfil['perfilNombre'] | titlecase}}
+                </li>
+    
+              <li class="list-group-item
+              text-right
+              align-custom
+              list-group-item-action
+              "
+              [class.cursor-pointer]="mostrarPuntero" 
+              (mouseover)="cambiarEstadoPuntero(true)"
+              (mouseout)="cambiarEstadoPuntero(false)"
+              (click)="candidatoSeleccionado(candidato,listaperfil['perfilNombre'])"
+              *ngFor="let candidato of listaperfil.candidatos"              
+              >
+                  {{candidato.nombreCandidato | titlecase}} 
+              </li> 
+    
+              </ul>
+        </div>
+
+
+    </div>
+
+    <div class="column">
+        <div class="centrar">
+            <h5><span class="grey">3</span></h5>
+            <h6 i18n>Generación de contrato</h6>
+            <hr>
+        </div>
+
+
+        <div class="ficha">
+            <div class="campo text-center"><b i18n>Resumen de contrato</b></div>
+            <div class="campo"><b i18n>Contrato No:</b> {{ numeroContrato }}</div>
+            <div class="campo"><b i18n>Nombre:</b> {{ nombreCandidatoContratar | titlecase}} </div>
+            <div class="campo"><b i18n>Cargo:</b> {{ perfilCandidatoContratar | titlecase}} </div>
+            <div class="campo"><b i18n>Proyecto:</b> {{ nombreProyecto | titlecase}} </div>
+          </div>
+
+          <div class="buttons">
+
+            <button i18n class="btn_" (click)="contratarCandidato()">Contratar</button>
+            <button i18n class="btn_" (click)="cancelar()">Volver</button>
+          </div>
+
+    </div>
+</div>
+
+<div>
+    <div class="row">
+        <p></p>
+    </div>
+</div>

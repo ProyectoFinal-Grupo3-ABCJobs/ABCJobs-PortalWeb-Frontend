@@ -1,0 +1,56 @@
+span.grey {
+    background: #4a4340;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    /* margin-right: 0; */
+    /* text-align: center; */
+    width: 1.6em; 
+    
+  }
+
+  .listadoCandidatos{
+    margin-top: -22px;
+  }
+
+
+  .main{
+    margin-top: 30px;
+  }
+
+.centrar{
+  text-align: center;
+}
+
+
+.bg-customcolor{
+  background-color: #4f423e;
+}
+
+.align-custom{
+  text-align: left;
+}
+
+.item-seleccionado {
+  background-color: #4f423e; /* Cambia el color según tus preferencias */
+  color: white; /* Cambia el color del texto si es necesario */
+}
+
+.cursor-pointer {
+  cursor: pointer; /* Puedes cambiar "pointer" por otros valores como "grab", "crosshair", etc. */
+}
+
+
+.ul-custom{
+  padding-left: 0;
+}
+
+
+.c-custom{
+  margin-top: 50px;
+  padding-left: 400px;
+}

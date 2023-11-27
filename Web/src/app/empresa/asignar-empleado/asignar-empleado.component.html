@@ -1,0 +1,70 @@
+<div class="container justify-content-center">
+  <div class="titulo">
+      <h2 i18n class="col-12">Formulario de creación de empleados</h2>
+      <form class="col-12" style="margin-top: 5rem;" [formGroup]="empleadoForm" (ngSubmit)="asignarEmpleado(empleadoForm.value)">
+
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-10 offset-md-1">
+                <select formControlName="tipoIdentificacion" class="form-select" >
+                  <option i18n value="">Seleccionar tipo documento *</option>
+                  <option i18n value="CC">Cédula de Ciudadanía</option>
+                  <option i18n value="CE">Cédula de Extranjería</option>
+                  <option i18n value="Pasaporte">Pasaporte</option>
+              </select>
+              </div>
+            </div>
+            <div i18n class="alert alert-danger my-3"
+              *ngIf="empleadoForm.get('tipoIdentificacion')?.hasError('required') && empleadoForm.get('tipoIdentificacion')?.touched">
+              Debe seleccionar un tipo de documento
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-10 offset-md-1">
+                <input i18n-placeholder formControlName="identificacion" type="text" class="form-control" placeholder="Identificación">
+              </div>
+            </div>  
+            <div i18n class="alert alert-danger my-3"
+              *ngIf="empleadoForm.get('identificacion')?.hasError('required') && empleadoForm.get('identificacion')?.touched">
+              Debe ingresar un número de documento
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-10 offset-md-1">
+                <input i18n-placeholder formControlName="nombre" type="text" class="form-control" placeholder="Nombre">
+              </div>
+            </div>  
+            <div i18n class="alert alert-danger my-3"
+              *ngIf="empleadoForm.get('nombre')?.hasError('required') && empleadoForm.get('nombre')?.touched">
+              Debe ingresar un nombre
+            </div>
+            <div i18n class="alert alert-danger my-3" *ngIf="empleadoForm.get('nombre')?.hasError('maxlength')">
+              El nombre no debe exceder los 100 carácteres
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="mb-3 row">
+              <div class="col-md-10 offset-md-1">
+                <input i18n-placeholder formControlName="cargo" type="text" class="form-control" placeholder="Cargo">
+              </div>
+            </div>  
+            <div i18n class="alert alert-danger my-3"
+              *ngIf="empleadoForm.get('cargo')?.hasError('required') && empleadoForm.get('cargo')?.touched">
+              Debe ingresar un cargo
+            </div>
+            <div i18n class="alert alert-danger my-3" *ngIf="empleadoForm.get('cargo')?.hasError('maxlength')">
+              El cargo no debe exceder los 100 carácteres
+            </div>
+          </div>
+
+        
+      
+        <div class="buttons justify-content-center">        
+          <button i18n type="submit" class="btn btn-warning" [disabled]="!empleadoForm.valid">Crear</button>
+          <button i18n class="btn btn-danger" (click)="cancelCreate()">Cancelar</button>
+        </div>
+    </form>
+  </div>
+</div>

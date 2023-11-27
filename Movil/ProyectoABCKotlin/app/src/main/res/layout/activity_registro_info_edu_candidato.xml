@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registroCandidato.RegistroInfoEduCandidatoActivity"
+    android:background="#F0ECEC">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titulo_registro_info_candidato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/acces_text_registro_info_camdidato"
+        android:gravity="center"
+        android:text="@string/titulo_registro_info_candidato"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/subtitulo_registro_edu_candidato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/acces_sub_text_registro_edu_candidato"
+        android:gravity="center"
+        android:text="@string/subtitulo_registro_edu_candidato"
+        android:textSize="20sp"
+        android:textColor="#292727"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_registro_info_candidato" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ultimoEstudioEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/ultimoEstudio"
+        android:contentDescription="@string/acces_ingrese_ultimo_estudio"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitulo_registro_edu_candidato" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/institucionEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/institucion"
+        android:contentDescription="@string/acces_ingrese_institucion"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ultimoEstudioEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/anioGradoEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/anioGrado"
+        android:contentDescription="@string/acces_ingrese_anio_grado"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/institucionEditText" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/departamentoSpinner"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="departamento"
+        android:contentDescription="@string/acces_ingrese_departamento"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anioGradoEditText" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/ciudadSpinner"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="ciudad"
+        android:contentDescription="@string/acces_ingrese_ciudad"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/departamentoSpinner" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/subtitulo_registro_lab_candidato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/acces_sub_text_registro_lab_candidato"
+        android:gravity="center"
+        android:text="@string/subtitulo_registro_lab_candidato"
+        android:textSize="20sp"
+        android:textColor="#292727"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ciudadSpinner" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/cargoEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/cargo"
+        android:contentDescription="@string/acces_ingrese_cargo"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitulo_registro_lab_candidato" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ultimaEmpresaEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/ultimaEmpresa"
+        android:contentDescription="@string/acces_ingrese_ultima_empresa"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cargoEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/anioIngresoEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/anioIngreso"
+        android:contentDescription="@string/acces_ingrese_anio_ingreso"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ultimaEmpresaEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/anioRetiroEditText"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/anioRetiro"
+        android:contentDescription="@string/acces_ingrese_anio_retiro"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:background="@drawable/ic_edittext_background_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anioIngresoEditText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continuar_regis_lab_candidato_button"
+        android:layout_width="246dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:text="@string/siguiente_personal_candidato"
+        android:contentDescription="@string/acces_boton_info_per_candidato"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anioRetiroEditText"
+        android:background="@drawable/ic_button_rounded"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

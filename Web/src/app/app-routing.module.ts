@@ -9,6 +9,15 @@ import { RegistroInfoCandidatoComponent } from './candidato/registro-info-candid
 import { RegistroEmpresaComponent } from './empresa/registro-empresa/registro-empresa.component'; 
 import { VerProyectosComponent } from './empresa/ver-proyectos/ver-proyectos.component';
 import { CrearProyectoComponent } from './empresa/crear-proyecto/crear-proyecto.component';
+import { AsignarEmpleadoComponent } from './empresa/asignar-empleado/asignar-empleado.component';
+import { CrearFichaComponent } from './empresa/crear-ficha/crear-ficha.component';
+import { VerEmparejamientoComponent } from './empresa/ver-emparejamiento/ver-emparejamiento.component';
+import { SeleccionCandidatoComponent } from './empresa/seleccion-candidato/seleccion-candidato.component';
+import { VerEntrevistasProgramadasComponent } from './candidato/ver-entrevistas-programadas/ver-entrevistas-programadas.component';
+import { VerResultadosEntrevistasComponent } from './candidato/ver-resultados-entrevistas/ver-resultados-entrevistas.component';
+import { VerResultadoPruebasComponent } from './candidato/ver-resultado-pruebas/ver-resultado-pruebas.component';
+import { RegistrarDesempenoCandidatoComponent } from './empresa/registro-desempeno-candidato/registro-desempeno-candidato.component';
+import { RegistroResPruebaTecnicaComponent } from './empresa/registro-res-prueba-tecnica/registro-res-prueba-tecnica.component';
 
 const routes: Routes = [
   {
@@ -41,11 +50,11 @@ const routes: Routes = [
     component: RegistroCandidatoComponent
   },
   {
-    path: 'candidato/registroInformacion',
+    path: 'candidato/registroInformacion/:userId',
     component: RegistroInfoCandidatoComponent
   },
   {
-    path: 'empresa/registroInformacion',
+    path: 'empresa/registroInformacion/:userId',
     component: RegistroEmpresaComponent
   },
   {
@@ -55,8 +64,47 @@ const routes: Routes = [
   {
     path: 'empresa/crearProyecto',
     component: CrearProyectoComponent
+  },
+  {
+    path: 'empresa/asignarEmpleado',
+    component: AsignarEmpleadoComponent
+  },
+  {
+    path: 'empresa/crearFicha',
+    component: CrearFichaComponent
+  },
+  {
+    path: 'empresa/verEmparejamiento',
+    component: VerEmparejamientoComponent
+  }
+  ,
+  {
+    path: 'empresa/seleccionCandidatos',
+    component: SeleccionCandidatoComponent
+  },
+  {
+    path: 'candidato/entrevistasProgramadas',
+    component: VerEntrevistasProgramadasComponent
+  },
+  {
+    path: 'candidato/resultadosEntrevistas',
+    component: VerResultadosEntrevistasComponent
+  },
+  {
+    path: 'candidato/resultadosPruebas',
+    component: VerResultadoPruebasComponent
+  },
+  {
+    path: 'empresa/registroDesempeno',
+    component: RegistrarDesempenoCandidatoComponent
+  },
+  {
+    path: 'empresa/registroResultadoPruebaTecnicaCand',
+    component: RegistroResPruebaTecnicaComponent
   }
 
+
+  
 ];
 
 @NgModule({

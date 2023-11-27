@@ -1,12 +1,12 @@
 package com.example.proyectoabckotlin.registroCandidato
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectoabckotlin.R
 import com.example.proyectoabckotlin.databinding.ActivityRegistroCandidatoBinding
 import com.example.proyectoabckotlin.registroCandidato.RegistroInfoCandidatoActivity

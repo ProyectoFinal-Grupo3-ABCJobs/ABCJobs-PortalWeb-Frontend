@@ -10,7 +10,7 @@
             <input  #usuario name="usuario" formControlName="usuario" type="text" class="form-control" i18n-placeholder placeholder="Correo electrónico *" >
           </div>
         </div>
-        <div class="alert alert-danger my-3"
+        <div i18n class="alert alert-danger my-3"
           *ngIf="loginForm.get('usuario')?.hasError('required') && loginForm.get('usuario')?.touched">
           Debe ingresar un usuario
         </div>
@@ -22,7 +22,7 @@
           <input i18n-placeholder #contrasena name="contrasena" formControlName="contrasena" type="password" class="form-control" placeholder="Contraseña *" i18n="@@namePlaceholder">
         </div>
       </div>
-      <div class="alert alert-danger my-3"
+      <div i18n class="alert alert-danger my-3"
         *ngIf="loginForm.get('contrasena')?.hasError('required') && loginForm.get('usuario')?.touched">
         Debe ingresar una contraseña
       </div>

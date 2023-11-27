@@ -1,0 +1,166 @@
+<div>
+  <div class="row text-center">
+    <p></p>
+    <h4 i18n> Formulario de registro de resultado de prueba técnica</h4>
+    <p></p>
+
+  </div>
+</div>
+
+
+<div class="column-container">
+  <div class="column">
+    <div class="centrar">
+      <h5><span class="grey">1</span></h5>
+      <h6 i18n>Seleccione proyecto</h6>
+      <hr>
+    </div>
+
+    <div class="list-group">
+
+      <ul class="ul-custom">
+
+        <li class="      
+                  list-group-item 
+                  list-group-item-action" [class.cursor-pointer]="mostrarPuntero"
+          *ngFor="let proyecto of datosProyecto;let i = index" (click)="listarCandidatosPerfil(proyecto)"
+          (mouseover)="cambiarEstadoPuntero(true)" (mouseout)="cambiarEstadoPuntero(false)"
+          (click)="listarCandidatosPerfil(proyecto)">
+
+          {{ proyecto['nombreProyecto'] | titlecase}}
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="column">
+
+    <div class="centrar">
+      <h5><span class="grey">2</span></h5>
+      <h6 i18n>Seleccione candidato a evaluar </h6>
+      <hr>
+    </div>
+
+
+    <div *ngFor="let candidato of listaTotalCandidatos" class="list-group">
+
+      <ul class="ul-custom">
+        <li class="
+                bg-customcolor
+                text-white     
+                list-group-item 
+                list-group-item-action           
+                text-center">
+          {{ candidato['perfilDescripcion'] | titlecase}}
+        </li>
+
+        <li class="list-group-item
+                text-right
+                align-custom
+                list-group-item-action
+                " [class.cursor-pointer]="mostrarPuntero" (mouseover)="cambiarEstadoPuntero(true)"
+          (mouseout)="cambiarEstadoPuntero(false)" (click)="seleccionCandidato(listacandidato,candidato)"
+          *ngFor="let listacandidato of candidato.candidatos">
+          {{listacandidato.candidatoNombre | titlecase}}
+        </li>
+
+
+
+      </ul>
+    </div>
+
+
+  </div>
+
+  <!-- Inicio -->
+  <div class="column">
+    <div class="centrar">
+      <h5><span class="grey">3</span></h5>
+      <h6 i18n>Registre prueba técnica</h6>
+      <hr>
+    </div>
+
+    
+
+
+    <form class="col-12" [formGroup]="registroResultadoPruebaForm"
+      (ngSubmit)="registrarResultadoPruebaCandidato(registroResultadoPruebaForm.value)">
+      <div class="offset-md-1 col-md-9" [hidden]="!formulario">
+        <!-- <h5 i18n class="col-12 mb-4">Registrar evaluación técnica</h5> -->
+
+        <div class="ficha">
+          <div class="campo text-center"><b i18n>Registro</b></div>
+          <div class="campo"><b i18n>Candidato:</b> {{ nombreCandidato }}</div>
+
+        </div>
+
+
+        <div class="form-group">
+          <div class="mb-3 row">
+            <div class="col-12">
+              <input i18n-placeholder formControlName="resultado" type="text" class="form-control" placeholder="Resultado prueba *">
+            </div>
+          </div>
+          <div i18n class="alert alert-danger my-3"
+            *ngIf="registroResultadoPruebaForm.get('resultado')?.hasError('required') && registroResultadoPruebaForm.get('resultado')?.touched">
+            Debe ingresar una calificación
+          </div>
+          <div i18n class="alert alert-danger my-3"
+            *ngIf="registroResultadoPruebaForm.get('resultado')?.hasError('maxlength')">
+            La calificación no debe exceder los 100 carácteres
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="mb-3 row">
+            <div class="col-12">
+              <input i18n-placeholder formControlName="observaciones" type="text" class="form-control" placeholder="Observación *">
+            </div>
+          </div>
+          <div i18n class="alert alert-danger my-3"
+            *ngIf="registroResultadoPruebaForm.get('observaciones')?.hasError('required') && registroResultadoPruebaForm.get('observaciones')?.touched">
+            Debe ingresar observación
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="mb-3 row">
+            <div class="col-md-10 offset-md-1">
+              <p><b i18n>Estado prueba:</b></p>
+              <select formControlName="aprobado" class="form-select">
+                <option i18n value="true">Aprobado</option>
+                <option i18n value="false">No aprobado</option>
+              </select>
+            </div>
+          </div>
+          <div i18n class="alert alert-danger my-3"
+            *ngIf="registroResultadoPruebaForm.get('aprobado')?.hasError('required') && registroResultadoPruebaForm.get('aprobado')?.touched">
+            Debe seleccionar un estado
+          </div>
+        </div>
+
+        <div class="row centrado">
+          <div class="buttons">
+
+            <div class="buttons justify-content-center">
+              <button i18n type="submit" class="btn btn-warning btn_"
+                [disabled]="!registroResultadoPruebaForm.valid">Registrar</button>
+              <button i18n class="btn btn-danger btn_" (click)="cancelCreate()">Cancelar</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+
+
+
+
+
+
+  </div>
+  <!-- hasta aca -->
+</div>

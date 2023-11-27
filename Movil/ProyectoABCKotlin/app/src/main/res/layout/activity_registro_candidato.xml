@@ -11,12 +11,12 @@
         android:id="@+id/imagen2"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/imagen1" />
+        app:srcCompat="@drawable/logo" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/registro_candidato"
@@ -81,12 +81,15 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contrasena_registro_edit" />
-    
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/continuar_registro_button"
         android:layout_width="246dp"
         android:layout_height="41dp"
         android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:text="@string/continuar"
         android:contentDescription="@string/acces_boton_continuar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,6 +102,9 @@
         android:id="@+id/regresar_candidato_login_button"
         android:layout_width="246dp"
         android:layout_height="41dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:background="@drawable/ic_button_rounded"
         android:contentDescription="@string/acces_boton_regresar"
         android:text="@string/regresar"

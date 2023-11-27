@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ingresar.IngresarActivity">
+    tools:context=".ingresar.IngresarActivity"
+    android:background="#F0ECEC">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imagen2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/evaluacion_desempeno_button"
+        android:layout_width="246dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="108dp"
+        android:background="@drawable/ic_button_rounded"
+        android:contentDescription="@string/acces_boton_desempeno_empleado"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/evaluacion_desempeno_empleado"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen2"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/regresar_button"
+        android:layout_width="246dp"
+        android:layout_height="41dp"
+        android:background="@drawable/ic_button_rounded"
+        android:contentDescription="@string/acces_boton_regresar"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/regresar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/evaluacion_desempeno_button"
+        app:layout_constraintVertical_bias="0.063" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
